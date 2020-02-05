@@ -126,7 +126,10 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        loader: "pug-loader"
+        loader: "pug-loader",
+        query: {
+          pretty: true
+        }
       },
       {
         // JavaScript
@@ -180,6 +183,10 @@ module.exports = {
               sourceMap: isDev,
               config: { path: `./postcss.config.js` }
             }
+          },
+          {
+            loader: "group-css-media-queries-loader",
+            options: { sourceMap: isDev }
           },
           {
             loader: "less-loader",
