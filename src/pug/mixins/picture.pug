@@ -1,0 +1,14 @@
+mixin picture(webp, name, ext, clas, width, height, alt)
+  picture
+    if webp
+      source(type="image/webp" media="(min-width: 1150px)" srcset="img/" + name + "-desktop@1x.webp 1x, img/" + name + "-desktop@2x.webp 2x")
+      source(type="image/webp" media="(min-width: 768px)" srcset="img/" + name + "-tablet@1x.webp 1x, img/" + name + "-tablet@2x.webp 2x")
+      source(type="image/webp" srcset="img/" + name + "-mobile@1x.webp 1x, img/" + name + "-mobile@2x.webp 2x")
+      source(media="(min-width: 1150px)" srcset="img/" + name + "-desktop@1x." + ext + " 1x, img/" + name + "-desktop@2x." + ext + " 2x")
+      source(media="(min-width: 768px)" srcset="img/" + name + "-tablet@1x." + ext + " 1x, img/" + name + "-tablet@2x." + ext + " 2x")
+      img(class=clas src="img/" + name + "-mobile@1x." + ext  srcset="img/" + name + "-mobile@2x" + ext + " 2x" width=width height=height alt=alt)
+    else
+      source(media="(min-width: 1150px)" srcset="img/" + name + "-desktop@1x."+ ext + " 1x, img/" + name + "-desktop@2x." + ext +" 2x")
+      source(media="(min-width: 768px)" srcset="img/" + name + "-tablet@1x." + ext + " 1x, img/" + name + "-tablet@2x." + ext + " 2x")
+      img(class=clas src="img/" + name + "-mobile@1x." +  ext  srcset="img/" + name + "-mobile@2x." + ext + " 2x" width=width height=height alt=alt)
+
