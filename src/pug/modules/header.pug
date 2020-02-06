@@ -1,0 +1,48 @@
+header.main-header
+  .container
+    .logo
+      a(href="index.html") #[+picture(false, "logo-white", "png", "logo-ing", "100", "19", "Логотип компании Погнали")]
+    button.open-button
+        span.visually-hidden Открыть меню
+    .menu
+      nav.main-nav
+        ul.site-navigation
+          li.site-navigation__item
+            a(href="") О сервисе
+          li.site-navigation__item
+            a(href="") Направления
+          li.site-navigation__item
+            a(href="") Попутчики
+      button.authorization.btn Авторизация
+      .about-us
+        p.about-us__tel
+          a(href="tel:+78005558628") 8 800 555-86-28
+        p.about-us__mail
+          a(href="mailto:mail@htmlacademy.ru") mail@htmlacademy.ru
+      ul.social-list
+        li.social-list__item.social-list__item--fb
+          a(href="")
+            span.visually-hidden Facebook
+        li.social-list__item.social-list__item--vk
+          a(href="https://vk.com/olimper")
+            span.visually-hidden Vkontakte
+        li.social-list__item.social-list__item--ista
+          a(href="")
+            span.visually-hidden Instagram
+    h1.main-title В путешествие с крутыми попутчиками!
+    ul.user-list
+      li.user-list__item.user-list__item--tel
+        a(href="tel:+78005558628") #[span.visually-hidden 8 800 555-86-28]
+      li.user-list__item.user-list__item--mail
+        a(href="mailto:mail@htmlacademy.ru") #[span.visually-hidden mail@htmlacademy.ru]
+      li.user-list__item.user-list__item--button
+        button.authorization.btn Авторизация
+    .user-review
+      p.user-review__text «Лучшее приложение,  что я видел в жизни!»
+      p.user-review__author Мурат Эльтазин главный редактор  газеты «гаджетлайф»
+    ul.journey-steps
+      li.journey-step Выберите  направление #[span.step-number 1]
+      li.journey-step Изучите идеи путешественников #[span.step-number 2]
+      li.journey-step Находите тех,  кто похож на вас #[span.step-number 3]
+      li.journey-step Путешествуйте вместе! #[span.step-number 4]
+
