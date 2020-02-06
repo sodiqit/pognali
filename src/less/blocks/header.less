@@ -1,9 +1,12 @@
 .main-header {
   background-color: @header-color;
-  background-image: url("./../../img/globe-back-mobile@1x.jpg");
+  background-image: url("./../../img/globe-back-mobile@1x.jpg"),
+                    linear-gradient(@header-color, @header-color);
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: 50% 0%;
+  background-size: 100% 53%,
+                   100% 100%;
+  background-position: 50% 18%,
+                       50% 80%;
   padding-top: 26px;
 
   .image({
@@ -63,6 +66,8 @@
   position: relative;
   z-index: 1;
 
+  margin-bottom: 25px;
+
   &::before {
     content: "";
     width: 192px;
@@ -101,6 +106,40 @@
       height: 40px;
     }
   }
+}
+
+.user-review {
+
+  margin-left: 9%;
+
+  &__text {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 170px;
+  }
+
+  &__author {
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 35px;
+    width: 155px;
+  }
+}
+
+.journey-steps {
+  .reset();
+
+  width: 100%;
+
+  padding: 9%;
+  padding-bottom: 0;
+}
+
+.journey-step {
+  padding-bottom: 25px;
+
+  border-radius: 10px;
 }
 
 .menu {
