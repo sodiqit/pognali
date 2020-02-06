@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixins";
+@import "./normilize";
 @import "./font";
 
 html {
@@ -16,7 +17,7 @@ body {
   margin: 0;
 
   font-family: @font-main;
-  font-size: 16px;
+  font-size: @main-font-size;
   font-weight: 300;
   line-height: 22px;
   color: @color-main;
@@ -48,4 +49,11 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.container {
+  width: 84%;
+  margin: 0 8%;
+
+  position: relative;
 }

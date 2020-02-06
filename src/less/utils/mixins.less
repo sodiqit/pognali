@@ -14,3 +14,21 @@
     @content();
   }
 }
+
+.reset() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tablet(@content, @width: @tablet-width) {
+  @media (min-width: @width) {
+    @content();
+  }
+}
+
+.desktop(@content, @width: @desktop-width) {
+  @media (min-width: @width) {
+    @content();
+  }
+}
