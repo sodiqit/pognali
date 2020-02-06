@@ -9,8 +9,8 @@
   }
 }
 
-.image(@content, @dpi: @retina-dpi, @dpx: @retina-dppx) {
-  @media (min-resolution: @dpi), (min-resolution: @dpx) {
+.image(@content, @width:320px, @dpi: @retina-dpi, @dpx: @retina-dppx) {
+  @media (min-resolution: @dpi), (min-resolution: @dpx) and (min-width: @width) {
     @content();
   }
 }
@@ -32,3 +32,5 @@
     @content();
   }
 }
+
+
