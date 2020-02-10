@@ -19,11 +19,25 @@
   });
 
   .tablet({
-    background-image: url("./../../img/globe-back-tablet@1x.jpg");
-    background-size: 100%;
+    padding-top: 41px;
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    background-image: url("./../../img/globe-back-tablet@1x.jpg"),
+                      linear-gradient(@background-color, @background-color);
+
+    background-size: 188% 612px,
+                     100% 31%;
+
+    background-position: 60% 62%,
+                         50% 65%;
 
     .image({
-      background-image: url("./../../img/globe-back-tablet@2x.jpg");
+      background-image: url("./../../img/globe-back-tablet@2x.jpg"),
+                        linear-gradient(@background-color, @background-color);
       background-size: 100%;
     });
   });
@@ -39,6 +53,21 @@
   });
 }
 
+.logo {
+  .tablet({
+    order:0;
+    width: 70%;
+    .logo-img {
+      width: 166px;
+      height: 42px;
+    }
+  });
+}
+
+.logo-img {
+
+}
+
 .main-title {
   text-align: center;
   line-height: 40px;
@@ -49,6 +78,16 @@
   margin-right: auto;
   margin-bottom: 244px;
   width: 237px;
+
+  .tablet({
+    line-height: 70px;
+    font-size: 60px;
+    margin-bottom: 105px;
+    margin-top: 72px;
+    width: 58%;
+
+    order: 2;
+  });
 }
 
 .open-button {
@@ -96,14 +135,12 @@
       transform: rotate(-45deg);
     }
   }
+
+  .tablet({
+    right: 337px;
+    top: 17px
+  });
 }
-
-// .open-menu-button {
-//   fill: @color-main;
-//   width: 25px;
-//   height: 11px;
-
-// }
 
 .user-list {
   .reset();
@@ -169,6 +206,60 @@
       height: 40px;
     }
   }
+
+  .tablet({
+    order:1;
+
+    margin-left: auto;
+
+    width: auto;
+
+    display: block;
+
+    margin-bottom: 0;
+    margin-right: 0;
+
+    &::before {
+      content: "";
+      width: 372px;
+      height: 451px;
+
+      // top: -235px;
+      // right: 25px;
+      // position: absolute;
+      // z-index: -1;
+
+      background-image: url("./../../img/traveller-illustration-tablet@1x.png");
+
+      .image({
+        background-image: url("./../../img/traveller-illustration-tablet@2x.png");
+      });
+    }
+
+    &__item {
+
+      &--tel {
+        display: none;
+      }
+
+      &--mail {
+        display: none;
+      }
+
+      &--button {
+        width: 188px;
+        height: 50px;
+
+        button {
+          height: 50px;
+          font-size: 20px;
+          line-height: 30px;
+
+          border-radius: 25px;
+        }
+      }
+    }
+  });
 }
 
 .user-review {
@@ -188,6 +279,11 @@
     margin-bottom: 32px;
     width: 155px;
   }
+
+  .tablet({
+    width: 100%;
+    order:3;
+  });
 }
 
 .journey-steps {
@@ -201,6 +297,10 @@
   font-size: 18px;
   line-height: 18px;
   font-weight: 800;
+
+  .tablet({
+    order:4;
+  });
 }
 
 .journey-step {
