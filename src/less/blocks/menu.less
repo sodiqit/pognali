@@ -8,6 +8,12 @@
   padding-left: 9%;
   padding-right: 9%;
   z-index: 2;
+  transform: translate(0, -600px);
+  transition: transform 0.5s;
+}
+
+.menu--opened {
+  transform: translate(0, 0);
 }
 
 .main-nav {
@@ -38,5 +44,95 @@
 }
 
 .menu__about-us {
+  color: @background-color;
+  font-weight: 800;
+  line-height: 22px;
+  text-transform: uppercase;
 
+  a {
+    color: inherit;
+  }
+
+  &__item {
+
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 45px;
+      background-color: @menu-circle-color;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      margin-right: 18px;
+    }
+
+    &--tel {
+      &::before {
+        background-image: url("./../../img/contacts-phone.svg");
+        background-size: 18px;
+      }
+    }
+
+    &--mail {
+      &::before {
+        background-image: url("./../../img/contacts-mail.svg");
+        background-size: 18px 13px;
+      }
+    }
+  }
+}
+
+.social-list {
+  .reset();
+  display: flex;
+  margin: 0 auto;
+  width: 123px;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 43px;
+  margin-bottom: 40px;
+
+  svg {
+    stroke: @stroke-color-icon;
+  }
+
+  &__item {
+    // margin-right: 25px;
+
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--fb {
+      width: 11px;
+      height: 21px;
+    }
+
+    &--vk {
+      width: 23px;
+      height: 12px;
+    }
+
+    &--insta {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.menu--no-js {
+  position: relative;
+  top: -52px;
+  padding-bottom: 30px;
+  transform: translate(0, 0);
+  transition: all 0s;
 }
