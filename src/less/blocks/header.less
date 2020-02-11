@@ -29,16 +29,17 @@
     background-image: url("./../../img/globe-back-tablet@1x.jpg"),
                       linear-gradient(@background-color, @background-color);
 
-    background-size: 188% 612px,
-                     100% 31%;
+    background-size: 189% 612px,//53.6%
+                     100% 100%;
 
-    background-position: 60% 62%,
-                         50% 65%;
+    background-position: 50% 384px,//73.3%
+                         50% 0;
 
     .image({
       background-image: url("./../../img/globe-back-tablet@2x.jpg"),
                         linear-gradient(@background-color, @background-color);
-      background-size: 100%;
+      background-size: 189% 612px,
+                       100% 100%;
     });
   });
 
@@ -64,10 +65,6 @@
   });
 }
 
-.logo-img {
-
-}
-
 .main-title {
   text-align: center;
   line-height: 40px;
@@ -82,9 +79,9 @@
   .tablet({
     line-height: 70px;
     font-size: 60px;
-    margin-bottom: 105px;
+    margin-bottom: 85px;
     margin-top: 72px;
-    width: 58%;
+    width: 407px;
 
     order: 2;
   });
@@ -137,8 +134,8 @@
   }
 
   .tablet({
-    right: 337px;
-    top: 17px
+    right: 49%;
+    top: 1.5%;
   });
 }
 
@@ -224,10 +221,8 @@
       width: 372px;
       height: 451px;
 
-      // top: -235px;
-      // right: 25px;
-      // position: absolute;
-      // z-index: -1;
+      top: 724%;
+      right: 38%;
 
       background-image: url("./../../img/traveller-illustration-tablet@1x.png");
 
@@ -283,6 +278,21 @@
   .tablet({
     width: 100%;
     order:3;
+    margin-left: 5%;
+
+    &__text {
+      margin-bottom: 45px;
+      width: 270px;
+      font-size: 28px;
+      line-height: 33px;
+    }
+
+    &__author {
+      margin-bottom: 210px;
+      width: 260px;
+      font-size: 21px;
+      line-height: 25px;
+    }
   });
 }
 
@@ -300,6 +310,14 @@
 
   .tablet({
     order:4;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
   });
 }
 
@@ -337,8 +355,70 @@
   &:nth-child(4) {
     background-color: @default-button-color;
   }
+
+  .tablet({
+    flex-basis: 49.8%;
+    padding-bottom: 35px;
+    padding-top: 31px;
+    padding-left: 5%;
+    margin-top: -10px;
+
+    max-height: 152px;
+
+    margin-left: -3%;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    display: block;
+
+    .step-text {
+      width: 188px;
+      display: block;
+      margin-bottom: 4.5%;
+    }
+
+    &:nth-child(1) {
+
+      margin-top: 0;
+      margin-left: 0;
+
+      flex-basis: 53%;
+      border-top-right-radius: 0;
+    }
+
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+
+    &:nth-child(3) {
+
+      margin-left: 0;
+
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 20px;
+
+      padding-bottom: 22px;
+
+      flex-basis: 53%;
+    }
+
+    &:nth-child(4) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+
+      padding-bottom: 22px;
+    }
+  });
 }
 
 .step-number {
   color: @color-main;
+
+  .tablet({
+    font-size: 30px;
+  });
 }
