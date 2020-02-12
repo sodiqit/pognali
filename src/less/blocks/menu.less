@@ -25,6 +25,34 @@
 
     transform: translate(0, -930px);
   });
+
+  .desktop({
+    background-color: transparent;
+    width: 400px;
+    margin: 0;
+    position: static;
+    top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 2;
+    transform: translate(0, 0);
+    transition: none;
+  });
+}
+
+.logo-menu {
+  .tablet({
+    order: 0;
+    img {
+      width: 166px;
+      height: 42px;
+    }
+  });
+
+  .desktop({
+    display: none;
+  });
 }
 
 .logo {
@@ -52,6 +80,11 @@
 
     width: 100%;
   });
+
+  .desktop({
+    margin-top: 0;
+    margin-bottom: 0;
+  });
 }
 
 .site-navigation {
@@ -59,7 +92,7 @@
 
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   color: @background-color;
@@ -74,6 +107,17 @@
     text-align: left;
 
     padding-left: 8.5%;
+  });
+
+  .desktop({
+    font-size: 20px;
+    line-height: 30px;
+    color: @color-main;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-left: 0;
   });
 }
 
@@ -92,6 +136,10 @@
 
     margin-bottom: 0;
     padding: 0;
+  });
+
+  .desktop({
+    display: none;
   });
 }
 
@@ -173,6 +221,10 @@
       }
     }
   });
+
+  .desktop({
+    display: none;
+  });
 }
 
 .social-list {
@@ -244,6 +296,10 @@
       }
     }
   });
+
+  .desktop({
+    display: none;
+  });
 }
 
 .menu--no-js {
@@ -252,4 +308,9 @@
   padding-bottom: 30px;
   transform: translate(0, 0);
   transition: all 0s;
+
+  .desktop({
+    position: static;
+    padding-bottom: 0;
+  });
 }
