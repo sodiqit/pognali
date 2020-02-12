@@ -44,12 +44,17 @@
   });
 
   .desktop({
+    padding-top: 47px;
+
     background-image: url("./../../img/globe-back-desktop@1x.jpg");
+
     background-size: 100%;
+
+    background-position: 0 0;
 
     .image({
       background-image: url("./../../img/globe-back-desktop@2x.jpg");
-      background-size: 100%;
+      background-size: 189% 612px;
     });
   });
 }
@@ -61,6 +66,15 @@
     .logo-img {
       width: 166px;
       height: 42px;
+    }
+  });
+
+  .desktop({
+    order:0;
+    width: 200px;
+    .logo-img {
+      width: 200px;
+      height: 52px;
     }
   });
 }
@@ -84,6 +98,13 @@
     width: 407px;
 
     order: 2;
+  });
+
+  .desktop({
+    margin-bottom: 85px;
+    margin-top: 72px;
+
+    text-align: left;
   });
 }
 
@@ -136,6 +157,10 @@
   .tablet({
     right: 49%;
     top: 1.5%;
+  });
+
+  .desktop({
+    display: none;
   });
 }
 
@@ -217,7 +242,6 @@
     margin-right: 0;
 
     &::before {
-      content: "";
       width: 372px;
       height: 451px;
 
@@ -252,6 +276,41 @@
 
           border-radius: 25px;
         }
+      }
+    }
+  });
+
+  .desktop({
+    width: 287px;
+
+    display: flex;
+
+    &::before {
+      width: 431px;
+      height: 640px;
+
+      top: 0;
+      right: 0;
+
+      background-image: url("./../../img/traveller-illustration-desktop@1x.png");
+
+      .image({
+        background-image: url("./../../img/traveller-illustration-desktop@2x.png");
+      });
+    }
+
+    &__item {
+
+      &--tel {
+        display: block;
+        width: 50px;
+        height: 50px;
+      }
+
+      &--mail {
+        display: block;
+        width: 50px;
+        height: 50px;
       }
     }
   });
@@ -292,6 +351,20 @@
       width: 260px;
       font-size: 21px;
       line-height: 25px;
+    }
+  });
+
+  .desktop({
+    width: 285px;
+    margin-left: auto;
+
+    &__text {
+      margin-bottom: 45px;
+      width: 270px;
+    }
+
+    &__author {
+      margin-bottom: 120px;
     }
   });
 }
@@ -413,6 +486,64 @@
       padding-bottom: 22px;
     }
   });
+
+  .desktop({
+    flex-basis: 25%;
+    // padding-bottom: 35px;
+    // padding-top: 31px;
+    // padding-left: 5%;
+    margin-top: 0;
+
+    max-height: 110px;
+
+    // margin-left: -3%;
+
+    // border-top-left-radius: 20px;
+    // border-top-right-radius: 20px;
+
+    // display: block;
+
+    .step-text {
+      // width: 188px;
+      // display: block;
+      // margin-bottom: 4.5%;
+    }
+
+    &:nth-child(1) {
+
+      // margin-top: 0;
+      // margin-left: 0;
+
+      // flex-basis: 53%;
+      // border-top-right-radius: 0;
+    }
+
+    &:nth-child(2) {
+      // margin-top: 0;
+    }
+
+    &:nth-child(3) {
+
+      // margin-left: 0;
+
+      // border-top-left-radius: 0;
+      // border-top-right-radius: 0;
+      // border-bottom-left-radius: 20px;
+
+      // padding-bottom: 22px;
+
+      // flex-basis: 53%;
+    }
+
+    &:nth-child(4) {
+      // border-top-left-radius: 0;
+      // border-top-right-radius: 0;
+      // border-bottom-right-radius: 20px;
+      // border-bottom-left-radius: 20px;
+
+      // padding-bottom: 22px;
+    }
+  });
 }
 
 .step-number {
@@ -420,5 +551,9 @@
 
   .tablet({
     font-size: 30px;
+  });
+
+  .desktop({
+    font-size: 24px;
   });
 }
