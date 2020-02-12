@@ -30,6 +30,7 @@
     background-color: transparent;
     width: 400px;
     margin: 0;
+    margin-left: 139px;
     position: static;
     top: 0;
     padding-top: 0;
@@ -38,6 +39,17 @@
     z-index: 2;
     transform: translate(0, 0);
     transition: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 27px;
+      left: -99px;
+
+      width: 60px;
+      height: 2px;
+      background-color: @color-main;
+    }
   });
 }
 

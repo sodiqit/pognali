@@ -3,7 +3,10 @@ import './less/styles.less';
 const button = document.querySelector('.open-button');
 const menu = document.querySelector('.menu');
 
-menu.style.opacity = 0;
+if (document.documentElement.clientWidth <= 1320) {
+  menu.style.opacity = 0;
+}
+
 menu.classList.remove('menu--no-js');
 
 button.addEventListener('click', () => {
