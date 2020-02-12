@@ -28,7 +28,7 @@
 
   .desktop({
     background-color: transparent;
-    width: 400px;
+    width: auto;
     margin: 0;
     margin-left: 139px;
     position: static;
@@ -130,6 +130,14 @@
     justify-content: space-between;
 
     padding-left: 0;
+
+    &__item {
+      margin-right: 37px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   });
 }
 
