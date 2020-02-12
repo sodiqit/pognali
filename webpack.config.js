@@ -6,7 +6,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
-const ImageminPlugin = require('imagemin-webpack-plugin').default
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -102,9 +103,14 @@ const plugins = () => {
       test: /\.(jpe?g|png|gif|svg)$/i,
       optipng: { optimizationLevel: 3 },
       gifsicle: { optimizationLevel: 1 },
-      jpegtran: { progressive: true },
       pngquant: { quality: "70-75" },
-      svgo: {}
+      svgo: {},
+      plugins: [
+        imageminMozjpeg({
+          quality: 75,
+          progressive: true
+        })
+      ]
     }));
   }
 
