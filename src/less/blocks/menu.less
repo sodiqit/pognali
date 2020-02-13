@@ -130,11 +130,18 @@
         }
       }
 
+      a:active {
+        span {
+          opacity: 0.3;
+        }
+      }
+
       span {
         position: relative;
         display: block;
         transition: transform 0.3s,
-                    color 0.3s;
+                    color 0.3s,
+                    opacity 0.3s;
 
         &::before {
           content: attr(data-hover);
@@ -167,6 +174,14 @@
 
           &::before {
             color: @hover-link-color;
+          }
+        }
+      }
+
+      a:active {
+        span {
+          &::before {
+            opacity: 0.3;
           }
         }
       }

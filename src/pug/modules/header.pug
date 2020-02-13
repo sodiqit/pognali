@@ -37,11 +37,15 @@ header.main-header
     h1.main-title В путешествие с крутыми попутчиками!
     ul.user-list
       li.user-list__item.user-list__item--tel
-        a(href="tel:+78005558628") #[span.visually-hidden 8 800 555-86-28]
+        a(href="tel:+78005558628")
+          include ./../../img/topmenu-phone.svg
+          span.visually-hidden 8 800 555-86-28
       li.user-list__item.user-list__item--mail
-        a(href="mailto:mail@htmlacademy.ru") #[span.visually-hidden mail@htmlacademy.ru]
+        a(href="mailto:mail@htmlacademy.ru")
+          include ./../../img/topmenu-mail.svg
+          span.visually-hidden mail@htmlacademy.ru
       li.user-list__item.user-list__item--button
-        button.btn Авторизация
+        button.btn #[span Авторизация]
     .user-review
       p.user-review__text «Лучшее приложение,  что я видел в жизни!»
       p.user-review__author Мурат Эльтазин<br/> главный редактор  газеты «гаджетлайф»

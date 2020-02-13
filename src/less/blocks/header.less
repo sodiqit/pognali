@@ -210,20 +210,19 @@
     height: 40px;
 
     border-radius: 50%;
-
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &--tel {
       background-color: @circle-tel-color;
-      background-image: url("./../../img/topmenu-phone.svg");
-      background-size: 18px;
     }
 
     &--mail {
       background-color: @circle-email-color;
-      background-image: url("./../../img/topmenu-mail.svg");
-      background-size: 18px 14px;
     }
 
     &--button {
@@ -260,22 +259,52 @@
 
     &__item {
 
+      transition: all 0.3s;
+
+      &:active {
+        svg {
+          opacity: 0.3;
+        }
+      }
+
       &--tel {
         display: none;
+
+        &:hover {
+          background-color: @hover-tel-circle;
+        }
       }
 
       &--mail {
         display: none;
+
+        &:hover {
+          background-color: @hover-email-circle;
+        }
       }
 
       &--button {
         width: 188px;
         height: 50px;
 
+        &:hover {
+          button {
+            background-color: @hover-button;
+          }
+        }
+
+        &:active {
+          span {
+            opacity: 0.3;
+          }
+        }
+
         button {
           height: 50px;
           font-size: 20px;
           line-height: 30px;
+
+          transition: all 0.3s;
 
           border-radius: 25px;
         }
@@ -307,6 +336,10 @@
     }
 
     &__item {
+
+      a {
+        height: 50px;
+      }
 
       &--tel {
         display: block;
