@@ -7,10 +7,11 @@
   background-size: 100% 40%,
                    100% 31%,
                    100% 30%;
-  background-position: 50% 12%,
-                       50% 65%,
+  background-position: 50% 65px,
+                       50% 62.5%,
                        30% 100%;
   padding-top: 26px;
+  padding-bottom: 29px;
 
   .image({
     background-image: url("./../../img/globe-back-mobile@2x.jpg"),
@@ -45,6 +46,7 @@
 
   .desktop({
     padding-top: 47px;
+    padding-bottom: 0;
 
     background-image: url("./../../img/globe-back-desktop@1x.jpg");
 
@@ -210,7 +212,13 @@
     height: 40px;
 
     border-radius: 50%;
-    
+
+    &:active {
+      svg, span {
+        opacity: 0.3;
+      }
+    }
+
     a {
       display: flex;
       justify-content: center;
@@ -261,12 +269,6 @@
 
       transition: all 0.3s;
 
-      &:active {
-        svg {
-          opacity: 0.3;
-        }
-      }
-
       &--tel {
         display: none;
 
@@ -289,13 +291,7 @@
 
         &:hover {
           button {
-            background-color: @hover-button;
-          }
-        }
-
-        &:active {
-          span {
-            opacity: 0.3;
+            background-color: @hover-color-button;
           }
         }
 
@@ -468,6 +464,9 @@
 
   &:nth-child(4) {
     background-color: @default-button-color;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 24px;
   }
 
   .tablet({
