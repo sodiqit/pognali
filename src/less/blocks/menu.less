@@ -119,6 +119,32 @@
     text-align: left;
 
     padding-left: 8.5%;
+
+    &__item {
+
+      overflow: hidden;
+
+      a:hover {
+        span {
+          color: @hover-link-color;
+        }
+      }
+
+      span {
+        position: relative;
+        display: block;
+        transition: transform 0.3s,
+                    color 0.3s;
+
+        &::before {
+          content: attr(data-hover);
+          display: inline-block;
+          position: absolute;
+          top: 100%;
+          transition: all 0.3s;
+        }
+      }
+    }
   });
 
   .desktop({
@@ -133,6 +159,17 @@
 
     &__item {
       margin-right: 37px;
+
+      a:hover {
+        span {
+          transform: translateY(-100%);
+          color: @color-main;
+
+          &::before {
+            color: @hover-link-color;
+          }
+        }
+      }
 
       &:last-child {
         margin-right: 0;
