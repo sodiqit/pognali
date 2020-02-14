@@ -1,0 +1,35 @@
+- var direction_info = [
+-  {
+-    title: "Тайланд",
+-    desc: "Джугли зовут!",
+-    count: "18321",
+-    img: "thailand"
+-  },
+-  {
+-    title: "Франция",
+-    desc: "Трэ бьен, манифик!",
+-    count: "12518",
+-    img: "france"
+-  },
+-  {
+-    title: "Чехия",
+-    desc: "Закоулки старой Европы",
+-    count: "5326",
+-    img: "czech"
+-  }
+-]
+
+section.directions
+  .container
+    h2.directions__title Направления
+    p.directions__description.
+      Мы не продаем туры
+      и ничего не рекламируем.
+      Люди сами пишут о странах,
+      куда хотели бы отправиться
+      и чем можно там заняться.
+    ul.directions__list
+      each val in direction_info
+        +direction-card(val.title, val.desc, val.count, val.img)
+
+
