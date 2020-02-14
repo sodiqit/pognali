@@ -1,0 +1,6 @@
+mixin direction-card(title, desc, count, img)
+  li.directions-list__item
+    +picture({webp: false, tablet: true}, img, "jpg", "direction-card__img", "270", "110", "Направление " + title)
+    h2.direction-card__title=title
+    p.direction-card__description=desc
+    span.direction-card__count=count
