@@ -70,6 +70,46 @@
       height: 213px;
     }
   });
+
+  .desktop({
+
+    padding-left: 129px;
+    padding-bottom: 164px;
+    padding-top: 171px;
+    margin-top: -65px;
+    z-index: 1;
+
+    &::before {
+      top: 18%;
+      left: 52%;
+      width: 630px;
+      height: 665px;
+      background-image: url("./../../../img/about-desktop@1x.png");
+      background-size: 630px 665px;
+
+      .image({
+        background-image: url("./../../../img/about-desktop@2x.png");
+      });
+    }
+
+    .container {
+      &::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: -69px;
+        width: 213px;
+        height: 213px;
+        background-color: @about-service-elemen;
+        z-index: -1;
+        border-radius: 20px;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  });
 }
 
 .about-service__title {
@@ -86,6 +126,10 @@
 
     font-size: 45px;
     line-height: 45px;
+  });
+
+  .desktop({
+    margin-bottom: 58px;
   });
 }
 
@@ -112,6 +156,15 @@
       display: inline;
     }
   });
+
+  .desktop({
+    width: 615px;
+    margin-bottom: 39px;
+
+    br.tablet-br {
+      display: none;
+    }
+  });
 }
 
 .about-service__call-to-action {
@@ -123,6 +176,15 @@
     line-height: 25px;
     margin-bottom: 50px;
     width: 300px;
+  });
+
+  .desktop({
+    margin-bottom: 83px;
+    width: 470px;
+
+    br {
+      display: none;
+    }
   });
 }
 
@@ -159,4 +221,13 @@
       border-color: transparent transparent transparent @triangle-color;
     }
   });
+
+  .desktop({
+
+    padding-top: 29px;
+    padding-bottom: 25px;
+    padding-left: 34px;
+
+  });
 }
+
