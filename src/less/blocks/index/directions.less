@@ -54,6 +54,46 @@
       background-color: @bg-element-color;
     }
   });
+
+  .desktop({
+
+    padding-top: 210px;
+    padding-bottom: 138px;
+    padding-left: 130px;
+
+    .container {
+      display: grid;
+      grid-template-columns: 560px auto;
+      align-items: start;
+      justify-content: start;
+      column-gap: 172px;
+      row-gap: 25px;
+      position: relative;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        z-index: -1;
+        top: -70px;
+        left: -70px;
+
+        width: 141px;
+        height: 141px;
+        border-radius: 20px;
+        background-color: @bg-element-color;
+      }
+    }
+
+    &::before {
+      top: 137px;
+      right: 58px;
+    }
+
+    &::after {
+      display: none;
+    }
+  });
 }
 
 .directions__title {
@@ -71,6 +111,13 @@
     font-size: 45px;
     line-height: 45px;
     margin-bottom: 58px;
+  });
+
+  .desktop({
+    margin-bottom: 0;
+    margin-top: 3px;
+
+    width: 44.5%;
   });
 }
 
@@ -92,6 +139,13 @@
     margin-bottom: 102px;
     width: 53%;
   });
+
+  .desktop({
+    margin-bottom: 0;
+    margin-top: 0;
+
+    width: 58%;
+  });
 }
 
 .directions__list {
@@ -108,6 +162,16 @@
     max-width: 100%;
     width: 94.1%;
     margin: 0;
+  });
+
+  .desktop({
+    max-width: 560px;
+    width: 100%;
+
+    grid-row-start: 1;
+    grid-row-end: 4;
+
+    order:-1;
   });
 }
 
@@ -223,7 +287,6 @@
 
     &::before {
       top: 2vw;
-      // left: 400px;
       left: 52vw;
       width: 70px;
       height: 47px;
@@ -292,6 +355,30 @@
     }
   });
 
+  .desktop({
+
+    &::before {
+      top: 24px;
+      left: 340px;
+      width: 70px;
+      height: 47px;
+      background-size: 70px 47px;
+    }
+
+    &__description {
+      margin-bottom: 26px;
+    }
+
+    &__container {
+
+      width: 68%;
+
+      padding-left: 31px;
+      padding-top: 24px;
+    }
+
+  });
+
 }
 
 .directions__button {
@@ -343,5 +430,13 @@
       right: 33px;
       top: 33px;
     }
+  });
+
+  .desktop({
+    width: 274px;
+    margin-top: 0;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    margin-top: auto;
   });
 }
