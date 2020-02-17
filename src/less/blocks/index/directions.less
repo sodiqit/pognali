@@ -19,25 +19,29 @@
     border-bottom-right-radius: 60px;
 
     padding-top: 86px;
-    padding-bottom: 30px;
+    padding-bottom: 80px;
     padding-left: 4.5%;
 
-    &::before {
-      content: "";
+    .container {
+      &::before {
+        content: "";
 
-      position: absolute;
-      top: 130px;
-      right: 40px;
+        position: absolute;
+        top: 7px;
+        right: 0;
 
-      width: 289px;
-      height: 575px;
-      background-image: url("./../../../img/flags-back@1x.png");
-      background-repeat: no-repeat;
-      background-size: 289px 575px;
+        z-index: -1;
 
-      .image({
-        background-image: url("./../../../img/flags-back@2x.png");
-      });
+        width: 289px;
+        height: 575px;
+        background-image: url("./../../../img/flags-back@1x.png");
+        background-repeat: no-repeat;
+        background-size: 289px 575px;
+
+        .image({
+          background-image: url("./../../../img/flags-back@2x.png");
+        });
+      }
     }
 
     &::after {
@@ -83,11 +87,11 @@
         border-radius: 20px;
         background-color: @bg-element-color;
       }
-    }
 
-    &::before {
-      top: 137px;
-      right: 58px;
+      &::before {
+        top: -73px;
+        right: 70px;
+      }
     }
 
     &::after {
