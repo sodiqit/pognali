@@ -1,0 +1,188 @@
+.directions {
+  background-color: @background-color-direct;
+  // background-color: green;
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  padding-top: 100px;
+  padding-bottom: 30px;
+
+  margin-top: -50px;
+  position: relative;
+  z-index: 8;
+
+  color: @directions-text-color;
+}
+
+.directions__title {
+
+  padding-left: 9%;
+
+  font-size: 24px;
+  line-height: 24px;
+  color: @title-color;
+  font-weight: @bold;
+}
+
+.directions__description {
+
+  line-height: 22px;
+
+  font-weight: @light;
+
+  padding-left: 9%;
+  margin-bottom: 61px;
+  width: 82%;
+}
+
+.directions__list {
+  .reset();
+
+  max-width: 270px;
+  margin: 0 auto;
+
+  &__item {
+    margin-bottom: 10px;
+  }
+}
+
+.direction-card {
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 87px;
+    left: 24px;
+    width: 35px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 35px 24px;
+    z-index: 1;
+  }
+
+  &--thailand {
+    &::before {
+      background-image: url("./../../../img/flag-thailand.svg");
+    }
+  }
+
+  &--france {
+    &::before {
+      background-image: url("./../../../img/flag-france.svg");
+    }
+  }
+
+  &--czech {
+    &::before {
+      background-image: url("./../../../img/flag-czech.svg");
+    }
+
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 270px;
+      height: 81px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, transparent 0%, rgba(237,239,246,1) 100%);
+    }
+  }
+
+  &__title {
+    color: @header-color;
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: @bold;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__description {
+    line-height: 18px;
+    font-weight: @medium;
+    color: fade(@directions-text-color, 30%);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__count {
+    color: fade(@directions-text-color, 30%);
+    font-weight: @medium;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -19px;
+      top: 4px;
+
+      opacity: 0.3;
+
+      width: 11px;
+      height: 11px;
+
+      background-image: url("./../../../img/user.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__container {
+    border-radius: 10px;
+
+    padding-left: 25px;
+    padding-top: 28px;
+
+    position: relative;
+    margin-top: -17px;
+
+    background-color: @color-main;
+  }
+
+  &__count {
+    display: block;
+    transform: translate(179px, -39px);
+  }
+
+}
+
+.directions__button {
+  width: 270px;
+  height: 62px;
+  margin-top: 28px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 23px;
+
+  position: relative;
+  display: block;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+  color: @triangle-color;
+  line-height: 18px;
+  font-weight: @bold;
+  text-transform: initial;
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent @triangle-color;
+  }
+}
