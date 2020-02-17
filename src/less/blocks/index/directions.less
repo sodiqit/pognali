@@ -21,6 +21,38 @@
     padding-top: 86px;
     padding-bottom: 30px;
     padding-left: 4.5%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 130px;
+      right: 40px;
+
+      width: 289px;
+      height: 575px;
+      background-image: url("./../../../img/flags-back@1x.png");
+      background-repeat: no-repeat;
+      background-size: 289px 575px;
+
+      .image({
+        background-image: url("./../../../img/flags-back@2x.png");
+      });
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      top: 456px;
+      left: 40px;
+
+      width: 141px;
+      height: 141px;
+      border-radius: 20px;
+      background-color: @bg-element-color;
+    }
   });
 }
 
