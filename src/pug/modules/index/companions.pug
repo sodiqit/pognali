@@ -1,0 +1,57 @@
+section.companions
+  .container
+    h2.companions__title Попутчики
+    p.companions__desc.
+      Все мы индивидуальны и у
+      каждого свой взгляд на идеальный отдых.
+      Одному нужен пляж и коктейль, а
+      другому маршрут для хайкинга.
+    p.companions__call-to-active Теперь можно легко найти единомышленников!
+    ul.companions__list.travellers
+      li.travellers__item
+        img(class="travellers__img" src="img/firsova-desktop@1x.jpg"  srcset="img/firsova-desktop@2x.jpg 2x" width="270" height="270" alt="Попутчик Татьяна Фирсова")
+        ul.travellers__countries.countries-list
+          li.countries-list__item
+            span.visually-hidden Шри-Ланка
+            include ./../../../img/flag-sri-lanka.svg
+          li.countries-list__item
+            span.visually-hidden Тайланд
+            include ./../../../img/flag-thailand.svg
+          li.countries-list__item
+            span.visually-hidden Шри-Ланка
+            include ./../../../img/flag-seychelles.svg
+        span.travellers__level 99 Level
+        h3.travellers__name Таня Фирсова
+        p.travellers__hashtags #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
+        ul.travellers__transport-list.transport-list
+          li.transport-list__item.transport-list__item--air.transport-list__item--active
+            span.visually-hidden Самолет
+          li.transport-list__item.transport-list__item--bus
+            span.visually-hidden Автобус
+          li.transport-list__item.transport-list__item--bike
+            span.visually-hidden Велосипед
+          li.transport-list__item.transport-list__item--afoot
+            span.visually-hidden Пешком
+      li.travellers__item.travellers__item--red
+        img(class="travellers__img" src="img/demin-desktop@1x.jpg"  srcset="img/demin-desktop@2x.jpg 2x" width="270" height="270" alt="Попутчик Петя Демин")
+        ul.travellers__countries.countries-list
+          li.countries-list__item
+            span.visually-hidden Бельгия
+            include ./../../../img/flag-belgium.svg
+          li.countries-list__item
+            span.visually-hidden Чехия
+            include ./../../../img/flag-czech.svg
+        span.travellers__level 80 Level
+        h3.travellers__name Петя Демин
+        p.travellers__hashtags #бургер #бар #футбол  #концерт #крафт
+        ul.travellers__transport-list.transport-list
+          li.transport-list__item.transport-list__item--air.transport-list__item--active
+            span.visually-hidden Самолет
+          li.transport-list__item.transport-list__item--bus.transport-list__item--active
+            span.visually-hidden Автобус
+          li.transport-list__item.transport-list__item--bike
+            span.visually-hidden Велосипед
+          li.transport-list__item.transport-list__item--afoot.transport-list__item--active
+            span.visually-hidden Пешком
+    a.btn.companions__button Показать всех
+
