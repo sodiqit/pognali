@@ -17,9 +17,21 @@ export default class Animate {
         }
       }
     }
-    console.log(this._el instanceof NodeList);
+
     this._checkHandlerBind = this._checkHandler.bind(this);
     this._checkCoord();
+
+    if (this._checkEl()) {
+      this._el.forEach((item) => {
+        item.style[this._options.prop] = this._options.from;
+      });
+    } else {
+      this._el.style[this._options.prop] = this._options.from;
+    }
+  }
+
+  _checkEl() {
+    return this._el instanceof NodeList;
   }
 
   _bindAnimation(target, i = 0) {
@@ -71,17 +83,17 @@ export default class Animate {
   }
 
   _unBindHandler() {
-    if (this._el instanceof NodeList && this._el.length === this._animatesEnd.length && this._animatesEnd[0] !== undefined) {
+    if (this._checkEl() && this._el.length === this._animatesEnd.length && this._animatesEnd[0] !== undefined) {
       window.removeEventListener('scroll', this._checkHandlerBind);
       console.log('removed');
-    } else if (!(this._el instanceof NodeList) && this._animatesEnd.length > 0) {
+    } else if (!this._checkEl() && this._animatesEnd.length > 0) {
       window.removeEventListener('scroll', this._checkHandlerBind);
       console.log('removed');
     }
   }
 
   _checkHandler() {
-    if (this._el instanceof NodeList) {
+    if (this._checkEl()) {
       this._el.forEach((item, i) => {
         if (Object.keys(this._options).length !== 0) {
           this._watcher(item) ? this._animate(item, i) : null;
@@ -128,8 +140,6 @@ export default class Animate {
           index: i,
           end: true
         };
-
-        console.log(this._animatesEnd);
       }
     }
 
