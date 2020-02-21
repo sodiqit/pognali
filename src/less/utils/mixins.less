@@ -33,4 +33,46 @@
   }
 }
 
+.flag(@name) {
+  &--@{name} {
+    &::before {
+      background-image: url("./../../img/flag-@{name}.svg");
+    }
+  };
+};
 
+.font-set(@size: @main-font-size, @line-height: 22, @fw: @light) {
+  font-size: @size;
+  line-height: @line-height;
+  font-weight: @fw;
+}
+
+.btn-triangle(@right: 22px, @top: 24px) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  
+  width: 270px;
+  height: 62px;
+  padding-left: 23px;
+  border-radius: 10px;
+  color: @triangle-color;
+  text-transform: initial;
+  text-align: left;
+
+  .font-set(18px, 18px, @bold);
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: @right;
+    top: @top;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent @triangle-color;
+  }
+
+}

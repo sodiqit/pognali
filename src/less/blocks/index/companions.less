@@ -6,6 +6,26 @@
 
   margin-top: -55px;
   padding-top: 107px;
+  padding-bottom: 30px;
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  background-image: url("./../../../img/smolov-back-desktop@1x.png"),
+                    url("./../../../img/rogovaya-back-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-size: 143px 143px,
+                   71px 71px;
+  background-position: 85% 7.5%,
+                       -4% 28%;
+  .image({
+    background-image: url("./../../../img/smolov-back-desktop@2x.png"),
+                      url("./../../../img/rogovaya-back-mobile@1x.png");
+  });
+
+  .container {
+
+  }
 }
 
 .companions__title {
@@ -35,6 +55,7 @@
 
   max-width: 270px;
   margin: 0 auto;
+  margin-bottom: 19px;
 }
 
 .travellers {
@@ -96,8 +117,31 @@
     &__item {
       width: 35px;
       height: 24px;
-      background-color: red;
       margin-right: 19px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35px;
+        height: 24px;
+        background-size: 35px 24px;
+        background-repeat: no-repeat;
+      }
+
+      .flag(sri-lanka);
+      .flag(thailand);
+      .flag(seychelles);
+      .flag(belgium);
+      .flag(czech);
+      .flag(usa);
+      .flag(australia);
+      .flag(bosnia);
+      .flag(dominica);
+      .flag(france);
+      .flag(united-kingdom);
 
       &:last-child {
         margin-right: 0;
@@ -108,7 +152,7 @@
   &__level {
     display: block;
     width: 60px;
-    height: 60px;
+    height: 61px;
     border-radius: 50%;
     background-color: fade(@total-black, 60%);
     font-weight: @regular;
@@ -117,6 +161,7 @@
     transform: translate(16px, -275px);
     text-align: center;
     padding-top: 1px;
+    position: relative;
 
     span {
       font-size: 24px;
@@ -204,4 +249,24 @@
       width: 20px;
     }
   }
+}
+
+.level-ring {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+
+  transform: rotate(269deg);
+  stroke-dashoffset: 177;
+  stroke-dasharray: 177;
+}
+
+.companions__button {
+
+  .font-set(18px, 18px, @bold);
+
+  .btn-triangle();
+
+  margin: 0 auto;
 }
