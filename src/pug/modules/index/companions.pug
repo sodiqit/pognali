@@ -12,13 +12,16 @@ section.companions
         img(class="travellers__img" src="img/firsova-desktop@1x.jpg"  srcset="img/firsova-desktop@2x.jpg 2x" width="270" height="270" alt="Попутчик Татьяна Фирсова")
         .travellers__container
           ul.travellers__countries
-            li.travellers__countries__item.travellers__countries__item--shri-lanka
+            li.travellers__countries__item.travellers__countries__item--sri-lanka
               span.visually-hidden Шри-Ланка
             li.travellers__countries__item.travellers__countries__item--thailand
               span.visually-hidden Тайланд
             li.travellers__countries__item.travellers__countries__item--seychelles
               span.visually-hidden Шейшелы
-          span.travellers__level #[span 99]<br> level
+          span.travellers__level
+            <span> 99</span><br> level
+            svg(width="62" height="63" viewBox="0 0 60 60" class="level-ring")
+              use(xlink:href="#level-ring" fill="none")
           h3.travellers__name Таня Фирсова
           p.travellers__hashtags #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
           ul.travellers__transport-list.transport-list
@@ -42,7 +45,10 @@ section.companions
               span.visually-hidden Бельгия
             li.travellers__countries__item.travellers__countries__item--czech
               span.visually-hidden Чехия
-          span.travellers__level #[span 80]<br> level
+          span.travellers__level
+            <span> 80</span><br> level
+            svg(width="62" height="63" viewBox="0 0 60 60" class="level-ring")
+              use(xlink:href="#level-ring" fill="none")
           h3.travellers__name Петя Демин
           p.travellers__hashtags #бургер #бар #футбол  #концерт #крафт
           ul.travellers__transport-list.transport-list
