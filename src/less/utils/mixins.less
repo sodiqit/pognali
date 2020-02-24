@@ -47,12 +47,24 @@
   font-weight: @fw;
 }
 
+.title(@fz: @main-font-size) {
+  font-size: @fz;
+  line-height: @fz;
+
+  color: @title-color;
+
+  .tablet({
+    font-size: @fz + 11px;
+    line-height: @fz + 11px;
+  });
+}
+
 .btn-triangle(@right: 22px, @top: 24px) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  
+
   width: 270px;
   height: 62px;
   padding-left: 23px;
