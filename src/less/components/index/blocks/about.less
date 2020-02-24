@@ -1,0 +1,236 @@
+.about-service {
+  background-color: @background-color;
+
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  padding-left: 8.5%;
+  padding-bottom: 65px;
+  padding-top: 20px;
+  margin-top: -1px;
+
+  position: relative;
+  z-index: 9;
+
+  .container {
+    z-index: 3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 17px;
+    width: 292px;
+    height: 352px;
+    background-image: url("./../../../../img/about-mobile@1x.png");
+    background-size: 292px 352px;
+    z-index: 2;
+
+    .image({
+      background-image: url("./../../../../img/about-mobile@2x.png");
+    });
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    width: 132px;
+    height: 132px;
+    background-color: @about-service-elemen;
+    z-index: 1;
+    border-radius: 20px;
+  }
+
+  .tablet({
+
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    padding-left: 4.5%;
+    padding-bottom: 89px;
+    padding-top: 89px;
+
+    &::before {
+      top: 15%;
+      left: 50%;
+      width: 376px;
+      height: 548px;
+      background-image: url("./../../../../img/about-tablet@1x.png");
+      background-size: 376px 548px;
+
+      .image({
+        background-image: url("./../../../../img/about-tablet@2x.png");
+      });
+    }
+
+    &::after {
+      top: 9%;
+      left: 5%;
+      width: 90%;
+      height: 213px;
+    }
+  });
+
+  .desktop({
+
+    padding-left: 129px;
+    padding-bottom: 164px;
+    padding-top: 171px;
+    margin-top: -65px;
+
+    &::before {
+      top: 18.4%;
+      left: 52%;
+      width: 630px;
+      height: 665px;
+      background-image: url("./../../../../img/about-desktop@1x.png");
+      background-size: 630px 665px;
+
+      .image({
+        background-image: url("./../../../../img/about-desktop@2x.png");
+      });
+    }
+
+    .container {
+      &::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: -69px;
+        width: 213px;
+        height: 213px;
+        background-color: @about-service-elemen;
+        z-index: -1;
+        border-radius: 20px;
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  });
+}
+
+.about-service__title {
+  margin-top: 25px;
+  margin-bottom: 18px;
+
+  font-size: 24px;
+  line-height: 24px;
+  color: @title-color;
+  font-weight: @bold;
+
+  .tablet({
+    margin-bottom: 35px;
+
+    font-size: 45px;
+    line-height: 45px;
+  });
+
+  .desktop({
+    margin-bottom: 58px;
+  });
+}
+
+.about-service__description {
+  font-weight: @light;
+  width: 210px;
+  margin-bottom: 19px;
+
+  br.tablet-br {
+    display: none;
+  }
+
+  .tablet({
+    font-size: 28px;
+    line-height: 33px;
+    width: 300px;
+    margin-bottom: 31px;
+
+    br.mobile-br {
+      display: none;
+    }
+
+    br.tablet-br {
+      display: inline;
+    }
+  });
+
+  .desktop({
+    width: 615px;
+    margin-bottom: 39px;
+
+    br.tablet-br {
+      display: none;
+    }
+  });
+}
+
+.about-service__call-to-action {
+  font-weight: @bold;
+  margin-top: 0;
+
+  .tablet({
+    font-size: 21px;
+    line-height: 25px;
+    margin-bottom: 50px;
+    width: 300px;
+  });
+
+  .desktop({
+    margin-bottom: 83px;
+    width: 470px;
+
+    br {
+      display: none;
+    }
+  });
+}
+
+.details {
+  .btn-triangle();
+
+  width: 260px;
+  display: none;
+
+  .tablet({
+    display: block;
+    width: 274px;
+    height: 81px;
+
+    text-align: left;
+
+    text-transform: initial;
+    color: @triangle-color;
+
+    padding-top: 29px;
+    padding-bottom: 25px;
+    padding-left: 34px;
+    margin-left: 0;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 34px;
+      top: 34px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 0 7px 10px;
+      border-color: transparent transparent transparent @triangle-color;
+    }
+  });
+
+  .desktop({
+
+    padding-top: 29px;
+    padding-bottom: 25px;
+    padding-left: 34px;
+
+  });
+}
+
