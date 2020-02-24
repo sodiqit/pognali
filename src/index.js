@@ -17,6 +17,7 @@ button.addEventListener('click', () => {
 });
 
 const animationRing = new Animate(document.querySelectorAll('.level-ring'), '', {
+  custom: true,
   from: 177,
   to: [Math.abs(Math.round(177 - 177 / 100 * 99)), Math.abs(Math.round(177 - 177 / 100 * 80)), Math.abs(Math.round(177 - 177 / 100 * 50))],
   draw(el, progress, i = 0) {
@@ -27,13 +28,9 @@ const animationRing = new Animate(document.querySelectorAll('.level-ring'), '', 
   prop: 'strokeDashoffset'
 });
 
-const animationCard = new Animate(document.querySelectorAll('.directions__list__item'), '', {
+const animationCard = new Animate(document.querySelectorAll('.directions__list__item'), 'direction-card--animation', {
   from: 0,
   to: 1,
-  draw(el, progress) {
-    el.style[this.prop] = Math.min(this.from + progress, this.to);
-  },
   duration: 500,
-  timing: 'linear',
   prop: "opacity"
 });
