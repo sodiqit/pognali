@@ -48,15 +48,12 @@
 }
 
 .title(@fz: @main-font-size) {
-  font-size: @fz;
-  line-height: @fz;
+  .font-set(@fz, @fz, @bold);
 
   color: @title-color;
 
   .tablet({
-    font-size: @fz + 21px;
-    line-height: @fz + 21px;
-    font-weight: @bold;
+    .font-set(@fz + 21px, @fz + 21px, @bold);
   });
 }
 
