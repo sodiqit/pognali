@@ -2,7 +2,7 @@
 @import "./mixins";
 @import "./normilize";
 @import "./font";
-@import "./../blocks/button";
+@import "./../components/button";
 
 html {
   box-sizing: border-box;
@@ -66,7 +66,11 @@ input[type="radio"].visually-hidden {
   });
 
   .desktop({
-    width: 1320px;
+    max-width: 1320px;
     margin: 0 auto;
   });
+
+  .desktop({
+    width: 1320px;
+  }, 1390px);
 }
