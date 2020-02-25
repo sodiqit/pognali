@@ -31,6 +31,6 @@ const animationRing = new Animate(document.querySelectorAll('.level-ring'), '', 
 const animationCard = new Animate(document.querySelectorAll('.directions__list__item'), 'direction-card--animation', {
   from: 0,
   to: 1,
-  duration: 500,
+  duration: 1000,
   prop: "opacity"
 });
