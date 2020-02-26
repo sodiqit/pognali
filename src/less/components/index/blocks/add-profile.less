@@ -12,6 +12,15 @@
 
   background-color: @background-color-direct;
   color: @directions-text-color;
+
+  .tablet({
+    padding-left: 0;
+    padding-top: 89px;
+    padding-bottom: 62px;
+
+    border-bottom-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+  });
 }
 
 .profile__title {
@@ -39,6 +48,18 @@
       background-image: url("./../../../../img/rates@2x.png");
     });
   }
+
+  .tablet({
+
+    padding-right: 0;
+
+    text-align: center;
+
+    &::before {
+      right: 45px;
+      top: 335px;
+    }
+  });
 }
 
 .profile__info {
@@ -57,7 +78,7 @@
     padding-bottom: 8px;
     padding-left: 0;
 
-    border-bottom: 1px solid @profile-table-color;
+    border-bottom: 1px solid fade(@total-black, 5%);
 
     position: relative;
 
@@ -83,7 +104,7 @@
     }
 
     &:first-child {
-      border-top: 1px solid @profile-table-color;
+      border-top: 1px solid fade(@total-black, 5%);
     }
 
     &:nth-child(2) {
@@ -98,10 +119,81 @@
       }
     }
   }
+
+  .tablet({
+    width: 91%;
+    margin: 0 auto;
+    margin-top: 73px;
+    padding-left: 56px;
+    margin-bottom: 34px;
+    position: relative;
+    .font-set(28px, 33px, @light);
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      width: 198px;
+      height: 285px;
+      border-radius: 20px;
+      z-index: -1;
+      top: -40px;
+      right: -30px;
+      background-color: @bg-element-color;
+    }
+
+    tr {
+      flex-direction: row;
+      justify-content: space-between;
+
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+      &::after {
+
+        .font-set(28px, 28px, @regular);
+
+        left: -89px;
+        top: -1px;
+        width: 67px;
+        height: 67px;
+      }
+
+    }
+  });
 }
 
 .profile__button {
   font-weight: @bold;
   color: @profile-button-color;
+
+  .tablet({
+    display: flex;
+    align-items: center;
+
+    .font-set(20px,20px,@bold);
+    color: @profile-button-color-tablet;
+
+    &::before {
+      content:"";
+      display: block;
+      width: 67px;
+      height: 67px;
+      background-color: @bg-element-color;
+      border-radius: 50%;
+
+      margin-right: 21px;
+    }
+
+    &::after {
+      content:"";
+      position: absolute;
+      width: 17px;
+      height: 21px;
+      left: 25px;
+      bottom: 27px;
+      background-image: url("./../../../../img/business.svg");
+    }
+  });
 }
 
