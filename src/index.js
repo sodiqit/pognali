@@ -13,6 +13,7 @@ if (document.documentElement.clientWidth <= 1320) {
 
 menu.classList.remove('menu--no-js');
 modal.classList.remove('modal--no-js');
+modal.classList.add('modal--closed');
 
 button.addEventListener('click', () => {
   button.classList.toggle('open-button--opened');
