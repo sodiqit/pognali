@@ -21,6 +21,11 @@
     border-bottom-left-radius: 60px;
     border-bottom-left-radius: 60px;
   });
+
+  .desktop({
+    padding-top: 127px;
+    padding-bottom: 120px;
+  });
 }
 
 .profile__title {
@@ -58,6 +63,18 @@
     &::before {
       right: 45px;
       top: 335px;
+    }
+  });
+
+  .desktop({
+    &::before {
+      right: 75px;
+      top: 180px;
+
+      width: 198px;
+      height: 198px;
+
+      background-size: 198px 198px;
     }
   });
 }
@@ -161,6 +178,19 @@
 
     }
   });
+
+  .desktop({
+    margin-top: 130px;
+    padding-left: 98px;
+    padding-right: 282px;
+
+    &::before {
+      width: 444px;
+      height: 300px;
+      top: -48px;
+      right: 128px;
+    }
+  });
 }
 
 .profile__button {
@@ -193,6 +223,14 @@
       left: 25px;
       bottom: 27px;
       background-image: url("./../../../../img/business.svg");
+    }
+  });
+
+  .desktop({
+    padding-left: 72px;
+
+    &::after {
+      left: 96px;
     }
   });
 }

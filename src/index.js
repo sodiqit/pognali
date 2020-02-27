@@ -3,17 +3,35 @@ import Animate from './js/animation';
 
 const button = document.querySelector('.open-button');
 const menu = document.querySelector('.menu');
+const modal = document.querySelector('.modal');
+const openModal = document.querySelector('.open-modal');
+const closeModal = document.querySelector('.close-modal');
 
 if (document.documentElement.clientWidth <= 1320) {
   menu.style.opacity = 0;
 }
 
 menu.classList.remove('menu--no-js');
+modal.classList.remove('modal--no-js');
 
 button.addEventListener('click', () => {
   button.classList.toggle('open-button--opened');
   menu.classList.toggle('menu--opened');
   menu.style.opacity = 1;
+});
+
+openModal.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  modal.classList.remove('modal--closed');
+  modal.classList.add('modal--opened');
+});
+
+closeModal.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  modal.classList.remove('modal--opened');
+  modal.classList.add('modal--closed');
 });
 
 const animationRing = new Animate(document.querySelectorAll('.level-ring'), '', {
