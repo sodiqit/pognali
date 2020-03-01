@@ -1,0 +1,163 @@
+.cart {
+  margin-top: -55px;
+  position: relative;
+  z-index: 4;
+}
+
+.cart__container {
+  background-color: @default-button-color;
+
+  padding-top: 72px;
+  padding-bottom: 34px;
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  color: @profile-button-color;
+
+  position: relative;
+  z-index: 1;
+
+  .tablet({
+
+    padding-top: 100px;
+    padding-bottom: 85px;
+
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  });
+
+  .desktop({
+    padding-top: 114px;
+    padding-bottom: 59px;
+
+    .container {
+      display: flex;
+      padding-left: 345px;
+      padding-right: 74px;
+    }
+  });
+}
+
+.cart__address {
+  .font-set(16px, 22px, @bold);
+
+  text-transform: uppercase;
+
+  padding-left: 60px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: @profile-button-color;
+    border-radius: 50%;
+    left: -1px;
+    top: -2px;
+
+    background-image: url("./../../../../img/contacts-location.svg");
+    background-repeat: no-repeat;
+    background-size: 14px 22px;
+    background-position:50% 50%;
+  }
+
+  .tablet({
+    .font-set(28px, 28px, @bold);
+
+    text-transform: uppercase;
+
+    padding-left: 0;
+
+    text-align: center;
+
+    br {
+      display: none;
+    }
+
+    &::before {
+      width: 68px;
+      height: 68px;
+      left: 34px;
+      top: -22px;
+
+      background-size: 21px 32px;
+    }
+  });
+
+  .desktop({
+
+    text-align: left;
+
+    &::before {
+      width: 90px;
+      height: 90px;
+      left: -123px;
+      top: -33px;
+
+      background-size: 28px 43px;
+    }
+  });
+}
+
+.cart__button {
+  .btn-triangle();
+
+  margin: 0 auto;
+  margin-top: 31px;
+
+  padding-left: 20px;
+
+  border: 3px solid @profile-button-color;
+
+  &::before {
+    top: 21px;
+  }
+
+  .tablet({
+    width: 90%;
+    margin-top: 61px;
+
+    padding-left: 34px;
+
+    &::before {
+      top: 31px;
+      right: 34px;
+    }
+  });
+
+  .desktop({
+    width: 324px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
+
+    padding-left: 34px;
+
+    &::before {
+      top: 31px;
+      right: 34px;
+    }
+  });
+}
+
+.cart__map {
+
+  margin-top: -124px;
+
+  position: relative;
+  z-index: 0;
+
+  width: 100%;
+  height: 546px;
+
+  .tablet({
+    height: 700px;
+  });
+
+  .desktop({
+    height: 750px;
+  });
+}
