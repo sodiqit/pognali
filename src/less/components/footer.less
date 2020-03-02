@@ -26,6 +26,12 @@
       align-items: center;
     }
   });
+
+  .desktop({
+    margin-top: -155px;
+    padding-top: 47px;
+    padding-bottom: 48px;
+  });
 }
 
 .footer__logo {
@@ -44,6 +50,16 @@
     }
 
     margin: 0;
+  });
+
+  .desktop({
+    width: 200px;
+    height: 52px;
+
+    img {
+      width: 200px;
+      height: 52px;
+    }
   });
 }
 
@@ -151,6 +167,11 @@
   });
 }
 
+.footer__social-list {
+  .desktop({
+    display: flex;
+  });
+}
 
 .author {
   .font-set(16px, 22px, @regular);
