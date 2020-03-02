@@ -10,6 +10,22 @@
 
   background-color: @color-main;
   color: @directions-text-color;
+
+  .tablet({
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+
+    margin-top: -115px;
+    padding-top: 47px;
+    padding-bottom: 48px;
+
+    .container {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+    }
+  });
 }
 
 .footer__logo {
@@ -17,6 +33,18 @@
   height: 19px;
 
   margin: 0 auto;
+
+  .tablet({
+    width: 166px;
+    height: 42px;
+
+    img {
+      width: 166px;
+      height: 42px;
+    }
+
+    margin: 0;
+  });
 }
 
 .social-list {
@@ -73,6 +101,54 @@
       }
     }
   }
+
+  .tablet({
+    margin: 0;
+    padding-left: 0;
+
+    flex-basis: 180px;
+
+    order: 0;
+
+    &__item {
+
+      width: 60px;
+      height: 60px;
+
+      &--fb {
+        a {
+          width: 14px;
+          height: 28px;
+        }
+        svg {
+          width: 14px;
+          height: 28px;
+        }
+      }
+
+      &--vk {
+        a {
+          width: 31px;
+          height: 16px;
+        }
+        svg {
+          width: 31px;
+          height: 16px;
+        }
+      }
+
+      &--insta {
+        a {
+          width: 24px;
+          height: 24px;
+        }
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  });
 }
 
 
@@ -105,4 +181,20 @@
     top: -10px;
     left: 0;
   }
+
+  .tablet({
+    .font-set(20px, 24px, @regular);
+
+    min-width: 155px;
+    margin: 0;
+
+    &__link {
+      display: block;
+      margin-top: 5px;
+    }
+
+    &::before {
+      display: none;
+    }
+  });
 }
