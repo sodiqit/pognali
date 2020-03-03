@@ -71,16 +71,17 @@ const plugins = () => {
       filename: `css/${fileName("css")}`
     }),
 
-    new CopyWebpackPlugin([
-      { from: `${PATHS.src}/img`, to: "img" },
-      { from: `${PATHS.src}/fonts`, to: "fonts"}
-    ]),
+    // new CopyWebpackPlugin([
+    //   { from: `${PATHS.src}/img`, to: "img" },
+    //   { from: `${PATHS.src}/fonts`, to: "fonts"}
+    // ]),
 
     ...PAGES.map(
       page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/,'.html')}`
+          filename: `./${page.replace(/\.pug/,'.html')}`,
+          chunks: [`${page.replace(/\.pug/,'')}`, `vendors`]
         })
     ),
   ]
@@ -119,7 +120,8 @@ const plugins = () => {
 
 module.exports = {
   entry: {
-    app: PATHS.src
+    index: `${PATHS.src}/index`,
+    form: `${PATHS.src}/form`
   },
   output: {
     filename: `js/${fileName("js")}`,
@@ -131,6 +133,7 @@ module.exports = {
   module: {
     rules: [
       {
+        // Pug
         test: /\.pug$/,
         loader: "pug-loader",
         query: {
