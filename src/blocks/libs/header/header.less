@@ -5,8 +5,13 @@
 
   position: relative;
 
+  .radius(0, 0, 20px, 20px);
+
   .tablet({
     padding-top: 45px;
+
+    .radius(0, 0, 60px, 60px);
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -17,7 +22,7 @@
 .logo {
   .tablet({
     order:0;
-    width: 70%;
+    width: 68%;
     .logo-img {
       width: 166px;
       height: 42px;
@@ -31,6 +36,52 @@
       width: 200px;
       height: 52px;
     }
+  });
+}
+
+.header__title {
+
+  position: relative;
+
+  display: inline-block;
+
+  margin-bottom: 0;
+
+  .font(36px, 40px, @bold, 24px, 30px);
+
+  margin-top: 49px;
+  padding-bottom: 10px;
+
+  &::after {
+    content:"";
+
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: @title-decor-color;
+    .radius(2.39px, 2.39px, 2.39px, 2.39px);
+  }
+
+  .tablet({
+    margin-top: 125px;
+    margin-left: 5%;
+    padding-bottom: 63px;
+
+    &::after {
+      bottom: -3px;
+      height: 8px;
+
+      .radius(4px, 4px, 4px, 4px);
+    }
+  });
+
+  .desktop({
+    margin-left: 66px;
+    margin-top: 115px;
   });
 }
 
@@ -82,7 +133,7 @@
 
   .tablet({
     right: 49%;
-    top: 28.5%;
+    top: 4.5%;
   });
 
   .desktop({
@@ -143,7 +194,6 @@
   }
 
   .tablet({
-    order:1;
 
     margin-left: auto;
 
@@ -177,6 +227,8 @@
       &--button {
         width: 188px;
         height: 50px;
+
+        margin-top: -4px;
 
         &:hover {
           button {
@@ -221,6 +273,10 @@
         width: 50px;
         height: 50px;
       }
+
+      &--button {
+        margin-top: 0;
+      }
     }
   });
 }
@@ -241,7 +297,7 @@
   .tablet({
     margin: 0 -5.8%;
     top: -4%;
-    padding-top: 46px;
+    padding-top: 56px;
     padding-left: 6%;
     padding-right: 6%;
 

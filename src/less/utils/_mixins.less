@@ -47,6 +47,14 @@
   font-weight: @fw;
 }
 
+.font(@size: @main-font-size, @line-height: 22, @fw, @plusFz: 11px, @plusLh: 0) {
+  .font-set(@size, @line-height, @fw);
+
+  .tablet({
+    .font-set(@size + @plusFz, @line-height + @plusLh, @fw);
+  });
+}
+
 .title(@fz: @main-font-size) {
   .font-set(@fz, @fz, @bold);
 
@@ -55,6 +63,10 @@
   .tablet({
     .font-set(@fz + 21px, @fz + 21px, @bold);
   });
+}
+
+.radius(@left-top: 0, @right-top: 0, @left-bottom: 0, @right-bottom: 0) {
+  border-radius: @left-top @right-top @left-bottom @right-bottom;
 }
 
 .btn-triangle(@right: 22px, @top: 24px) {
