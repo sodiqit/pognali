@@ -1,0 +1,47 @@
+header.header
+  .container
+    .logo
+      a(href="index.html") #[+picture({webp: false}, "logo-white", "png", "logo-img", "100", "19", "Логотип компании Погнали")]
+    button.open-button
+        span.visually-hidden Открыть меню
+    .menu.menu--no-js
+      .logo-menu
+        a(href="index.html") #[+picture({webp: false}, "logo-blue", "png", "logo-img", "100", "19", "Логотип компании Погнали")]
+      nav.main-nav
+        ul.site-navigation
+          li.site-navigation__item
+            a(href="") #[span(data-hover="О сервисе") О сервисе]
+          li.site-navigation__item
+            a(href="./form.html") #[span(data-hover="Направления") Направления]
+          li.site-navigation__item
+            a(href="") #[span(data-hover="Попутчики") Попутчики]
+      button.authorization.btn Авторизация
+      .menu__about-us
+        p.menu__about-us__item.menu__about-us__item--tel
+          a(href="tel:+78005558628") 8 800 555-86-28
+        p.menu__about-us__item.menu__about-us__item--mail
+          a(href="mailto:mail@htmlacademy.ru") mail@htmlacademy.ru
+      ul.social-list
+        li.social-list__item.social-list__item--fb
+          a(href="https://www.facebook.com/?ref=logo")
+            span.visually-hidden Facebook
+            include ./../../../img/facebook.svg
+        li.social-list__item.social-list__item--vk
+          a(href="https://vk.com/olimper")
+            span.visually-hidden Vkontakte
+            include ./../../../img/vk.svg
+        li.social-list__item.social-list__item--insta
+          a(href="https://www.instagram.com/")
+            span.visually-hidden Instagram
+            include ./../../../img/instagram.svg
+    ul.user-list
+      li.user-list__item.user-list__item--tel
+        a(href="tel:+78005558628")
+          include ./../../../img/topmenu-phone.svg
+          span.visually-hidden 8 800 555-86-28
+      li.user-list__item.user-list__item--mail
+        a(href="mailto:mail@htmlacademy.ru")
+          include ./../../../img/topmenu-mail.svg
+          span.visually-hidden mail@htmlacademy.ru
+      li.user-list__item.user-list__item--button
+        button.btn #[span Авторизация]
