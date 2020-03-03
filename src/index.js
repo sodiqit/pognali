@@ -1,4 +1,4 @@
-import './less/styles.less';
+import './less/styles-index.less';
 import Animate from './js/animation';
 
 const button = document.querySelector('.open-button');

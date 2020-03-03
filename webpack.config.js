@@ -71,10 +71,10 @@ const plugins = () => {
       filename: `css/${fileName("css")}`
     }),
 
-    // new CopyWebpackPlugin([
-    //   { from: `${PATHS.src}/img`, to: "img" },
-    //   { from: `${PATHS.src}/fonts`, to: "fonts"}
-    // ]),
+    new CopyWebpackPlugin([
+      { from: `${PATHS.src}/img`, to: "img" },
+      { from: `${PATHS.src}/fonts`, to: "fonts"}
+    ]),
 
     ...PAGES.map(
       page =>
