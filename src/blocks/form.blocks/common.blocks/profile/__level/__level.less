@@ -1,0 +1,57 @@
+.level {
+  display: block;
+  width: 100px;
+  height: 101px;
+  border-radius: 50%;
+  background-color: fade(@total-black, 0%);
+  font-weight: @regular;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  padding-top: 1px;
+  position: relative;
+
+  color: @directions-text-color;
+
+  span {
+    .font-set(38px, 38px, @bold);
+
+    color: @level-color;
+
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 22px;
+    margin-bottom: -21px;
+
+
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 1px;
+      left: 26px;
+      width: 49px;
+      height: 2px;
+      background-color: @level-line-color;
+    }
+  }
+}
+
+.level-ring {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: -1;
+
+  stroke-width: 2px;
+
+  transform: rotate(269deg);
+  stroke-dashoffset: 177;
+  stroke-dasharray: 177;
+}
+
+.profile__level {
+  margin-left: 7%;
+}
