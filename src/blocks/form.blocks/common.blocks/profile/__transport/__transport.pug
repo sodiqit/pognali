@@ -1,0 +1,23 @@
+.transport.profile__transport
+  label.transport__label Транспорт
+  ul.transport__list
+    li.transport__list__item
+      input(class="visually-hidden" type="checkbox" id="airplane" name="airplane" checked)
+      label(for="airplane").transport__list__label.transport__list__label--plane
+        span.visually-hidden Самолет
+        include ./../../../../../img/plane.svg
+    li.transport__list__item
+      input(class="visually-hidden" type="checkbox" id="bus" name="bus" checked)
+      label(for="bus").transport__list__label.transport__list__label--bus
+        span.visually-hidden Автобус
+        include ./../../../../../img/bus.svg
+    li.transport__list__item
+      input(class="visually-hidden" type="checkbox" id="bike" name="bike")
+      label(for="bike").transport__list__label.transport__list__label--bike
+        span.visually-hidden Велосипед
+        include ./../../../../../img/bike.svg
+    li.transport__list__item
+      input(class="visually-hidden" type="checkbox" id="run" name="run" checked)
+      label(for="run").transport__list__label.transport__list__label--run
+        span.visually-hidden Пешком
+        include ./../../../../../img/run.svg
