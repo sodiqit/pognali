@@ -129,7 +129,6 @@ module.exports = {
   },
   devtool: isDev ? "source-map" : false, //"cheap-module-eval-source-map" - not working
   devServer: isDev ? devServer() : {},
-  optimization: optimization(),
   module: {
     rules: [
       {
@@ -208,9 +207,13 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: [`.js`, `.jsx`, `.less`],
     alias: {
-      "~": PATHS.src
+      "@j": path.resolve(__dirname, 'src/js/'),
     }
   },
+
+  optimization: optimization(),
+
   plugins: plugins()
 };
