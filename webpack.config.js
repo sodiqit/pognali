@@ -210,6 +210,7 @@ module.exports = {
     extensions: [`.js`, `.jsx`, `.less`],
     alias: {
       "@j": path.resolve(__dirname, 'src/js/'),
+      img: path.resolve(__dirname, 'src/img/')
     }
   },
 
