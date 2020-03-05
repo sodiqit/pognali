@@ -1,0 +1,48 @@
+@import "./__level/__level";
+@import "./__img/__img";
+@import "./__btn/__btn";
+@import "./__hashtags/__hashtags";
+@import "./__transport/__transport";
+
+.tablet({
+  .profile {
+    padding-top: 117px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 33px;
+    
+    position: relative;
+    z-index: 9;
+
+    background-color: @profile-bg-color;
+  }
+
+  .profile__form {
+    justify-content: space-between;
+  }
+
+  .profile__img-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .profile__button {
+    margin-top: 19px;
+    margin-bottom: 32px;
+  }
+
+  .profile__hastags {
+    margin-bottom: 24px;
+  }
+
+  .profile__level {
+    margin-left: 0;
+    order: -2;
+  }
+
+  .profile__transport {
+    order: -1;
+  }
+});
+
+

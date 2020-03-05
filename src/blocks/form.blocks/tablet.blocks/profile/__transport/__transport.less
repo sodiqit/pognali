@@ -1,0 +1,74 @@
+.tablet({
+
+});
+
+.transport {
+  width: 50%;
+
+  padding-bottom: 0;
+
+  flex-direction: column-reverse;
+
+  position: relative;
+}
+
+.transport__label {
+  .font-set(20px, 18px, @medium);
+
+  letter-spacing: 0.1em;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  margin-top: 0;
+
+  margin-bottom: 0;
+
+  position: absolute; //TODO: 
+  bottom: 0;
+
+}
+
+.transport__list {
+
+  min-width: 198px;
+
+  margin-top: 17px;
+
+  justify-content: space-between;
+
+  &__label {
+
+    width: 43px;
+    height: 43px;
+
+    &--plane {
+      svg {
+        width: 19px;
+        height: 21px;
+      }
+    }
+
+    &--bus {
+      svg {
+        width: 17px;
+        height: 21px;
+      }
+    }
+
+    &--bike {
+      svg {
+        width: 24px;
+        height: 21px;
+      }
+    }
+
+    &--run {
+      svg {
+        width: 20px;
+        height: 21px;
+      }
+    }
+  }
+
+}
