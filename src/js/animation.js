@@ -1,6 +1,6 @@
 export default class Animate {
   constructor(el, animation, options = {}) {
-    this._el= el;
+    this._el= [...el];
     this._animation = animation;
     this._options = options;
     this._animatesEnd = [];
@@ -19,15 +19,13 @@ export default class Animate {
     }
 
     this._checkHandlerBind = this._checkHandler.bind(this);
-    this._checkCoord();
+    this._checkEl();
 
-    if (this._checkEl()) {
-      this._el.forEach((item) => {
-        item.style[this._options.prop] = this._options.from;
-      });
-    } else {
-      this._el.style[this._options.prop] = this._options.from;
-    }
+    this._el.forEach((item) => {
+      item.style[this._options.prop] = this._options.from;
+    });
+
+
   }
 
   get animateEnd() {
@@ -35,7 +33,23 @@ export default class Animate {
   }
 
   _checkEl() {
-    return this._el instanceof NodeList;
+    const result = this._el.map((item) => {
+      return this._watcher(item);
+    });
+
+    for (let i = 0; i < this._el.length; i++) {
+      if (result[i]) {
+        this._options.custom ? this._animate(this._el[i]) : this._bindAnimation(this._el[i]);
+      }
+    }
+
+    console.log(this.animateEnd);
+
+    if (!this.animateEnd) {
+      this._checkCoord();
+    } else {
+      return;
+    }
   }
 
   _bindAnimation(target, i = 0) {
@@ -87,36 +101,24 @@ export default class Animate {
   }
 
   _unBindHandler() {
-    if (this._checkEl() && this.animateEnd) {
+    if (this.animateEnd) {
       this._el.forEach((item) => {
         item.style[this._options.prop] = this._options.to;
       });
       this._animation ? setTimeout(() => this._el.forEach(item => item.classList.remove(this._animation)), this._options.duration + 500) : null;
       window.removeEventListener('scroll', this._checkHandlerBind);
       console.log('removed');
-    } else if (!this._checkEl() && this._animatesEnd.length > 0) {
-      window.removeEventListener('scroll', this._checkHandlerBind);
-      console.log('removed');
     }
   }
 
   _checkHandler() {
-    if (this._checkEl()) {
-      this._el.forEach((item, i) => {
-        if (this._options.custom) {
-          this._watcher(item) ? this._animate(item, i) : null;
-        } else {
-          this._watcher(item) ? this._bindAnimation(item, i) : null;
-        }
-      });
-    } else {
+    this._el.forEach((item, i) => {
       if (this._options.custom) {
-        this._watcher(this._el) ? this._animate() : null;
+        this._watcher(item) ? this._animate(item, i) : null;
       } else {
-        this._watcher(this._el) ? this._bindAnimation(this._el) : null;
+        this._watcher(item) ? this._bindAnimation(item, i) : null;
       }
-
-    }
+    });
 
     this._unBindHandler();
   }
@@ -129,6 +131,11 @@ export default class Animate {
 
     if (this._animatesEnd[i]) {
       return;
+    }
+
+    this._animatesEnd[i] = {
+      index: i,
+      end: true
     }
 
     let start = performance.now();
@@ -144,10 +151,6 @@ export default class Animate {
 
       if (timeFraction < 1) {
         requestAnimationFrame(animate);
-        this._animatesEnd[i] = {
-          index: i,
-          end: true
-        };
       }
     }
 
