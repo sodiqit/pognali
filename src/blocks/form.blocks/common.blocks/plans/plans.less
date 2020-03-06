@@ -1,0 +1,32 @@
+@import "./__plan/__plan";
+
+.plans {
+  background-color: @plans-bg-color;
+
+  margin-top: -48px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+
+  position: relative;
+  z-index: 10;
+
+  .radius(30px, 30px, 0, 0);
+}
+
+.plans__title {
+  .font-set(24px, 24px, @bold);
+  color: @plan-title-color;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.plans-list {
+  counter-reset: plan;
+
+  .reset();
+
+  &__plan {
+    margin-bottom: 10px;
+  }
+}

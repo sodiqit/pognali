@@ -1,0 +1,8 @@
+mixin plan(options)
+  li(class=options.block + "__plan plan")
+    h3(class="plan__title")=options.title
+    p(class="plan__companions")=options.companions
+    p(class="plan__date")=options.date
+    button(class="plan__button") Изменить
+
+
