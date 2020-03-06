@@ -4,44 +4,48 @@
 @import "./__hashtags/__hashtags";
 @import "./__transport/__transport";
 
-.tablet({
+.desktop({
   .profile {
-    padding-top: 117px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 33px;
+    padding-top: 67px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 115px;
 
-    position: relative;
-    z-index: 9;
+    margin-top: 5px;
 
-    background-color: @profile-bg-color;
+    z-index: 11;
   }
 
   .profile__form {
-    justify-content: space-between;
+    margin-left: 66px;
   }
 
   .profile__img-container {
-    margin-left: 0;
-    margin-right: 0;
+    right: 95px;
+    top: -262px;
+
+    position: absolute;
   }
 
   .profile__button {
-    margin-top: 53px;
-    margin-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    position: absolute;
+    right: 95px;
+    top: -72px;
   }
 
   .profile__hastags {
-    margin-bottom: 24px;
+    order: -3;
   }
 
   .profile__level {
-    margin-left: 0;
-    order: -2;
-  }
 
-  .profile__transport {
-    order: -1;
+    position: absolute;
+
+    top: -222px;
+    right: 332px;
   }
 });
 
