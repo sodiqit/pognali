@@ -21,6 +21,22 @@
   padding: 0;
 }
 
+.reset-vh() {
+  position: static;
+
+  width: auto;
+  height: auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  white-space: wrap;
+
+  clip-path: unset;
+  clip: unset;
+  overflow: visible;
+}
+
 .tablet(@content, @width: @tablet-width) {
   @media (min-width: @width) {
     @content();
