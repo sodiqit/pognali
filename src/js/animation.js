@@ -25,7 +25,6 @@ export default class Animate {
       item.style[this._options.prop] = this._options.from;
     });
 
-
   }
 
   get animateEnd() {
@@ -42,8 +41,6 @@ export default class Animate {
         this._options.custom ? this._animate(this._el[i]) : this._bindAnimation(this._el[i]);
       }
     }
-
-    console.log(this.animateEnd);
 
     if (!this.animateEnd) {
       this._checkCoord();
