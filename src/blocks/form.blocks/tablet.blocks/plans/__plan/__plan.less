@@ -1,0 +1,54 @@
+.tablet({
+  .plan {
+
+    padding-top: 4.4%;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 2.5%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .plan__title {
+    .font-set(24px, 50px, @bold);
+
+    width: 100%;
+
+    position: relative;
+
+    margin-bottom: 41px;
+    padding-left: 3px;
+
+    &::before {
+      .font-set(20px,18px,@medium);
+      position: absolute;
+      right: 0;
+      top: 17px;
+    }
+  }
+
+  .plan__companions {
+    margin-top: 0;
+  }
+
+  .plan__date {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .plan__companions, .plan__date {
+    .font-set(20px, 18px, @medium);
+  }
+
+  .plan__button {
+    .font-set(20px, 18px, @medium);
+
+    margin-top: 0;
+  }
+});
+
+
