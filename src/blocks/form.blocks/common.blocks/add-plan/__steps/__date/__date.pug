@@ -1,0 +1,27 @@
+-
+  var inputInfo = [
+    {
+      block_name: "date__compan",
+      name: "Попутчиков",
+      value: 2,
+      measuring: "чел.",
+      nameInput: "companions"
+    },
+    {
+      block_name: "date__time",
+      name: "Длительность",
+      value: 2,
+      measuring: "дн.",
+      nameInput: "duration"
+    }
+  ]
+
+include ./__input/__input
+
+.date
+  h3.date__title Даты пребывания
+  p.date__desc.
+    Укажите предпочтительное количество попутчиков, которых
+    вы хотели бы позвать в поездку и ее предполагаемую длительность.
+  each option in inputInfo
+    +input(option)
