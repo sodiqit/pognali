@@ -25,3 +25,7 @@ include ./__input/__input
     вы хотели бы позвать в поездку и ее предполагаемую длительность.
   each option in inputInfo
     +input(option)
+  label.date__checkbox Можно с детьми
+    span.date__custom-checkbox
+    input(type="checkbox" name="children")
+  include ./__calendar/__calendar
