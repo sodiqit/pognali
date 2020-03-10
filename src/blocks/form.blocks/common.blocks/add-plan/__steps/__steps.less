@@ -1,3 +1,42 @@
 @import "./__date/__date";
 @import "./__route/__route";
 @import "./__fun/__fun";
+
+.step() {
+  background-color: @color-main;
+  .radius(10px,10px,10px,10px);
+
+  padding-top: 24px;
+  padding-left: 23px;
+  padding-right: 24px;
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    color: @add-plan-title-color;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    .font-set(20px,20px,@bold);
+
+    counter-increment: step;
+
+    &::before {
+      content: "Шаг " counter(step) ". ";
+      width: 100%;
+    }
+  }
+
+  &__desc {
+    color: @directions-text-color;
+    .font-set(16px,22px,@regular);
+    margin-top: 0;
+  }
+}
+
+.steps {
+  .reset();
+
+  counter-reset: step;
+}
