@@ -2,15 +2,18 @@
   var btnInfo = [
     {
       block_name: "add-plan__button",
-      name: "Даты"
+      name: "Даты",
+      active: "slider-btn--active"
     },
     {
       block_name: "add-plan__button",
-      name: "Маршрут"
+      name: "Маршрут",
+      active: ""
     },
     {
       block_name: "add-plan__button",
-      name: "Развлечения"
+      name: "Развлечения",
+      active: ""
     }
   ]
 
@@ -19,7 +22,8 @@ include ./__slider-btn/__slider-btn
 section.add-plan
   .container
     h2.add-plan__title Добавить план:
-    each option in btnInfo
-     +slider-btn(option)
+    .add-plan__buttons-container
+      each option in btnInfo
+        +slider-btn(option)
     form.add-plan__form(action="")
       include ./__steps/__steps
