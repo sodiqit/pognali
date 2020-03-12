@@ -47,6 +47,31 @@
       transition: transform 0.3s;
     }
   }
+
+  &__calendar {
+    margin-top: 21px;
+    margin-bottom: 22px;
+  }
+
+  .date__next-step {
+    .btn-triangle();
+    background-color: @default-button-color;
+    color: @add-plan-text-button-color;
+    padding: 0;
+    display: block;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    .font-set(17px,30px,@bold);
+
+    width: 102%;
+    height: 40px;
+    border-radius: 20px;
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 input[name="children"]:checked + span {

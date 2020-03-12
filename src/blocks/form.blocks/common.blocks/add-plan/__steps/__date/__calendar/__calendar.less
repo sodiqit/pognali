@@ -1,0 +1,148 @@
+.calendar {
+
+  &__container {
+    position: relative;
+    border: 1px solid @input-border-color;
+    border-left: none;
+    border-right: none;
+
+    padding-top: 12px;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    color: @add-plan-title-color;
+    .font-set(20px,20px,@bold);
+    text-align: center;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__decrease {
+    position: absolute;
+    top: 5px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    background-color: @transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 4px;
+
+      width: 11px;
+      height: 11px;
+
+      transform: rotate(45deg);
+
+      background-color: @transparent;
+      border: 1px solid fade(@total-black, 30%);
+      border-right: none;
+      border-top: none;
+    }
+  }
+
+  &__increase {
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    background-color: @transparent;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 17px;
+
+      width: 11px;
+      height: 11px;
+
+      transform: rotate(45deg);
+
+      background-color: @transparent;
+      border: 1px solid fade(@total-black, 30%);
+      border-left: none;
+      border-bottom: none;
+    }
+  }
+
+  &__table {
+    color: fade(@directions-text-color, 30%);
+    .font-set(14px,18px,@regular);
+
+    border-collapse: collapse;
+
+    margin-top: 16px;
+    width: 100%;
+
+    td {
+      padding: 0;
+      width: 31px;
+      height: 31px;
+      border: 1px solid @input-border-color;
+
+      text-align: center;
+    }
+  }
+}
+
+.calendar__day-name {
+  margin-bottom: 5px;
+
+  color: @directions-text-color;
+
+  td {
+    border: none;
+  }
+
+  td:nth-child(6) {
+    color: @calendar-holiday-color;
+  }
+
+  td:last-child {
+    color: @calendar-holiday-color;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: @transparent;
+
+    display: block;
+  }
+}
+
+.calendar__day-number {
+
+  td {
+    cursor: pointer;
+  }
+
+  .relevant {
+    color: @directions-text-color;
+    background-color: @calendar-relevant-day-color;
+  }
+
+  .active {
+    background-color: @add-plan-title-color;
+
+    color: @color-main;
+  }
+
+  .clicked {
+    border: 2px solid @calendar-holiday-color;
+  }
+}
