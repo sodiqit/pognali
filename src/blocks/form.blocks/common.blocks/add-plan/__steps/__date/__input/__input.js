@@ -11,8 +11,6 @@ class Input {
     this.change = this._change.bind(this);
 
     this._bind();
-
-    console.log(elements);
   }
 
   _bind() {
@@ -31,7 +29,7 @@ class Input {
 
   _checkInput(cnt) {
     let num = parseFloat(cnt);
-    console.log(cnt);
+
     if (num <= this._min) {
       this._input.value = this._min;
       this._cnt = this._min;

@@ -11,4 +11,46 @@
   &__compan {
     margin-bottom: 21px;
   }
+
+  &__checkbox {
+    color: @directions-text-color;
+    .font-set(15px,15px,@regular);
+
+    margin-top: 21px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__custom-checkbox {
+    width: 26px;
+    height: 26px;
+
+    display: block;
+    border: 1px solid @input-border-color;
+    border-radius: 4px;
+    order:-1;
+
+    margin-right: 14px;
+
+    position: relative;
+
+    svg {
+      fill: @checkbox-tick-color;
+      width: 9px;
+      height: 9px;
+      position: absolute;
+      top: calc(50% - 4.5px);
+      left: calc(50% - 4.5px);
+
+      transform: scale(0);
+      transition: transform 0.3s;
+    }
+  }
+}
+
+input[name="children"]:checked + span {
+  svg {
+    transform: scale(1);
+  }
 }
