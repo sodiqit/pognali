@@ -1,0 +1,26 @@
+.slider-btn {
+  border: none;
+  padding: 0;
+  width: 17px;
+  height: 20px;
+  position: relative;
+
+  background-color: @transparent;
+
+  &::before {
+    content: "";
+    background-color: fade(@slider-btn-color, 30%);
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+
+  &--active {
+    &::before {
+      background-color: @add-plan-title-color;
+    }
+  }
+}
