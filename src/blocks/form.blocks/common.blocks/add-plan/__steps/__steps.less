@@ -9,6 +9,15 @@
   padding-top: 24px;
   padding-left: 23px;
   padding-right: 24px;
+  padding-bottom: 21px;
+
+  .tablet({
+    .radius(30px,30px,30px,30px);
+    padding-left: 43px;
+    padding-right: 44px;
+    padding-top: 48px;
+    padding-bottom: 55px;
+  });
 
   &__title {
     display: flex;
@@ -22,6 +31,10 @@
 
     counter-increment: step;
 
+    .tablet({
+      .font-set(36px,36px,@bold);
+    });
+
     &::before {
       content: "Шаг " counter(step) ". ";
       width: 100%;
@@ -32,6 +45,10 @@
     color: @directions-text-color;
     .font-set(16px,22px,@regular);
     margin-top: 0;
+
+    .tablet({
+      .font-set(20px,24px,@regular);
+    });
   }
 }
 

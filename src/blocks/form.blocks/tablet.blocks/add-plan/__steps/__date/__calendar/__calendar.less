@@ -1,148 +1,83 @@
 .calendar {
 
-  &__container {
-    position: relative;
-    border: 1px solid @input-border-color;
-    border-left: none;
-    border-right: none;
-
-    padding-top: 12px;
-    padding-bottom: 10px;
-  }
-
-  &__title {
-    color: @add-plan-title-color;
-    .font-set(20px,20px,@bold);
-    text-align: center;
-
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  &__decrease {
-    position: absolute;
-    top: 5px;
-
-    width: 30px;
-    height: 30px;
-
-    padding: 0;
-    border: none;
-    background-color: @transparent;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 11px;
-      left: 4px;
-
-      width: 11px;
-      height: 11px;
-
-      transform: rotate(45deg);
-
-      background-color: @transparent;
-      border: 1px solid fade(@total-black, 30%);
-      border-right: none;
-      border-top: none;
+  .tablet({
+    &__container {
+      padding-top: 27px;
+      padding-bottom: 22px;
     }
-  }
 
-  &__increase {
-    position: absolute;
-    top: 5px;
-    right: 0;
-
-    width: 30px;
-    height: 30px;
-
-    padding: 0;
-    border: none;
-    background-color: @transparent;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 11px;
-      left: 17px;
-
-      width: 11px;
-      height: 11px;
-
-      transform: rotate(45deg);
-
-      background-color: @transparent;
-      border: 1px solid fade(@total-black, 30%);
-      border-left: none;
-      border-bottom: none;
+    &__title {
+      .font-set(36px,36px,@bold);
     }
-  }
 
-  &__table {
-    color: fade(@directions-text-color, 30%);
-    .font-set(14px,18px,@regular);
+    &__decrease {
+      top: 26px;
 
-    border-collapse: collapse;
+      width: 40px;
+      height: 40px;
 
-    margin-top: 16px;
-    width: 100%;
+      &::before {
+        top: 7px;
+        left: 22px;
 
-    td {
-      padding: 0;
-      width: 31px;
-      height: 31px;
-      border: 1px solid @input-border-color;
+        width: 23px;
+        height: 23px;
 
-      text-align: center;
+        border: 3px solid fade(@total-black, 30%);
+        border-right: none;
+        border-top: none;
+      }
     }
-  }
+
+    &__increase {
+      top: 26px;
+
+      width: 40px;
+      height: 40px;
+
+      &::before {
+        top: 7px;
+        left: -3px;
+
+        width: 23px;
+        height: 23px;
+
+        border: 3px solid fade(@total-black, 30%);
+        border-left: none;
+        border-bottom: none;
+      }
+    }
+
+    &__table {
+      .font-set(20px,18px,@medium);
+      letter-spacing: 0.1em;
+
+      margin-top: 31px;
+
+      td {
+        width: 77px;
+        height: 69px;
+      }
+    }
+
+    &__day-name {
+      td {
+        height: 35px;
+        span {
+          .reset-vh();
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__day-number {
+      .clicked {
+        border: 4px solid @calendar-holiday-color;
+      }
+    }
+  });
 }
 
-.calendar__day-name {
-  margin-bottom: 5px;
-
-  color: @directions-text-color;
-
-  td {
-    border: none;
-  }
-
-  td:nth-child(6) {
-    color: @calendar-holiday-color;
-  }
-
-  td:last-child {
-    color: @calendar-holiday-color;
-  }
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: @transparent;
-
-    display: block;
-  }
-}
-
-.calendar__day-number {
-
-  td {
-    cursor: pointer;
-  }
-
-  .relevant {
-    color: @directions-text-color;
-    background-color: @calendar-relevant-day-color;
-  }
-
-  .active {
-    background-color: @add-plan-title-color;
-
-    color: @color-main;
-  }
-
-  .clicked {
-    border: 2px solid @calendar-holiday-color;
-  }
-}

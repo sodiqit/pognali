@@ -1,30 +1,27 @@
-@import "./__slider-btn/__slider-btn";
 @import "./__steps/__steps";
 
 .add-plan {
-  background-color: @add-plan-bg-color;
+  .tablet({
+    margin-top: -46px;
+    padding-top: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
 
-  margin-top: -60px;
-  padding-top: 29px;
-  z-index: 13;
-  position: relative;
+    &__title {
+      .font-set(36px,50px,@bold);
+    }
 
-  .radius(30px,30px,0,0);
+    &__buttons-container {
+      right: 2px;
+      top: 10px;
 
-  &__title {
-    color: @add-plan-title-color;
-    .font-set(24px,24px,@bold);
+      width: 80px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-    margin-top: 0;
-  }
-
-  &__buttons-container {
-    position: absolute;
-    right: 13px;
-    top: -1px;
-  }
-
-  &__steps {
-    margin-top: 29px;
-  }
+    &__steps {
+      margin-top: 49px;
+    }
+  });
 }
