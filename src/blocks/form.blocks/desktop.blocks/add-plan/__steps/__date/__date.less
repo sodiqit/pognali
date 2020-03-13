@@ -2,72 +2,34 @@
 @import "./__calendar/__calendar";
 
 .date {
-  .tablet({
-    display: flex;
-    flex-direction: column;
-
-    &__title {
-      margin-bottom: 34px;
-      order: -4;
-    }
+  .desktop({
 
     &__desc {
-      width: 95%;
-      margin-bottom: 38px;
-      order: -3;
+      width: 55%;
+      margin-bottom: 55px;
     }
 
     &__compan {
-      margin-bottom: 21px;
-      order:-2;
+      border-top: 1px solid @input-border-color;
+      margin-bottom: 0;
+    }
+
+    &__time {
+      margin-top: -14px;
     }
 
     &__checkbox {
-      order: -1;
-      color: @add-plan-title-color;
-      .font-set(20px,18px,@medium);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 0;
 
-      margin-top: 4px;
-      margin-bottom: 26px;
-    }
-
-    &__custom-checkbox {
-      width: 36px;
-      height: 36px;
-
-      margin-right: 24px;
-
-      svg {
-        width: 12px;
-        height: 12px;
-        top: calc(50% - 6px);
-        left: calc(50% - 6px);
-      }
+      position: absolute;
+      right: 158px;
+      top: 319px;
     }
 
     &__calendar {
-      margin-top: 59px;
-      margin-bottom: 45px;
-    }
-
-    .date__next-step {
-      background-color: @default-button-color;
-      color: @add-plan-text-button-color;
-      padding-left: 35px;
-      display: block;
-      text-align: left;
-      text-transform: unset;
-      .font-set(24px,24px,@bold);
-
-      width: 285px;
-      height: 81px;
-
-      &::before {
-        display: block;
-        right: 34px;
-      }
+      margin-top: 33px;
+      margin-bottom: 57px;
     }
   });
 }

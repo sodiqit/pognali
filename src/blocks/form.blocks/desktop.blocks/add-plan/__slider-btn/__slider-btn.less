@@ -1,26 +1,37 @@
 .slider-btn {
-  border: none;
-  padding: 0;
-  width: 17px;
-  height: 20px;
-  position: relative;
-
-  background-color: @transparent;
-
-  &::before {
-    content: "";
-    background-color: fade(@slider-btn-color, 30%);
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-  }
-
-  &--active {
-    &::before {
-      background-color: @add-plan-title-color;
+  .desktop({
+    span {
+      .reset-vh();
+      color: fade(@total-black,60%);
+      text-transform: uppercase;
+      .font-set(20px, auto, @regular);
+      letter-spacing: 0.1em;
     }
-  }
+
+    width: auto;
+    height: 33px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 15;
+
+    margin-bottom: 11px;
+
+    &::before {
+      background-color: fade(@slider-btn-color, 30%);
+
+      position: static;
+
+      margin-right: 37px;
+    }
+
+    &--active {
+      span {
+        color: @total-black;
+      }
+      &::before {
+        background-color: @add-plan-title-color;
+      }
+    }
+  });
 }

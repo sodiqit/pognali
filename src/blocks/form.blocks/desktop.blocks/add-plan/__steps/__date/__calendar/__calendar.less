@@ -1,81 +1,38 @@
 .calendar {
 
-  .tablet({
-    &__container {
-      padding-top: 27px;
-      padding-bottom: 22px;
-    }
-
-    &__title {
-      .font-set(36px,36px,@bold);
-    }
+  .desktop({
 
     &__decrease {
-      top: 26px;
-
-      width: 40px;
-      height: 40px;
-
       &::before {
-        top: 7px;
-        left: 22px;
-
-        width: 23px;
-        height: 23px;
-
-        border: 3px solid fade(@total-black, 30%);
-        border-right: none;
-        border-top: none;
+        left: 4px;
       }
     }
 
     &__increase {
-      top: 26px;
-
-      width: 40px;
-      height: 40px;
-
       &::before {
-        top: 7px;
-        left: -3px;
-
-        width: 23px;
-        height: 23px;
-
-        border: 3px solid fade(@total-black, 30%);
-        border-left: none;
-        border-bottom: none;
+        left: 12px;
       }
     }
 
     &__table {
-      .font-set(20px,18px,@medium);
-      letter-spacing: 0.1em;
+      .font-set(18px,30px,@regular);
 
-      margin-top: 31px;
+      margin-top: 10px;
 
       td {
-        width: 77px;
-        height: 69px;
+        text-align: left;
+        width: 143px;
+        height: 71px;
+        padding-top: 0;
+        padding-bottom: 30px;
+        padding-left: 16px;
       }
     }
 
     &__day-name {
       td {
-        height: 35px;
-        span {
-          .reset-vh();
-        }
-      }
-
-      &::after {
-        display: none;
-      }
-    }
-
-    &__day-number {
-      .clicked {
-        border: 4px solid @calendar-holiday-color;
+        height: 31px;
+        padding-bottom: 14px;
       }
     }
   });

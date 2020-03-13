@@ -1,27 +1,26 @@
+@import "./__slider-btn/__slider-btn";
 @import "./__steps/__steps";
 
 .add-plan {
-  .tablet({
-    margin-top: -46px;
-    padding-top: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
+  .desktop({
+    margin-top: -95px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .radius(60px,60px);
 
     &__title {
-      .font-set(36px,50px,@bold);
+      padding-left: 66px;
     }
 
     &__buttons-container {
-      right: 2px;
-      top: 10px;
+      right: 207px;
+      top: 199px;
 
-      width: 80px;
+      width: 180px;
       display: flex;
       justify-content: space-between;
-    }
-
-    &__steps {
-      margin-top: 49px;
+      flex-direction: column;
     }
   });
 }

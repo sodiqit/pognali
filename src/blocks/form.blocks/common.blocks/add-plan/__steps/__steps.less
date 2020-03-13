@@ -19,6 +19,17 @@
     padding-bottom: 55px;
   });
 
+  .desktop({
+    .radius(60px,60px,60px,60px);
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 97px;
+    padding-bottom: 104px;
+
+    position: relative;
+    z-index: 13;
+  });
+
   &__title {
     display: flex;
     flex-wrap: wrap;
@@ -31,14 +42,22 @@
 
     counter-increment: step;
 
-    .tablet({
-      .font-set(36px,36px,@bold);
-    });
-
     &::before {
       content: "Шаг " counter(step) ". ";
       width: 100%;
     }
+
+    .tablet({
+      .font-set(36px,36px,@bold);
+    });
+
+    .desktop({
+      &::before {
+        content: "Шаг " counter(step) ". ";
+        width: auto;
+        margin-right: 7px;
+      }
+    });
   }
 
   &__desc {
