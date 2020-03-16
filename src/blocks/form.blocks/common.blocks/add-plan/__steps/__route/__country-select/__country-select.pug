@@ -1,12 +1,16 @@
 mixin country-select(option)
   div(class="country-select " + option.class)
+    svg.country-select__arrow(width="5" height="10" aria-hidden="true")
+      use(xlink:href="#small-arrow")
     input(class="visually-hidden" type="text" name="country")
     p.country-select__selected
       span.country-select__value=option.text
       button(class="country-select__change-button" type="button") <span class="visually-hidden">Открыть список стран</span>
     if option.checked
       .country-select__img
-        img(src="./../../../../../../../img/" + option.flag + ".svg" alt="Флаг " + option.text)
+        //- img(src="./../../../../../../../img/" + option.flag + ".svg" alt="Флаг " + option.text)
+        svg(viewBox="0 0 70 47")
+          use(xlink:href="#" + option.flag)
     else
       .country-select__img
     button(class="country-select__delete-country" type="button") <span class="visually-hidden">Удалить страну из списка</span>
