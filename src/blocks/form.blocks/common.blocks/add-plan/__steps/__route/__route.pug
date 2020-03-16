@@ -1,0 +1,42 @@
+-
+  var countryOptions = [
+    {
+      class: "country-select--checked",
+      checked: true,
+      flag: "flag-bosnia",
+      text: "Босния и герцеговина"
+    },
+    {
+      class: "country-select--checked",
+      checked: true,
+      flag: "flag-czech",
+      text: "Чехословакия"
+    },
+    {
+      class: "",
+      checked: false,
+      text: "Выберите страну"
+    },
+    {
+      class: "country-select--add",
+      checked: false,
+      text: "Добавить страну"
+    }
+  ]
+
+include ./__country-select/__country-select
+
+.route
+  h3.route__title Маршрут
+  p.route-decription.
+    Укажите страны, которые вы
+    хотели по посетить. Это может
+    быть одна или сразу несколько
+  ul.route__country-list
+    each option in countryOptions
+      li.country-list__item
+        +country-select(option)
+  .route__buttons-container
+    button.route__next-step(type="button") Следующий шаг
+    button.route__prev-step(type="button") Предыдущий шаг
+

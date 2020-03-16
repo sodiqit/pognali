@@ -1,0 +1,62 @@
+mixin country-select(option)
+  div(class="country-select " + option.class)
+    input(class="visually-hidden" type="text" name="country")
+    p.country-select__selected
+      span.country-select__value=option.text
+      button(class="country-select__change-button" type="button") <span class="visually-hidden">Открыть список стран</span>
+    if option.checked
+      .country-select__img
+        img(src="./../../../../../../../img/" + option.flag + ".svg")
+    else
+      .country-select__img
+    button(class="country-select__delete-country" type="button") <span class="visually-hidden">Удалить страну из списка</span>
+    .country-select__dropdown
+      table.country-select__table
+        tbody
+          tr
+            td А
+            td Б
+            td В
+            td Г
+            td Д
+          tr
+            td Е
+            td Ё
+            td Ж
+            td З
+            td И
+          tr
+            td Й
+            td К
+            td Л
+            td М
+            td Н
+          tr
+            td О
+            td П
+            td Р
+            td С
+            td Т
+          tr
+            td У
+            td Ф
+            td Х
+            td Ц
+            td Ч
+          tr
+            td Ш
+            td Щ
+            td Э
+            td Ю
+            td Я
+      ul.country-select__list
+        li Афганистан
+        li Албания
+        li Алгерия
+        li Андорра
+        li Аргентина
+        li Армения
+        li Австралия
+        li Австрия
+        li Азербайджанм
+
