@@ -1,0 +1,131 @@
+.country-select--checked {
+
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  border: none;
+
+  &::before {
+    top: 16px;
+    right: 48px;
+    background-color: @add-plan-title-color;
+    border: none;
+    z-index: 17;
+  }
+
+  .country-select__selected {
+    width: 76.5%;
+    flex-grow: 1;
+
+    border: 1px solid @input-border-color;
+    border-radius: 4px;
+
+    padding-top: 12px;
+    padding-left: 12px;
+  }
+
+  .country-select__value {
+    width: 90%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .country-select__img {
+    width: 52px;
+    height: 41px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid @input-border-color;
+    border-radius: 4px;
+
+    svg {
+      width: 35px;
+      height: 24px;
+    }
+  }
+
+  .country-select__change-button {
+    right: 7px;
+    top: 3px;
+
+    height: 30px;
+
+    background-color: @color-main;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: -3px;
+      left: -16px;
+
+      height: 38px;
+      width: 18px;
+
+      background: linear-gradient(90deg, @transparent 0%, @color-main 75%);
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 6px);
+      left: calc(50% - 6px);
+
+      width: 10px;
+      height: 10px;
+      background-color: @transparent;
+
+      transform: rotate(45deg);
+      border: 1px solid @route-close-button;
+      border-left: none;
+      border-top: none;
+    }
+  }
+
+  &__delete-country {
+    position: absolute;
+    right: -11px;
+    top: -11px;
+
+    .reset-btn();
+    width: 21px;
+    height: 21px;
+    background-color: @route-close-button-bg;
+    border-radius: 50%;
+
+    &::before, &::after {
+      content: "";
+
+      position: absolute;
+      left: 4px;
+      top: 10px;
+
+      transform: rotate(45deg);
+
+      width: 13px;
+      height: 1px;
+
+      background-color: @route-close-button;
+    }
+
+    &::after {
+      right: 4px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--add {
+    display: none;
+  }
+
+  &__dropdown {
+    display: none;
+  }
+}

@@ -8,8 +8,8 @@ mixin country-select(option)
       button(class="country-select__change-button" type="button") <span class="visually-hidden">Открыть список стран</span>
     if option.checked
       .country-select__img
-        //- img(src="./../../../../../../../img/" + option.flag + ".svg" alt="Флаг " + option.text)
-        svg(viewBox="0 0 70 47")
+        svg(viewBox="0 0 70 47" role="img")
+          title Изображение флага #{option.text}
           use(xlink:href="#" + option.flag)
     else
       .country-select__img
