@@ -1,49 +1,14 @@
 .country-select--add {
-  width: 100%;
-  padding-top: 12px;
-  padding-left: 12px;
-  padding-bottom: 10px;
-  margin-bottom: 23px;
-  border: 1px solid @input-border-color;
-  border-radius: 4px;
-  position: relative;
 
-  &::before {
-    content: "";
+  margin-bottom: 0;
 
-    position: absolute;
-    top: 16px;
-    right: 48px;
+  background-color: @route-close-button-bg;
 
-    width: 8px;
-    height: 8px;
-    background-color: @transparent;
-    border: 1px solid @input-border-color;
-    border-radius: 50%;
+  .country-select__arrow {
+    display: none;
   }
 
-  &__arrow {
-    position: absolute;
-    bottom: -17px;
-    right: 49px;
-
-    fill: @input-border-color;
-  }
-
-  &__selected {
-    color: @add-plan-title-color;
-    .font-set(14px,18px,@medium);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0;
-
-    position: relative;
-  }
-
-  &__change-button {
-    .reset-btn();
-
-    position: absolute;
+  .country-select__change-button {
     right: 8px;
     top: -14px;
 
@@ -51,52 +16,36 @@
     height: 39px;
 
     &::before {
+      top: 20px;
+      left: 3px;
+
+      width: 14px;
+      height: 2px;
+      background-color: @route-add-button;
+
+      transform: rotate(0);
+      border: none;
+      opacity: 0.3;
+    }
+
+    &::after {
       content: "";
+
       position: absolute;
-      top: calc(50% - 6px);
-      left: calc(50% - 6px);
+      top: 20px;
+      left: 3px;
 
-      width: 10px;
-      height: 10px;
-      background-color: @transparent;
+      width: 14px;
+      height: 2px;
+      background-color: @route-add-button;
 
-      transform: rotate(45deg);
-      border: 1px solid @route-close-button;
-      border-left: none;
-      border-top: none;
+      transform: rotate(90deg);
+      opacity: 0.3;
     }
 
   }
 
-  &__delete-country {
-    position: absolute;
-    right: -11px;
-    top: -11px;
-
-    .reset-btn();
-    width: 21px;
-    height: 21px;
-    background-color: @route-close-button-bg;
-    border-radius: 50%;
-
-    &::before, &::after {
-      content: "";
-
-      position: absolute;
-      left: 4px;
-      top: 10px;
-
-      transform: rotate(45deg);
-
-      width: 13px;
-      height: 1px;
-
-      background-color: @route-close-button;
-    }
-
-    &::after {
-      right: 4px;
-      transform: rotate(-45deg);
-    }
+  .country-select__delete-country {
+    display: none;
   }
 }
