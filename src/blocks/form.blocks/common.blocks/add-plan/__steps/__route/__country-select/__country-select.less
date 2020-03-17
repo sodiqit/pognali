@@ -157,7 +157,7 @@
 
   &__dropdown {
     position: absolute;
-    z-index: 2;
+    z-index: 20;
 
     overflow: hidden;
 
@@ -168,6 +168,8 @@
     box-shadow: 0px 20px 50px 0px fade(@add-plan-title-color, 10%);
 
     transition: max-height 0.5s;
+
+    background-color: @color-main;
   }
 
   &__table {
@@ -179,7 +181,7 @@
       width: 45px;
       height: 40px;
       border: 1px solid @input-border-color;
-      background-color: @color-main;
+
       color: @add-plan-title-color;
       .font-set(14px,18px,@medium);
       letter-spacing: 0.1em;

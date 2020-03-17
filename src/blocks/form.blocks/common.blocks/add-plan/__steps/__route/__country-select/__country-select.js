@@ -1,9 +1,8 @@
-const button = document.querySelectorAll('.country-select__change-button')[2];
-const select = document.querySelectorAll(".country-select")[2];
+const buttons = document.querySelectorAll('.country-select__change-button');
+const selects = document.querySelectorAll('.country-select');
 
-console.log(button);
-
-button.addEventListener('click', () => {
-  console.log('click')
-  select.classList.toggle('country-select--opened');
+selects.forEach((item, i) => {
+  buttons[i].addEventListener('click', () => {
+    item.classList.toggle('country-select--opened');
+  });
 });

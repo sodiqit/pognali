@@ -89,7 +89,39 @@
     }
   }
 
-  .country-select__dropdown {
-    display: none;
+}
+
+.country-select--checked.country-select--opened {
+  .country-select__change-button {
+    position: absolute;
+    right: 3px;
+    top: 9px;
+
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+
+    &::before, &::after {
+      content: "";
+
+      position: absolute;
+      left: 4px;
+      top: 10px;
+
+      transform: rotate(45deg);
+
+      width: 13px;
+      height: 1px;
+
+      background-color: @add-plan-title-color;
+      background-image: none;
+      border: none;
+      pointer-events: unset;
+    }
+
+    &::after {
+      right: 4px;
+      transform: rotate(-45deg);
+    }
   }
 }
