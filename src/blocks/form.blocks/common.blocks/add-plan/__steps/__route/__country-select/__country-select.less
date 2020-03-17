@@ -10,6 +10,57 @@
   border-radius: 4px;
   position: relative;
 
+  &--opened {
+    background-color: @add-plan-title-color;
+
+    &::before {
+      display: none;
+    }
+
+    .country-select__selected {
+      color: @color-main;
+    }
+
+    .country-select__delete-country {
+      display: none;
+    }
+
+    .country-select__change-button {
+      position: absolute;
+      right: 9px;
+      top: -3px;
+
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+
+      &::before, &::after {
+        content: "";
+
+        position: absolute;
+        left: 4px;
+        top: 10px;
+
+        transform: rotate(45deg);
+
+        width: 13px;
+        height: 1px;
+
+        background-color: @color-main;
+        border: none;
+      }
+
+      &::after {
+        right: 4px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .country-select__dropdown {
+      max-height: 1500px;
+    }
+  }
+
   &::before {
     content: "";
 
@@ -40,6 +91,8 @@
     margin: 0;
 
     position: relative;
+
+    transition: color 0.5s;
   }
 
   &__change-button {
@@ -103,8 +156,60 @@
   }
 
   &__dropdown {
-    display: none;
+    position: absolute;
+    z-index: 2;
+
+    overflow: hidden;
+
+    width: 100%;
+    max-height: 0;
+    top: 39px;
+    left: 0;
+    box-shadow: 0px 20px 50px 0px fade(@add-plan-title-color, 10%);
+
+    transition: max-height 0.5s;
   }
+
+  &__table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    td {
+      width: 45px;
+      height: 40px;
+      border: 1px solid @input-border-color;
+      background-color: @color-main;
+      color: @add-plan-title-color;
+      .font-set(14px,18px,@medium);
+      letter-spacing: 0.1em;
+      cursor: pointer;
+    }
+  }
+
+  .active-td {
+    background-color: @route-close-button-bg;
+  }
+
+  &__list {
+    .reset();
+
+    width: 100%;
+    border: 1px solid @input-border-color;
+    border-top: none;
+    .radius(0,0,10px,10px);
+
+    .font-set(16px,22px,@regular);
+
+    padding-top: 15px;
+    padding-left: 19px;
+    padding-bottom: 20px;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
 }
 
 @import "./country-select--checked/country-select--checked";

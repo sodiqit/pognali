@@ -89,43 +89,7 @@
     }
   }
 
-  &__delete-country {
-    position: absolute;
-    right: -11px;
-    top: -11px;
-
-    .reset-btn();
-    width: 21px;
-    height: 21px;
-    background-color: @route-close-button-bg;
-    border-radius: 50%;
-
-    &::before, &::after {
-      content: "";
-
-      position: absolute;
-      left: 4px;
-      top: 10px;
-
-      transform: rotate(45deg);
-
-      width: 13px;
-      height: 1px;
-
-      background-color: @route-close-button;
-    }
-
-    &::after {
-      right: 4px;
-      transform: rotate(-45deg);
-    }
-  }
-
-  &--add {
-    display: none;
-  }
-
-  &__dropdown {
+  .country-select__dropdown {
     display: none;
   }
 }
