@@ -22,7 +22,7 @@
     }
 
     .country-select__delete-country {
-      display: none;
+      opacity: 0;
     }
 
     .country-select__change-button {
@@ -57,7 +57,7 @@
     }
 
     .country-select__dropdown {
-      max-height: 1500px;
+      max-height: 1000px;
     }
   }
 
@@ -92,7 +92,7 @@
 
     position: relative;
 
-    transition: color 0.5s;
+    transition: color 0.3s;
   }
 
   &__change-button {
@@ -127,6 +127,8 @@
     position: absolute;
     right: -11px;
     top: -11px;
+
+    transition: opacity 0.3s;
 
     .reset-btn();
     width: 21px;
@@ -167,7 +169,7 @@
     left: 0;
     box-shadow: 0px 20px 50px 0px fade(@add-plan-title-color, 10%);
 
-    transition: max-height 0.5s;
+    transition: max-height 0.3s;
 
     background-color: @color-main;
   }
