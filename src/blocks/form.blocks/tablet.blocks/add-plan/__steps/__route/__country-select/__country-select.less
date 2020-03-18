@@ -129,57 +129,67 @@
       }
     }
 
-    // &__dropdown {
-    //   width: 156.7%;
-    //   max-height: 1000px;
-    //   top: 65px;
-    //   left: -1px;
+    &__dropdown {
+      width: 577px;
+      max-height: 1000px;
+      top: 65px;
+      left: -1px;
+      padding-bottom: 36px;
 
-    //   display: flex;
-    //   display: none;
+      display: flex;
 
-    //   .radius(0,0,10px,10px);
-    // }
+      .radius(0,0,10px,10px);
 
-    // &__table {
-    //   width: 64%;
-    //   text-align: center;
-    //   border-collapse: collapse;
+      div {
+        width: 368px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 34px;
+        padding-left: 27px;
+        padding-right: 19px;
+      }
 
-    //   td {
-    //     width: 45px;
-    //     height: 40px;
-    //     border: 1px solid @input-border-color;
+      &::after {
+        content: "";
 
-    //     color: @add-plan-title-color;
-    //     .font-set(14px,18px,@medium);
-    //     letter-spacing: 0.1em;
-    //     cursor: pointer;
-    //   }
-    // }
+        position: absolute;
+        left: 369px;
+        top: 0;
 
-    // .active-td {
-    //   background-color: @route-close-button-bg;
-    // }
+        width: 1px;
+        height: 491px;
+        background-color: fade(@input-border-color, 50%);
 
-    // &__list {
-    //   .reset();
+      }
+    }
 
-    //   width: 100%;
-    //   border: 1px solid @input-border-color;
-    //   border-top: none;
-    //   .radius(0,0,10px,10px);
+    &__table {
 
-    //   .font-set(16px,22px,@regular);
+      width: 316px;
 
-    //   padding-top: 15px;
-    //   padding-left: 19px;
-    //   padding-bottom: 20px;
+      td {
+        width: 54px;
+        height: 70px;
 
-    //   li {
-    //     cursor: pointer;
-    //   }
-    // }
+        .font-set(20px,18px,@medium);
+      }
+    }
+
+    .active-td {
+      background-color: @add-plan-title-color;
+      color:@color-main;
+    }
+
+    &__list {
+      width: 205px;
+      border: none;
+
+      .font-set(20px,30px,@regular);
+
+      padding-top: 34px;
+      padding-bottom: 0;
+    }
   });
 
 
