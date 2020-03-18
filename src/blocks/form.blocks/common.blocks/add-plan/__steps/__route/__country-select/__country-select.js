@@ -105,13 +105,17 @@ const countries = ['Австралия', 'Австрия', 'Азербайджа
 'Никарагуа',
 'Новая Зеландия',
 'Норвегия',
+'Чад',
+'Черногория',
+'Чехословакия',
+'Чили',
 ];
 
 const flags = {
   'австралия': 'flag-australia',
   'бельгия': 'flag-belgium',
   'босния и герцеговина': 'flag-bosnia',
-  'чехия': 'flag-czech',
+  'чехословакия': 'flag-czech',
   'доминикана': 'flag-dominica',
   'франция': 'flag-france',
   'сейшелы': 'flag-seychelles',
@@ -172,9 +176,7 @@ class Dropdown {
   }
 
   _changeInput(e) {
-    console.log(e.target);
     this._input.value = e.target.textContent.toLowerCase();
-    console.log(this._input.value);
     this._field.textContent = e.target.textContent;
     this._container.classList.add('country-select--checked');
 
@@ -224,9 +226,9 @@ class CountrySelect {
     this._createELement(this._buttons.add);
   }
 
-  _curry(i) {
+  _curry(i, fn) {
     return (e) => {
-      this._changeCountry(e, i);
+      fn.apply(this, [e, i]);
     };
   }
 
@@ -237,13 +239,10 @@ class CountrySelect {
     const target = e.target.offsetParent.offsetParent; // pull info about parent eventTarget because we need add class him
     if (!this._dropdowns[i]) {
       dropdown = new Dropdown(target.querySelector('input'), target.querySelector('.country-select__value'), target);
-      console.log(dropdown);
       this._dropdowns[i] = dropdown;
     } else {
       dropdown = this._dropdowns[i];
     }
-
-    console.log(this._dropdowns);
 
     if (open) {
       e.target.innerHTML = '<span class="visually-hidden">Закрыть список стран</span>';
@@ -258,16 +257,24 @@ class CountrySelect {
     this._createELement(this._buttons.change);
   }
 
+  _deleteCountry(e, i) {
+    this._container.removeChild(this._elements[i]);
+    this._elements[i] = null;
+    console.log(this._elements);
+  }
+
   _bind(el, i) {
     const country = el.querySelector('.country-select');
     const button = el.querySelector('.country-select__change-button');
+    const deleteButton = el.querySelector('.country-select__delete-country');
 
     if (country.classList.contains('country-select--add')) {
       button.addEventListener('click', this.addNewCountry);
     } else {
-      button.addEventListener('click', this.curry(i));
+      button.addEventListener('click', this.curry(i, this._changeCountry));
     }
 
+    deleteButton.addEventListener('click', this.curry(i, this._deleteCountry));
   }
 
   _render() {
@@ -275,7 +282,9 @@ class CountrySelect {
     const reverseElem = this._elements.slice().reverse();
 
     reverseElem.forEach((item) => {
-      fragment.appendChild(item);
+      if (item) {
+        fragment.appendChild(item);
+      }
     });
 
     this._container.appendChild(fragment);
