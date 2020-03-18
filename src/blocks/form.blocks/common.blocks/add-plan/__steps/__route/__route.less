@@ -3,6 +3,7 @@
 .route {
   color: @directions-text-color;
   .step();
+  padding-bottom: 9px;
 
   &__description {
     margin-bottom: 20px;
@@ -10,5 +11,42 @@
 
   &__country-list {
     .reset();
+  }
+
+  &__buttons-container {
+    margin-top: 25px;
+  }
+
+  &__next-step {
+    .btn-triangle();
+    background-color: @default-button-color;
+    color: @add-plan-text-button-color;
+    padding: 0;
+    display: block;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+    .font-set(17px,30px,@bold);
+
+    width: 102%;
+    transform: translate(-2px);
+    height: 40px;
+    border-radius: 20px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &__prev-step {
+    .reset-btn();
+
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    color: @add-plan-title-color;
+    .font-set(17px,30px,@bold);
+
+    margin-top: 12px;
   }
 }
