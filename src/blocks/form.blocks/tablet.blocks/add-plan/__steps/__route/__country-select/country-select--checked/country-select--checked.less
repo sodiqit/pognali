@@ -65,48 +65,33 @@
         opacity: 0.2;
       }
     }
-
-    .country-select__dropdown {
-      display: none;
-      width: 100%;
-    }
   });
 }
 
 .country-select--checked.country-select--opened {
   .tablet({
-    // .country-select__change-button {
-    //   position: absolute;
-    //   right: 3px;
-    //   top: 9px;
+    background-color: @color-main;
 
-    //   width: 21px;
-    //   height: 21px;
-    //   border-radius: 50%;
+    .country-select__selected {
+      background-color: @add-plan-title-color;
+    }
 
-    //   &::before, &::after {
-    //     content: "";
+    .country-select__change-button {
+      right: 9px;
+      top: 22px;
 
-    //     position: absolute;
-    //     left: 4px;
-    //     top: 10px;
+      width: 40px;
+      height: 40px;
 
-    //     transform: rotate(45deg);
+      background-color: unset;
 
-    //     width: 13px;
-    //     height: 1px;
+      &::before, &::after {
+        width: 24px;
+        height: 2px;
 
-    //     background-color: @add-plan-title-color;
-    //     background-image: none;
-    //     border: none;
-    //     pointer-events: unset;
-    //   }
-
-    //   &::after {
-    //     right: 4px;
-    //     transform: rotate(-45deg);
-    //   }
-    // }
+        background-color: @color-main;
+      }
+    }
   });
 
 }

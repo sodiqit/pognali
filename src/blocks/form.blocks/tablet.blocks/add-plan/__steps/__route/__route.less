@@ -22,39 +22,54 @@
 
     &__buttons-container {
       margin-top: 50px;
+
+      display: flex;
+      align-items: center;
     }
 
     &__next-step {
-      // .btn-triangle();
-      // background-color: @default-button-color;
-      // color: @add-plan-text-button-color;
-      // padding: 0;
-      // display: block;
-      // letter-spacing: 0;
-      // text-align: center;
-      // text-transform: uppercase;
-      // .font-set(17px,30px,@bold);
+      background-color: @default-button-color;
+      color: @add-plan-text-button-color;
+      padding-left: 35px;
+      display: block;
+      text-align: left;
+      text-transform: unset;
+      .font-set(24px,24px,@bold);
 
-      // width: 102%;
-      // transform: translate(-2px);
-      // height: 40px;
-      // border-radius: 20px;
+      width: 285px;
+      height: 81px;
 
-      // &::before {
-      //   display: none;
-      // }
+      margin-right: 101px;
+
+      &::before {
+        display: block;
+        right: 34px;
+      }
     }
 
     &__prev-step {
-      // .reset-btn();
+      text-transform: unset;
+      .font-set(24px,24px,@bold);
 
-      // text-align: center;
-      // width: 100%;
-      // text-transform: uppercase;
-      // color: @add-plan-title-color;
-      // .font-set(17px,30px,@bold);
+      margin-top: 0;
 
-      // margin-top: 12px;
+      position: relative;
+
+      width: auto;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -31px;
+        top: 4px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 0 7px 10px;
+        border-color: transparent transparent transparent @triangle-color;
+
+        transform: rotate(180deg);
+      }
     }
   });
 }

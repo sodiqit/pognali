@@ -176,6 +176,9 @@ class Dropdown {
   }
 
   _changeInput(e) {
+    if (e.target.classList.contains('country-select__list')) {
+      return;
+    };
     this._input.value = e.target.textContent.toLowerCase();
     this._field.textContent = e.target.textContent;
     this._container.classList.add('country-select--checked');
@@ -314,7 +317,8 @@ class CountrySelect {
       <div class="country-select__img"></div>
       <button class="country-select__delete-country" type="button"><span class="visually-hidden">Удалить страну из списка</span></button>
       <div class="country-select__dropdown">
-      <table class="country-select__table">
+      <div>
+        <table class="country-select__table">
         <tbody>
           <tr>
             <td class="active-td">А</td>
@@ -360,6 +364,8 @@ class CountrySelect {
           </tr>
         </tbody>
       </table>
+      </div>
+
       <ul class="country-select__list">
         <li>Афганистан</li>
         <li>Албания</li>
@@ -376,4 +382,4 @@ class CountrySelect {
   }
 }
 
-const a = new CountrySelect(document.querySelector('.route__country-list'));
+const select = new CountrySelect(document.querySelector('.route__country-list'));
