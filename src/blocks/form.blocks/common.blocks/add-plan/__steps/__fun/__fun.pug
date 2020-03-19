@@ -1,0 +1,30 @@
+-
+  var countryOptions = [
+    {
+      class: "",
+      flag: "flag-bosnia",
+      title: "Босния и герцеговина",
+      text: ""
+    },
+    {
+      class: "",
+      flag: "flag-czech",
+      title: "Чехословакия",
+      text: "Пить пиво и лазить по старым замкам, наслаждаться аритектурой и вот это все."
+    }
+  ]
+
+include ./__country-desc/__country-desc
+
+.fun
+  h3.fun__title Развлечения
+  p.fun__description.
+    Наконец, расскажите о своих планах времяпровождения.
+    Можно писать в свободной форме и ставить тэги.
+  ul.fun__country-list
+    each option, index in countryOptions
+      li.fun__country-list__item
+        +country-desc(option, index)
+  .fun__buttons-container
+    button.fun__submit(type="submit") Отправить
+    button.fun__prev-step(type="button") На шаг назад
