@@ -40,6 +40,11 @@ class CountryDescription {
       let countryName = item[0].toUpperCase() + item.slice(1);
 
       let li = document.createElement('li');
+
+      if (this._inputsData.length < 2) {
+        li.classList.add('one-element');
+      }
+
       li.classList.add('fun__country-list__item');
       li.innerHTML = this._createTemplate(i, {title: countryName, flag: flags[item]});
 
