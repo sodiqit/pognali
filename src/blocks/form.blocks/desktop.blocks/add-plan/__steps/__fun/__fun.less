@@ -1,0 +1,40 @@
+@import "./__country-desc/__country-desc";
+
+.fun {
+  .desktop({
+    margin-bottom: 0;
+
+    &__description {
+
+      width: 50%;
+
+      margin-bottom: 125px;
+
+      &::after {
+        width: 997px;
+        bottom: -54px;
+      }
+    }
+
+    &__country-list {
+      padding-right: 115px;
+      width: 100%;
+
+      &__item.one-element {
+        .country-desc {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__buttons-container {
+      margin-top: 50px;
+    }
+
+    &__prev-step {
+      margin-right: 4px;
+    }
+  });
+}
