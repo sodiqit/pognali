@@ -5,7 +5,23 @@
     padding-bottom: 0;
 
     position: relative;
+
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: @profile-input-hover-color;
+    }
+
+    &--focus {
+      border-color: @profile-input-focus-color;
+
+      &:hover {
+        border-color: @profile-input-focus-color;
+      }
+    }
   }
+
+
 
   .hastags__label {
     .font-set(20px, 18px, @medium);
@@ -29,6 +45,15 @@
     background-color: @transparent;
 
     .font-set(20px, 24px, @regular);
+
+    &::placeholder {
+      .font-set(20px, 24px, @regular);
+      color: fade(@directions-text-color, 30%);
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 });
 

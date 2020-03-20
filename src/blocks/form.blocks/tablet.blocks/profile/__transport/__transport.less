@@ -39,6 +39,21 @@
       width: 43px;
       height: 43px;
 
+      &:hover {
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+
+        svg {
+          opacity: 0.3;
+        }
+      }
+
+      &:active {
+        background-color: @profile-transport-active-color;
+        svg {
+          opacity: 0.1;
+        }
+      }
+
       &--plane {
         svg {
           width: 19px;
