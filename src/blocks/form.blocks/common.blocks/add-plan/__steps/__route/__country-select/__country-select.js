@@ -111,7 +111,7 @@ const countries = ['Австралия', 'Австрия', 'Азербайджа
 'Чили',
 ];
 
-const flags = {
+export const flags = {
   'австралия': 'flag-australia',
   'бельгия': 'flag-belgium',
   'босния и герцеговина': 'flag-bosnia',
