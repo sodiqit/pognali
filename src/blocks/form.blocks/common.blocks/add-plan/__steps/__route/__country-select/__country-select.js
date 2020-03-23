@@ -155,7 +155,12 @@ class Dropdown {
   }
 
   _changeActive(e) {
+    e.stopPropagation();
     let target = e.target;
+    if (target.classList.contains('country-select__table')) {
+      return;
+    };
+
     let  tds = this._table.querySelectorAll('td');
 
     tds.forEach((item) => {
@@ -176,6 +181,7 @@ class Dropdown {
   }
 
   _changeInput(e) {
+    e.stopPropagation();
     if (e.target.classList.contains('country-select__list')) {
       return;
     };
@@ -236,6 +242,7 @@ class CountrySelect {
   }
 
   _changeCountry(e, i) {
+    e.stopPropagation();
     let dropdown = null;
     let open = !this._open;
     this._open = open;
@@ -256,11 +263,13 @@ class CountrySelect {
     target.classList.toggle('country-select--opened');
   }
 
-  _addNewCountry() {
+  _addNewCountry(e) {
+    e.stopPropagation();
     this._createELement(this._buttons.change);
   }
 
   _deleteCountry(e, i) {
+    e.stopPropagation();
     this._container.removeChild(this._elements[i]);
     this._elements[i] = null;
     console.log(this._elements);
@@ -278,6 +287,14 @@ class CountrySelect {
     }
 
     deleteButton.addEventListener('click', this.curry(i, this._deleteCountry));
+
+    country.addEventListener('click', (e) => {
+      if (e.target.classList.contains('country-select__change-country')) {
+        return;
+      } else {
+        button.click();
+      }
+    });
   }
 
   _render() {
