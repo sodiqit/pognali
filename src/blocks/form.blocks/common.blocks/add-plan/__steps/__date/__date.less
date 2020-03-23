@@ -20,13 +20,32 @@
 
     display: flex;
     align-items: center;
+
+    &:hover {
+      .date__custom-checkbox {
+        border-color: @profile-input-focus-color;
+      }
+    }
+
+    &:active {
+      .date__custom-checkbox {
+        border-color: @transparent;
+        background-color: @profile-transport-active-color;
+
+        svg {
+          opacity: 0.3;
+        }
+      }
+    }
   }
 
   &__custom-checkbox {
     width: 26px;
     height: 26px;
-
     display: block;
+
+    transition: all 0.3s;
+
     border: 1px solid @input-border-color;
     border-radius: 4px;
     order:-1;
@@ -71,7 +90,30 @@
     border-radius: 20px;
 
     &::before {
+      transition: opacity 0.1s;
       display: none;
+    }
+
+    span {
+      transition: opacity 0.1s;
+    }
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: @add-plan-hover-button-color;
+    }
+
+    &:active {
+      background-color: @add-plan-hover-button-color;
+
+      &::before {
+        opacity: 0.3;
+      }
+
+      span {
+        opacity: 0.3;
+      }
     }
   }
 }

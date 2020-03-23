@@ -4,6 +4,16 @@
 
   background-color: @route-close-button-bg;
 
+  &:active {
+    .country-select__value {
+      opacity: 0.3;
+    }
+  }
+
+  .country-select__value {
+    transition: opacity 0.3s;
+  }
+
   .country-select__arrow {
     display: none;
   }

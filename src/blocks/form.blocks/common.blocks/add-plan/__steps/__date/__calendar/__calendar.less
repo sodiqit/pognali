@@ -19,6 +19,25 @@
     margin-bottom: 0;
   }
 
+  &__decrease, &__increase {
+
+    &::before {
+      transition: border-color 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        border-color: fade(@total-black, 50%);
+      }
+    }
+
+    &:active {
+      &::before {
+        border-color: fade(@total-black, 10%);
+      }
+    }
+  }
+
   &__decrease {
     position: absolute;
     top: 5px;
@@ -129,6 +148,15 @@
 
   td {
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: @add-plan-title-color;
+      color: @color-main;
+    }
+
+    &:active {
+      border: 2px solid @calendar-holiday-color;
+    }
   }
 
   .relevant {
@@ -137,12 +165,8 @@
   }
 
   .active {
-    background-color: @add-plan-title-color;
+    background-color: @calendar-chosen-day-color;
 
     color: @color-main;
-  }
-
-  .clicked {
-    border: 2px solid @calendar-holiday-color;
   }
 }

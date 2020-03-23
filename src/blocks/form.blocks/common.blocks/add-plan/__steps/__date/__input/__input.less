@@ -24,10 +24,41 @@
 
     text-align: center;
     .font-set(14.3px,13px,@medium);
+
+    transition: border-color 0.3s;
+
+    outline: none;
+
+    &:hover {
+      border-color: @profile-input-hover-color;
+    }
+
+    &:focus {
+      border-color: @profile-input-focus-color;
+    }
   }
 
   &__measuring {
     color: fade(@add-plan-title-color, 30%);
+  }
+
+  &__decrease, &__increase {
+
+    &::before, &::after {
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::before, &::after {
+        opacity: 0.4;
+      }
+    }
+
+    &:active {
+      &::before, &::after {
+        opacity: 0.1;
+      }
+    }
   }
 
   &__decrease {
@@ -52,7 +83,8 @@
       width: 14px;
       height: 2px;
 
-      background-color: fade(@input-sign-color,30%);
+      background-color: @total-black;
+      opacity: 0.2;
     }
   }
 
@@ -78,8 +110,8 @@
       width: 14px;
       height: 2px;
 
-      background-color: @input-sign-color;
-      opacity: 0.3;
+      background-color: @total-black;
+      opacity: 0.2;
     }
 
     &::after {
@@ -96,8 +128,8 @@
       width: 14px;
       height: 2px;
 
-      background-color: @input-sign-color;
-      opacity: 0.3;
+      background-color: @total-black;
+      opacity: 0.2;
     }
   }
 }

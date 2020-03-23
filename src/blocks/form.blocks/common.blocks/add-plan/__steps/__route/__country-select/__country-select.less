@@ -10,6 +10,18 @@
   border-radius: 4px;
   position: relative;
 
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: @route-hover-color;
+
+    .country-select__change-button {
+      &::before {
+        border-color: fade(@total-black, 50%);
+      }
+    }
+  }
+
   &--opened {
     background-color: @add-plan-title-color;
 
@@ -34,7 +46,20 @@
       height: 21px;
       border-radius: 50%;
 
+      &:hover {
+        &::before, &::after {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        &::before, &::after {
+          opacity: 0.1;
+        }
+      }
+
       &::before, &::after {
+        transition: opacity 0.3s;
         content: "";
 
         position: absolute;
@@ -48,6 +73,7 @@
 
         background-color: @color-main;
         border: none;
+        opacity: 0.3;
       }
 
       &::after {
@@ -106,6 +132,7 @@
     height: 39px;
 
     &::before {
+      transition: opacity 0.3s;
       content: "";
       position: absolute;
       top: calc(50% - 6px);
@@ -116,7 +143,7 @@
       background-color: @transparent;
 
       transform: rotate(45deg);
-      border: 1px solid @route-close-button;
+      border: 1px solid fade(@total-black, 30%);
       border-left: none;
       border-top: none;
     }
@@ -128,7 +155,11 @@
     right: -11px;
     top: -11px;
 
-    transition: opacity 0.3s;
+    &:hover {
+      &::before, &::after {
+        opacity: 0.3;
+      }
+    }
 
     .reset-btn();
     width: 21px;
@@ -139,6 +170,8 @@
     &::before, &::after {
       content: "";
 
+      transition: opacity 0.3s;
+
       position: absolute;
       left: 4px;
       top: 10px;
@@ -148,7 +181,9 @@
       width: 13px;
       height: 1px;
 
-      background-color: @route-close-button;
+      opacity: 0.1;
+
+      background-color: @directions-text-color;
     }
 
     &::after {
@@ -188,6 +223,12 @@
       .font-set(14px,18px,@medium);
       letter-spacing: 0.1em;
       cursor: pointer;
+
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: @route-hover-color;
+      }
     }
   }
 
@@ -203,6 +244,8 @@
     border-top: none;
     .radius(0,0,10px,10px);
 
+    color: @directions-text-color;
+
     .font-set(16px,22px,@regular);
 
     padding-top: 15px;
@@ -211,6 +254,15 @@
 
     li {
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: @add-plan-title-color;
+      }
+
+      &:active {
+        color: @add-plan-title-color;
+        opacity: 0.3;
+      }
     }
   }
 
