@@ -1,0 +1,7 @@
+mixin location(option)
+  li.locations-list__item
+    button.locations-list__button.locations-list__button--active(type="button")=option.letter
+    ul.locations-list__list-countries
+      each name in option.list_countries
+        li=name
+
