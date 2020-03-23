@@ -121,7 +121,8 @@ const plugins = () => {
 module.exports = {
   entry: {
     index: `${PATHS.src}/index`,
-    form: `${PATHS.src}/form`
+    form: `${PATHS.src}/form`,
+    catalog: `${PATHS.src}/catalog`
   },
   output: {
     filename: `js/${fileName("js")}`,
