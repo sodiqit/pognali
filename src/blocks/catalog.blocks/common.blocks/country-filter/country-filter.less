@@ -1,4 +1,156 @@
+@import "./__locations-list/__locations-list";
+
 .country-filter {
-  background-color: @plans-bg-color;
-  color: red;
+  background-color: @filter-bg-color;
+  color: @directions-text-color;
+  position: relative;
+
+  margin-top: -55px;
+  padding-top: 58px;
+  padding-left: 8%;
+
+  .radius(0,0,20px,20px);
+
+  &--opened {
+    position: absolute;
+    z-index: 30;
+
+    width: 100%;
+  }
+
+  &--closed {
+
+    padding-bottom: 1px;
+
+    .country-filter__button {
+      svg {
+        display: block;
+      }
+      .close {
+        display: none;
+      }
+    }
+
+    .country-filter__list {
+      display: none;
+    }
+
+    .country-filter__locations-list {
+      display: none;
+    }
+
+    .country-filter__bottom-button {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: @filter-title-color;
+    .font-set(16px,22px,@bold);
+    text-transform: uppercase;
+
+    position: relative;
+
+    padding-left: 1%;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: -24px;
+      top: 5px;
+
+      width: 15px;
+      height: 10px;
+      background-image: url("./../../../../img/filter.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: -4px;
+    right: 0;
+
+    .reset-btn();
+    width: 30px;
+    height: 30px;
+
+    svg {
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 12px;
+      fill: @add-plan-title-color;
+      circle {
+        fill: @add-plan-title-color;
+      }
+
+      width: 17px;
+      height: 3px;
+    }
+
+    .close {
+      width: 12px;
+      height: 12px;
+      left: 10px;
+      top: 8px;
+      display: block;
+    }
+  }
+
+  &__list {
+    .reset();
+
+    margin-top: 30px;
+
+    input[type="radio"]:checked + span {
+      opacity: 1;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    .font-set(16px, 22px, @bold);
+    color: @filter-title-color;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
+  &__locations-list {
+    margin-top: 20px;
+    margin-bottom: 11px;
+  }
+
+  &__bottom-button {
+    .reset-btn();
+
+    width: 107%;
+    height: 40px;
+    .radius(20px,20px,20px,20px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translate(-23px);
+
+    .font-set(16.69px,29.45px,@bold);
+    text-transform: uppercase;
+
+    background-color: @filter-bottom-button-color;
+
+    margin-bottom: 26px;
+
+    svg {
+      margin-right: 14px;
+    }
+  }
 }

@@ -2,6 +2,7 @@
   var countryOptions = [
     {
       letter: "А",
+      active: true,
       list_countries: ["Австралия","Австрия","Азербайджан","Албания","Алжир","Ангола","Андорра","Антигуа и Барбуда","Аргентина","Армения","Афганистан"]
     },
     {
@@ -25,12 +26,24 @@
       list_countries: ["Египет"]
     },
     {
+      letter: "Ё",
+      list_countries: []
+    },
+    {
+      letter: "Ж",
+      list_countries: []
+    },
+    {
       letter: "З",
       list_countries: ["Замбия","Зимбабве"]
     },
     {
       letter: "И",
       list_countries: ["Израиль","Индия","Индонезия","Иордания","Ирак","Иран","Ирландия","Исландия","Испания","Италия"]
+    },
+    {
+      letter: "Й",
+      list_countries: []
     },
     {
       letter: "К",
@@ -57,6 +70,10 @@
       list_countries: ["Пакистан","Палау","Панама","Папуа — Новая Гвинея","Парагвай","Перу","Польша","Португалия"]
     },
     {
+      letter: "Р",
+      list_countries: []
+    },
+    {
       letter: "С",
       list_countries: ["Сальвадор","Самоа","Сан-Марино","Сан-Томе и Принсипи","Саудовская Аравия","Северная Македония","Сейшелы","Сенегал","Сент-Люсия","Сербия","Сингапур","Сирия","Словакия","Словения","США","Сомали","Судан","Суринам","Сьерра-Леоне"]
     },
@@ -77,12 +94,20 @@
       list_countries: ["Хорватия"]
     },
     {
+      letter: "Ц",
+      list_countries: []
+    },
+    {
       letter: "Ч",
       list_countries: ["Чад","Черногория","Чехия","Чили"]
     },
     {
       letter: "Ш",
       list_countries: ["Швейцария","Швеция","Шри-Ланка"]
+    },
+    {
+      letter: "Щ",
+      list_countries: []
     },
     {
       letter: "Э",
@@ -104,26 +129,32 @@ section.country-filter
   .container
     form.country-filter__form(action="http://echo.htmlacademy.ru")
       h2.country-filter__title Фильтрация по странам:
-      button.country-filter__button
+      button.country-filter__button(type="button")
         span.visually-hidden Открыть список стран
+        svg(class="close" viewBox="0 0 12 12" width="12" height="12")
+          use(xlink:href="#filter-close")
+        include ./../../../../img/dots.svg
       ul.country-filter__list
         li
           label
-            input(type="checkbox" name="europe" checked)
+            input(class="visually-hidden" type="radio" name="country" value="europe" checked)
             span.country-filter__name Европа
         li
           label
-            input(type="checkbox" name="asia")
+            input(class="visually-hidden" type="radio" name="country" value="asia")
             span.country-filter__name Азия
         li
           label
-            input(type="checkbox" name="america")
+            input(class="visually-hidden" type="radio" name="country" value="america")
             span.country-filter__name Америка
         li
           label
-            input(type="checkbox" name="island")
+            input(class="visually-hidden" type="radio" name="country" value="island")
             span.country-filter__name Острова
       ul.country-filter__locations-list.locations-list
         each option in countryOptions
           +location(option)
-      button(type="button") Свернуть
+      button(class="country-filter__bottom-button" type="button")
+        svg(viewBox="0 0 12 12" width="12" height="12")
+          use(xlink:href="#filter-close")
+        span Свернуть

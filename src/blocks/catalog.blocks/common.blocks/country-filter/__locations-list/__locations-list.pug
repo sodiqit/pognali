@@ -1,6 +1,6 @@
 mixin location(option)
-  li.locations-list__item
-    button.locations-list__button.locations-list__button--active(type="button")=option.letter
+  li(class="locations-list__item " + (option.active ? "locations-list__item--active" : ""))
+    button(class="locations-list__button " + (option.active ? "locations-list__button--active" : ""))(type="button")=option.letter
     ul.locations-list__list-countries
       each name in option.list_countries
         li=name
