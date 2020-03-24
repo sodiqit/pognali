@@ -1,0 +1,64 @@
+.locations-list {
+  .tablet({
+    .reset();
+    width: 100%;
+    padding-right: 26px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    padding-bottom: 231px;
+
+    &__item {
+      .locations-list__list-countries {
+        display: none;
+      }
+      margin-left: -1px;
+      margin-top: -1px;
+
+      width: 20%;
+
+      &--active {
+        .locations-list__list-countries {
+          display: block;
+        }
+      }
+    }
+
+    &__button {
+      .reset-btn();
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid @filter-border-color;
+      background-color: @color-main;
+      color: @filter-letter-color;
+
+      .font-set(14px,18px,@medium);
+      width: 100%;
+      height: auto;
+      min-height: 42px;
+
+      &--active {
+        background-color: @filter-letter-color;
+        color: @color-main;
+      }
+    }
+
+    &__list-countries {
+      .reset();
+
+      position: absolute;
+      top: 269px;
+      left: 0;
+      max-height: 208px;
+      overflow-y: auto;
+
+      .font-set(16px,22px,@regular);
+    }
+  });
+
+}
