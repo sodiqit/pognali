@@ -125,12 +125,12 @@
 
 include ./__locations-list/__locations-list.pug
 
-section.country-filter
+section.country-filter.country-filter--opened
   .container
     form.country-filter__form(action="http://echo.htmlacademy.ru")
       h2.country-filter__title Фильтрация по странам:
       button.country-filter__button(type="button")
-        span.visually-hidden Открыть список стран
+        span.visually-hidden Показать все
         svg(class="close" viewBox="0 0 12 12" width="12" height="12")
           use(xlink:href="#filter-close")
         include ./../../../../img/dots.svg

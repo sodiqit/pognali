@@ -11,16 +11,16 @@ openButton.addEventListener('click', () => {
   if (section.classList.contains('country-filter--closed')) {
     section.classList.remove('country-filter--closed');
     section.classList.add('country-filter--opened');
-    text.textContent = "Закрыть фильтр стран";
+    text.textContent = "Свернуть";
   } else {
     section.classList.remove('country-filter--opened');
     section.classList.add('country-filter--closed');
-    text.textContent = "Открыть фильтр стран";
+    text.textContent = "Показать все";
   }
 });
 
 closeButton.addEventListener('click', () => {
   section.classList.remove('country-filter--opened');
   section.classList.add('country-filter--closed');
-  text.textContent = "Открыть фильтр стран";
+  text.textContent = "Показать все";
 });

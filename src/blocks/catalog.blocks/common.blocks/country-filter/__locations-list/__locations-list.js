@@ -27,3 +27,21 @@ container.addEventListener('click', (e) => {
 
   };
 });
+
+let screen = document.documentElement.clientWidth >= 768;
+
+buttons.forEach((el) => {
+  let fragment = document.createDocumentFragment();
+  countries.forEach((item) => {
+    if (item[0].toLowerCase() === el.textContent.toLowerCase()) {
+      let li = document.createElement('li');
+      li.textContent = item;
+      fragment.appendChild(li);
+    }
+  });
+  el.nextElementSibling.innerHTML = '';
+  el.nextElementSibling.appendChild(fragment);
+  if (screen && el.nextElementSibling.children.length === 0) {
+    container.removeChild(el.parentNode);
+  }
+});
