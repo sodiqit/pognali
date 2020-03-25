@@ -1,0 +1,51 @@
+.locations-list {
+  .tablet({
+    padding-right: 0;
+    width: 57%;
+
+    padding-bottom: 0;
+
+    &__item {
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 15px;
+      margin-right: 12px;
+
+      width: 17.4%;
+      min-height: 65px;
+    }
+
+    &__item:nth-child(5n) {
+      margin-right: 0;
+    }
+
+    &__button {
+
+      border: none;
+      background-color: @transparent;
+
+      .font-set(60px,24px,@bold);
+      color:@filter-title-color;
+      opacity: 0.2;
+      width: 100%;
+      min-height: 65px;
+
+      &--active {
+        background-color: @transparent;
+        color: @filter-title-color;
+        opacity: 1;
+      }
+    }
+
+    &__list-countries {
+      top: -2px;
+      left: 122.5%;
+      max-height: 430px;
+
+      min-width: 250px;
+
+      .font-set(20px,30px,@regular);
+    }
+  });
+
+}
