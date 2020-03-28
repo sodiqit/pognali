@@ -25,7 +25,8 @@ class RangeSlider {
     return {
       top: box.top + pageYOffset,
       left: box.left + pageXOffset,
-      right: box.right + pageXOffset
+      right: box.right + pageXOffset,
+      width: box.width
     };
   }
 
@@ -39,11 +40,17 @@ class RangeSlider {
     let activeBar = e.target.previousElementSibling;
 
     const changePos = (event) => {
-      if (coordParent.left - event.clientX < 0 && coordParent.right - event.clientX > 5) {
-        e.target.style.left = `${event.clientX - coordParent.left}px`;
-        activeBar.style.left = `${this._decreaseButton.getBoundingClientRect().left - coordParent.left}px`;
-        activeBar.style.width = `${(event.clientX - coordParent.left) - (this._decreaseButton.getBoundingClientRect().left - coordParent.left)}px`;
+      let newLeft = event.clientX - coordParent.left;
+
+      if (newLeft <= this._decreaseButton.getBoundingClientRect().left - coordParent.left + 10) {
+        newLeft = this._decreaseButton.getBoundingClientRect().left - coordParent.left + 10;
+      } else if (newLeft >= coordParent.width) {
+        newLeft = coordParent.width;
       }
+
+      e.target.style.left=`${newLeft}px`;
+      activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - coordParent.left) - (this._decreaseButton.getBoundingClientRect().left - coordParent.left)}px`;
+      activeBar.style.left = `${this._decreaseButton.getBoundingClientRect().left - coordParent.left}px`;
     }
 
     const deleteList = () => {
@@ -64,17 +71,20 @@ class RangeSlider {
       return false;
     };
 
-    console.log();
-    //
-
     const changePos = (event) => {
-      if (coordParent.left - event.clientX < 0 && coordParent.right - event.clientX > 5) {
-        console.log(this._increaseButton.getBoundingClientRect().left - coordParent.left - (e.clientX - coordParent.left));
-        e.target.style.left = `${event.clientX - coordParent.left}px`;
-        activeBar.style.left = `${event.clientX - coordParent.left}px`;
-        activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - coordParent.left) - (event.clientX - coordParent.left)}px`;
+      let newLeft = event.clientX - coordParent.left;
 
+      if (newLeft < 0) {
+        newLeft = 0;
+      } else if (newLeft >= this._increaseButton.getBoundingClientRect().left - coordParent.left - 10) {
+        newLeft = this._increaseButton.getBoundingClientRect().left - coordParent.left - 10;
+      } else if (newLeft >= coordParent.width) {
+        newLeft = coordParent.width;
       }
+
+      e.target.style.left=`${newLeft}px`;
+      activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - coordParent.left) - newLeft}px`;
+      activeBar.style.left = `${newLeft}px`;
     }
 
     const deleteList = () => {
@@ -94,4 +104,4 @@ class RangeSlider {
 
 const rangeSlider = new RangeSlider(filter.querySelector('.travellers-filter__range-slider'), filter.querySelector('.travellers-filter__input-container'));
 
-
+//TODO: end second button;
