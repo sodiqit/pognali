@@ -23,9 +23,17 @@ class RangeSlider {
     this._bind();
   }
 
+  _makePercent(parent, val) {
+    return (val / parent * 100);
+  }
+
   _changeDecrCoord(e) {
+    let coordSlider = this._getCoords(this._slider);
+    let coordIncrButton = this._getCoords(this._increaseButton);
+
     let newValue = parseInt(e.target.value);
     let maxValue = parseInt(this._maxInput.value);
+
     if (newValue >= maxValue) {
       newValue = maxValue - 1;
       e.target.value = maxValue - 1;
@@ -33,18 +41,21 @@ class RangeSlider {
       newValue = 0;
       e.target.value = 0;
     }
-    let sliderCoords = this._getCoords(this._slider);
 
-    let newLeft = sliderCoords.width / 100 * newValue;
+    let newLeft = newValue;
 
-    this._activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - sliderCoords.left) - newLeft}px`;
-    this._activeBar.style.left = `${newLeft}px`;
-    this._decreaseButton.style.left = `${newLeft}px`;
+    this._activeBar.style.width = `${this._makePercent(coordSlider.width,(coordIncrButton.left - coordSlider.left)) - newLeft}%`;
+    this._activeBar.style.left = `${newLeft}%`;
+    this._decreaseButton.style.left = `${newLeft}%`;
   }
 
   _changeIncrCoord(e) {
+    let coordSlider = this._getCoords(this._slider);
+    let coordDecrButton = this._getCoords(this._decreaseButton);
+
     let newValue = parseInt(e.target.value);
-    let minValue = parseInt(this._minInput.value)
+    let minValue = parseInt(this._minInput.value);
+
     if (newValue <= minValue) {
       newValue = minValue + 1;
       e.target.value = minValue + 1;
@@ -52,14 +63,11 @@ class RangeSlider {
       newValue = 100;
       e.target.value = 100;
     }
-    let sliderCoords = this._getCoords(this._slider);
 
-    let newLeft = (sliderCoords.width / 100) * newValue;
+    let newLeft = (coordSlider.width / 100) * newValue;
 
-    console.log((this._decreaseButton.getBoundingClientRect().left - sliderCoords.left));
-
-    this._activeBar.style.width = `${newLeft - (this._decreaseButton.getBoundingClientRect().left - sliderCoords.left)}px`;
-    this._activeBar.style.left = `${this._decreaseButton.getBoundingClientRect().left - sliderCoords.left}px`;
+    this._activeBar.style.width = `${newLeft - (coordDecrButton.left - coordSlider.left)}px`;
+    this._activeBar.style.left = `${coordDecrButton.left - coordSlider.left}px`;
     this._increaseButton.style.left = `${newLeft}px`;
   }
 
@@ -74,7 +82,7 @@ class RangeSlider {
   }
 
   _startDragIncr(e) {
-    let coordParent = this._slider.getBoundingClientRect();
+    let coordParent = this._getCoords(this._slider);
 
     e.target.ondragstart = () => {
       return false;
@@ -85,6 +93,8 @@ class RangeSlider {
     const changePos = (event) => {
 
       let newLeft;
+      let coordDecrButton = this._getCoords(this._decreaseButton);
+      let coordIncrButton = this._getCoords(this._increaseButton);
 
       if (!event.clientX) {
         newLeft = event.touches[0].clientX - coordParent.left;
@@ -92,16 +102,16 @@ class RangeSlider {
         newLeft = event.clientX - coordParent.left;
       }
 
-      if (newLeft <= this._decreaseButton.getBoundingClientRect().left - coordParent.left + 10) {
-        newLeft = this._decreaseButton.getBoundingClientRect().left - coordParent.left + 10;
+      if (newLeft <= coordDecrButton.left - coordParent.left + 10) {
+        newLeft = coordDecrButton.left - coordParent.left + 10;
       } else if (newLeft >= coordParent.width) {
         newLeft = coordParent.width;
       }
 
-      e.target.style.left=`${newLeft}px`;
-      activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - coordParent.left) - (this._decreaseButton.getBoundingClientRect().left - coordParent.left)}px`;
-      activeBar.style.left = `${this._decreaseButton.getBoundingClientRect().left - coordParent.left}px`;
-      this._maxInput.value = Math.floor(newLeft / coordParent.width * 100);
+      e.target.style.left=`${this._makePercent(coordParent.width, newLeft)}%`;
+      activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - (coordDecrButton.left - coordParent.left))}%`;
+      activeBar.style.left = `${this._makePercent(coordParent.width, coordDecrButton.left - coordParent.left)}%`;
+      this._maxInput.value = Math.ceil(this._makePercent(coordParent.width, newLeft));
     }
 
     const deleteList = () => {
@@ -118,7 +128,7 @@ class RangeSlider {
   }
 
   _startDragDecr(e) {
-    let coordParent = this._slider.getBoundingClientRect();
+    let coordParent = this._getCoords(this._slider);
 
     let activeBar = e.target.nextElementSibling;
 
@@ -129,6 +139,8 @@ class RangeSlider {
     const changePos = (event) => {
       let newLeft;
 
+      let coordIncrButton = this._getCoords(this._increaseButton);
+
       if (!event.clientX) {
         newLeft = event.touches[0].clientX - coordParent.left;
       } else {
@@ -137,17 +149,16 @@ class RangeSlider {
 
       if (newLeft < 0) {
         newLeft = 0;
-      } else if (newLeft >= this._increaseButton.getBoundingClientRect().left - coordParent.left - 10) {
-        newLeft = this._increaseButton.getBoundingClientRect().left - coordParent.left - 10;
+      } else if (newLeft >= coordIncrButton.left - coordParent.left - 10) {
+        newLeft = coordIncrButton.left - coordParent.left - 10;
       } else if (newLeft >= coordParent.width) {
         newLeft = coordParent.width;
       }
 
-      e.target.style.left=`${newLeft}px`;
-      activeBar.style.width = `${(this._increaseButton.getBoundingClientRect().left - coordParent.left) - newLeft}px`;
-      activeBar.style.left = `${newLeft}px`;
-      console.log(coordParent.width, newLeft);
-      this._minInput.value = Math.ceil(newLeft / coordParent.width * 100);
+      e.target.style.left=`${this._makePercent(coordParent.width,newLeft)}%`;
+      activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - newLeft)}%`;
+      activeBar.style.left = `${this._makePercent(coordParent.width,newLeft)}%`;
+      this._minInput.value = Math.floor(this._makePercent(coordParent.width,newLeft));
     }
 
     const deleteList = () => {
@@ -174,5 +185,3 @@ class RangeSlider {
 }
 
 const rangeSlider = new RangeSlider(filter.querySelector('.travellers-filter__range-slider'), filter.querySelector('.travellers-filter__input-container'));
-
-//TODO: end second button;
