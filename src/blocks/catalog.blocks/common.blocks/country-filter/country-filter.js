@@ -6,6 +6,7 @@ const section = document.querySelector('.country-filter');
 const text = openButton.querySelector('span');
 
 section.classList.add('country-filter--closed');
+section.classList.remove('country-filter--opened');
 
 openButton.addEventListener('click', () => {
   if (section.classList.contains('country-filter--closed')) {

@@ -1,0 +1,61 @@
+mixin fieldset(option)
+  fieldset
+    div(class="travellers-filter__fieldset-container " + (option.opened ? "travellers-filter__fieldset-container--opened" : ""))
+      legend
+        button.travellers-filter__legend(type="button")=option.name
+      ul.travellers-filter__checkbox-list
+        each input in option.inputOptions
+          li
+            label.travellers-filter__label
+              input(class="visually-hidden" type="checkbox" name=input.name)
+              span.travellers-filter__custom-checkbox
+                svg(xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 12 12")
+                  use(xlink:href="#tick")
+              span=input.title
+
+mixin travellers-filter(option)
+  form(class="travellers-filter " + option.class)(action="http://echo.htmlacademy.ru")
+    h2.travellers-filter__title Подберите идеального попутчика
+    each field in option.fieldOptions
+      +fieldset(field)
+    fieldset
+      .travellers-filter__fieldset-container.travellers-filter__fieldset-container--opened
+        legend
+          button.travellers-filter__legend(type="button") Транспорт
+        ul.travellers-filter__transport-list.transport-list
+          li.transport-list__item
+            input(class="visually-hidden" type="checkbox" id="airplane" name="airplane" checked)
+            label(for="airplane").transport-list__label.transport-list__label--plane
+              span.visually-hidden Самолет
+              svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 21" width="19" height="21")
+                use(xlink:href="#plane")
+          li.transport-list__item
+            input(class="visually-hidden" type="checkbox" id="autobus" name="bus" checked)
+            label(for="autobus").transport-list__label.transport-list__label--bus
+              span.visually-hidden Автобус
+              svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 21" width="17" height="21")
+                use(xlink:href="#bus")
+          li.transport-list__item
+            input(class="visually-hidden" type="checkbox" id="bicycle" name="bike")
+            label(for="bicycle").transport-list__label.transport-list__label--bike
+              span.visually-hidden Велосипед
+              svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" width="24" height="21")
+                use(xlink:href="#bike")
+          li.transport-list__item
+            input(class="visually-hidden" type="checkbox" id="afoot" name="run" checked)
+            label(for="afoot").transport-list__label.transport-list__label--run
+              span.visually-hidden Пешком
+              svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 21" width="20" height="21")
+                use(xlink:href="#run")
+    fieldset
+      .travellers-filter__fieldset-container.travellers-filter__fieldset-container--opened
+        legend
+          button.travellers-filter__legend(type="button") Левел
+        .travellers-filter__input-container
+          input(type="number" name="min" value="0")
+          input(type="number" name="max" value="100")
+        .travellers-filter__range-slider
+          button(type="button").travellers-filter__decrease-level.decrease-level
+          span.travellers-filter__active
+          button(type="button").travellers-filter__increase-level.increase-level
+    button.travellers-filter__submit(type="submit") Показать

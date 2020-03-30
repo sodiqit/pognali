@@ -1,0 +1,62 @@
+-
+  var options = {
+    class: "travellers__filter",
+    fieldOptions: [
+      {
+        name: "Хобби",
+        inputOptions: [
+          {
+            name: "gym",
+            title: "Спортзал",
+          },
+          {
+            name: "hookah",
+            title: "Кальян",
+          },
+          {
+            name: "sofa",
+            title: "Диван",
+          }
+        ]
+      },
+      {
+        name: "Музыка",
+        opened: true,
+        inputOptions: [
+          {
+            name: "rock",
+            title: "Тяжелый рок",
+          },
+          {
+            name: "rap",
+            title: "Русский рэп",
+          },
+          {
+            name: "eurodance",
+            title: "Евроденс",
+          }
+        ]
+      },
+      {
+        name: "Еда",
+        inputOptions: [
+          {
+            name: "meat",
+            title: "Мясоед",
+          },
+          {
+            name: "healthy",
+            title: "Сидит на ПП",
+          },
+          {
+            name: "vegan",
+            title: "Веган-сыроед",
+          }
+        ]
+      }
+    ]
+  }
+include ./__filter/__filter
+section.travellers
+  .container
+    +travellers-filter(options)
