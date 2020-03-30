@@ -1,11 +1,11 @@
 const filter = document.querySelector('.travellers-filter');
 
-// filter.addEventListener('click', (e) => {
-//   if (e.target.classList.contains('travellers-filter__legend')) {
-//     let container = e.target.parentNode.parentNode;
-//     container.classList.toggle('travellers-filter__fieldset-container--opened');
-//   }
-// });
+filter.addEventListener('click', (e) => {
+  if (e.target.classList.contains('travellers-filter__legend')) {
+    let container = e.target.parentNode.parentNode;
+    container.classList.toggle('travellers-filter__fieldset-container--opened');
+  }
+});
 
 class RangeSlider {
   constructor(slider, inputs) {
