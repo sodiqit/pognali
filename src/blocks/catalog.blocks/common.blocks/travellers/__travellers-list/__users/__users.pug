@@ -5,44 +5,49 @@ mixin user(option)
       +picture({tablet: false}, option.img, "jpg", "", "70", "70", "Фотография пользователя " + option.name)
     h3(class="user__title " + (option.online ? "user__title--online" : ""))=option.name
     span.user__level
-      <span> #{option.level}</span><br> level
-      svg(width="102" height="102" viewBox="0 0 60 60" class="level-ring")
+      <span> #{option.level}</span><br>
+      svg(width="46" height="46" viewBox="0 0 60 60" class="level-ring")
         use(xlink:href="#level-ring" fill="none")
-    p.user__hastags=option.hashtags
-    p.user__wants-visit Хочет посетить
+    p.user__hashtags=option.hashtags
+    p.user__wants-visit
+      span Хочет посетить:
     ul.user__countries
       each country in option.countries
         li.user__country
-          svg(width="70" height="47" viewBox=" 0 0 70 47" role="img")
+          svg(width="26" height="18" viewBox=" 0 0 70 47" role="img")
             title="Изображение флага " + country.name
             use(xlink:href="#flag-" + country.flag)
-    p.user__wants-transport Транспорт
-      ul.transport-list
-        li.transport-list__item
-          div(class="transport-list__label transport__list__label--plane " + (option.transport.plane ? "transport-list__label--active" : ""))
-            span.visually-hidden Самолет
-            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 21" width="19" height="21")
-              use(xlink:href="#plane")
-        li.transport-list__item
-          div(class="transport-list__label transport__list__label--bus " + (option.transport.bus ? "transport-list__label--active" : ""))
-            span.visually-hidden Автобус
-            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 21" width="17" height="21")
-              use(xlink:href="#bus")
-        li.transport-list__item
-          div(class="transport-list__label transport__list__label--bike " + (option.transport.bike ? "transport-list__label--active" : ""))
-            span.visually-hidden Велосипед
-            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" width="24" height="21")
-              use(xlink:href="#bike")
-        li.transport-list__item
-          div(class="transport-list__label transport__list__label--run " + (option.transport.run ? "transport-list__label--active" : ""))
-            span.visually-hidden Пешком
-            svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 21" width="20" height="21")
-              use(xlink:href="#run")
+          span=country.name
+    p.user__wants-transport
+      span Транспорт:
+    ul.transports-list
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--plane " + (option.transport.plane ? "transports-list__label--active" : ""))
+          span.visually-hidden Самолет
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 21" width="14" height="16")
+            use(xlink:href="#plane")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--bus " + (option.transport.bus ? "transports-list__label--active" : ""))
+          span.visually-hidden Автобус
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 21" width="13" height="16")
+            use(xlink:href="#bus")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--bike " + (option.transport.bike ? "transports-list__label--active" : ""))
+          span.visually-hidden Велосипед
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" width="19" height="17")
+            use(xlink:href="#bike")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--run " + (option.transport.run ? "transport-list__label--active" : ""))
+          span.visually-hidden Пешком
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 21" width="15" height="17")
+            use(xlink:href="#run")
     .user__button-container
-      button(type="button" class="user__call-button") Позвать
       button(type="button" class="user__like-button " + (option.liked ? "user__like-button--liked" : ""))
         span(class="visually-hidden")=option.liked ? "Убрать лайк" : "Поставить лайк"
+        svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 17" width="13" height="11")
+          use(xlink:href="#heart" + (option.liked ? "-active" : ""))
       span(class="user__count-likes")=option.likes
+    button(type="button" class="user__call-button") Позвать!
 
 
 

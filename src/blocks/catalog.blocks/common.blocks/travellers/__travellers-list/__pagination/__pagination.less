@@ -1,0 +1,39 @@
+.users-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: none;
+  }
+
+  &__step {
+    .reset-btn();
+    width: 50%;
+    background-color: @color-main;
+    height: 50px;
+    position: relative;
+    .radius(20px,0,0,20px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 10px 0 10px;
+      border-color: @user-heart-color @transparent @transparent @transparent;
+      transform: rotate(90deg);
+      top: calc(50%);
+      left: calc(50% - 5px);
+    }
+    &--next {
+      .radius(0,20px,20px,0);
+      border-left: 1px solid @user-transport-color;
+      &::after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
