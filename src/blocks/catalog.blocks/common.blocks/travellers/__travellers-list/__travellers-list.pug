@@ -1,0 +1,8 @@
+include ./__users/__users
+include ./__pagination/__pagination
+mixin travellers-list(option)
+  div(class="travellers-list " + option.block_name)
+    h2.visually-hidden Список попутчиков
+    +users-list(option.users_list)
+    button(type="button") Показать еще
+    +users-pagination(option.users_pagination)
