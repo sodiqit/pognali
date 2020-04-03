@@ -38,7 +38,7 @@ export default class Animate {
 
     for (let i = 0; i < this._el.length; i++) {
       if (result[i]) {
-        this._options.custom ? this._animate(this._el[i]) : this._bindAnimation(this._el[i]);
+        this._options.custom ? this._animate(this._el[i], i) : this._bindAnimation(this._el[i]);
       }
     }
 
@@ -71,7 +71,6 @@ export default class Animate {
   }
 
   _watcher(target) {
-
     const targetPosition = {
       top: window.pageYOffset + target.getBoundingClientRect().top,
       bottom: window.pageYOffset + target.getBoundingClientRect().bottom,
@@ -90,7 +89,6 @@ export default class Animate {
         targetPosition.top < windowPosition.bottom &&
         targetPosition.right > windowPosition.left &&
         targetPosition.left < windowPosition.right) {
-
       return true;
     } else {
       return false;

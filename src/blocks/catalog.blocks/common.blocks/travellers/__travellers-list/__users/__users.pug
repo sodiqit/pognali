@@ -3,7 +3,8 @@ mixin user(option)
   .user
     .user__img
       +picture({tablet: false}, option.img, "jpg", "", "70", "70", "Фотография пользователя " + option.name)
-    h3(class="user__title " + (option.online ? "user__title--online" : ""))=option.name
+    h3(class="user__title " + (option.online ? "user__title--online" : ""))
+      span=option.name
     span.user__level
       <span> #{option.level}</span><br>
       svg(width="46" height="46" viewBox="0 0 60 60" class="level-ring")

@@ -3,13 +3,13 @@ mixin users-pagination(option)
     button.users-pagination__step.users-pagination__step--prev(type="button")
       span.visually-hidden Назад
     ul.users-pagination__list
-      li
+      li.users-pagination__item.users-pagination__item--active
         a.users-pagination__page(href="#") 1
-      li
+      li.users-pagination__item
         a.users-pagination__page(href="#") 2
-      li
+      li.users-pagination__item
         a.users-pagination__page(href="#") 3
-      li
+      li.users-pagination__item
         a.users-pagination__page(href="#") 4
     button.users-pagination__step.users-pagination__step--next(type="button")
       span.visually-hidden Вперед
