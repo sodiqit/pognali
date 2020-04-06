@@ -36,6 +36,17 @@
     }
 
     &__button {
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+
+      transition: opacity 0.3s;
+
       width: 190px;
       height: 44px;
       color: @filter-title-color;
@@ -68,11 +79,25 @@
     &__list {
 
       margin-top: 0;
-
+      span {
+        transition: opacity 0.1s;
+      }
       li {
 
         margin-bottom: 0;
         margin-right: 27px;
+      }
+
+      li:hover {
+        span {
+          opacity: 0.6;
+        }
+      }
+
+      li:active {
+        span {
+          opacity: 1;
+        }
       }
 
       li:last-child {
@@ -104,6 +129,22 @@
         margin-right: 20px;
         width: 18px;
         height: 18px;
+      }
+
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: @filter-bottom-button-hover-color;
+        span, svg {
+          opacity: 0.6;
+        }
+      }
+
+      &:active {
+        background-color: @filter-bottom-button-hover-color;
+        span, svg {
+          opacity: 0.3;
+        }
       }
     }
   });

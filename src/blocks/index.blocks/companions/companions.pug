@@ -12,57 +12,67 @@ section.companions
         img(class="travellers__img" src="img/firsova-desktop@1x.jpg"  srcset="img/firsova-desktop@2x.jpg 2x" width="270" height="270" alt="Попутчик Татьяна Фирсова")
         .travellers__container
           ul.travellers__countries
-            li.travellers__countries__item.travellers__countries__item--sri-lanka
+            li.travellers__countries__item.travellers__countries__item--sri-lanka(data-hover="Шри-ланка")
+              svg(width="35" height="24" viewBox=" 0 0 70 47")
+                use(xlink:href="#flag-sri-lanka")
               span.visually-hidden Шри-Ланка
-            li.travellers__countries__item.travellers__countries__item--thailand
+            li.travellers__countries__item.travellers__countries__item--thailand(data-hover="Тайланд")
+              svg(width="35" height="24" viewBox=" 0 0 70 47")
+                  use(xlink:href="#flag-thailand")
               span.visually-hidden Тайланд
-            li.travellers__countries__item.travellers__countries__item--seychelles
-              span.visually-hidden Шейшелы
+            li.travellers__countries__item.travellers__countries__item--seychelles(data-hover="Сейшелы")
+              svg(width="35" height="24" viewBox=" 0 0 70 47")
+                use(xlink:href="#flag-seychelles")
+              span.visually-hidden Сейшелы
           span.travellers__level
             <span> 99</span><br> level
             svg(width="62" height="63" viewBox="0 0 60 60" class="level-ring")
               use(xlink:href="#level-ring" fill="none")
-          h3.travellers__name Таня Фирсова
+          h3.travellers__name <a href="#">Таня Фирсова</a>
           p.travellers__hashtags #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
           ul.travellers__transport-list.transport-list
-            li.transport-list__item.transport-list__item--air.transport-list__item--active
+            li.transport-list__item.transport-list__item--air.transport-list__item--active(data-hover="Авиаперелет")
               span.visually-hidden Самолет
               include ./../../../img/plane.svg
-            li.transport-list__item.transport-list__item--bus
+            li.transport-list__item.transport-list__item--bus.transport-list__item--active(data-hover="Автотранспорт")
               span.visually-hidden Автобус
               include ./../../../img/bus.svg
-            li.transport-list__item.transport-list__item--bike
+            li.transport-list__item.transport-list__item--bike(data-hover="Велосипед")
               span.visually-hidden Велосипед
               include ./../../../img/bike.svg
-            li.transport-list__item.transport-list__item--afoot
+            li.transport-list__item.transport-list__item--afoot.transport-list__item--active(data-hover="Пешком")
               span.visually-hidden Пешком
               include ./../../../img/run.svg
       li.travellers__item.travellers__item--green
         img(class="travellers__img" src="img/demin-desktop@1x.jpg"  srcset="img/demin-desktop@2x.jpg 2x" width="270" height="270" alt="Попутчик Петя Демин")
         .travellers__container
           ul.travellers__countries
-            li.travellers__countries__item.travellers__countries__item--belgium
+            li.travellers__countries__item.travellers__countries__item--belgium(data-hover="Бельгия")
+              svg(width="35" height="24" viewBox=" 0 0 70 47")
+                use(xlink:href="#flag-belgium")
               span.visually-hidden Бельгия
-            li.travellers__countries__item.travellers__countries__item--czech
+            li.travellers__countries__item.travellers__countries__item--czech(data-hover="Чехословакия")
+              svg(width="35" height="24" viewBox=" 0 0 70 47")
+                use(xlink:href="#flag-czech")
               span.visually-hidden Чехия
           span.travellers__level
             <span> 80</span><br> level
             svg(width="62" height="63" viewBox="0 0 60 60" class="level-ring")
               use(xlink:href="#level-ring" fill="none")
-          h3.travellers__name Петя Демин
+          h3.travellers__name <a href="#">Петя Демин</a>
           p.travellers__hashtags #бургер #бар #футбол  #концерт #крафт
           ul.travellers__transport-list.transport-list
-            li.transport-list__item.transport-list__item--air.transport-list__item--active
+            li.transport-list__item.transport-list__item--air.transport-list__item--active(data-hover="Авиаперелет")
               span.visually-hidden Самолет
               include ./../../../img/plane.svg
-            li.transport-list__item.transport-list__item--bus.transport-list__item--active
+            li.transport-list__item.transport-list__item--bus.transport-list__item--active(data-hover="Автотранспорт")
               span.visually-hidden Автобус
               include ./../../../img/bus.svg
-            li.transport-list__item.transport-list__item--bike
+            li.transport-list__item.transport-list__item--bike(data-hover="Велосипед")
               span.visually-hidden Велосипед
               include ./../../../img/bike.svg
-            li.transport-list__item.transport-list__item--afoot.transport-list__item--active
+            li.transport-list__item.transport-list__item--afoot.transport-list__item--active(data-hover="Пешком")
               span.visually-hidden Пешком
               include ./../../../img/run.svg
-    a.btn.companions__button Показать всех
+    a(href="./catalog.html").btn.companions__button <span>Показать всех</span>
 

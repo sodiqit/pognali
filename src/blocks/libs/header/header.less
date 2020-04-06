@@ -17,7 +17,43 @@
       display: flex;
       flex-wrap: wrap;
     }
+
+    &__back {
+      display: flex;
+      .font-set(20px,24px,@bold);
+      text-transform: uppercase;
+      position: absolute;
+      right: 37px;
+      bottom: 84px;
+
+      transition: opacity 0.1s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+
+      svg {
+        width: 32px;
+        height: 16px;
+        fill : @color-main;
+        margin-left: 27px;
+      }
+    }
   });
+
+  .desktop({
+    &__back {
+      right: 64px;
+    }
+  });
+
+  &__back {
+    display: none;
+  }
 }
 
 .logo {
@@ -242,7 +278,7 @@
           font-size: 20px;
           line-height: 30px;
 
-          transition: all 0.3s;
+          transition: all 0.1s;
 
           border-radius: 25px;
         }

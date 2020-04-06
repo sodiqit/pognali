@@ -1,7 +1,6 @@
 .footer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  // display: none;
   margin-top: -149px;
   padding-top: 38px;
 
@@ -79,6 +78,26 @@
     justify-content: center;
 
     border-radius: 50%;
+
+    transition: all 0.1s;
+    svg {
+      transition: all 0.1s;
+    }
+
+    &:hover {
+      background-color: @background-color;
+      svg {
+        fill: @color-main;
+      }
+    }
+
+    &:active {
+      background-color: @background-color;
+      svg {
+        fill: @color-main;
+        opacity: 0.3;
+      }
+    }
 
     svg {
       fill: @total-black;
@@ -182,6 +201,16 @@
 
   align-items: center;
   justify-content: space-between;
+
+  transition: all 0.1s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   &__link {
     display: block;

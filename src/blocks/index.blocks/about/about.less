@@ -195,6 +195,21 @@
   display: none;
 
   .tablet({
+
+    transition: all 0.1s;
+
+    span {
+      transition: opacity 0.1s;
+    }
+
+    &:hover {
+      background-color: @hover-color-button;
+    }
+
+    &:active {
+      span,&::before {opacity: 0.3;}
+    }
+
     display: block;
     width: 274px;
     height: 81px;

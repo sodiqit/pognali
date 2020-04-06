@@ -302,6 +302,23 @@
       svg {
         fill: @user-heart-liked-color;
       }
+
+
+      &:active {
+        background-color: @user-liked-hover-red-color;
+        svg {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    transition: all 0.3s;
+
+    &:active {
+      background-color: @user-liked-hover-color;
+      svg {
+        opacity: 0.1;
+      }
     }
   }
   &__count-likes {
@@ -322,6 +339,14 @@
     height: 40px;
 
     margin-bottom: 20px;
+
+    transition: all 0.3s;
+
+    &:active {
+      span {
+        opacity: 0.3;
+      }
+    }
   }
 }
 

@@ -99,6 +99,10 @@
     display: flex;
 
     .font-set(15px,22px,@regular);
+    transition: opacity 0.1s;
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   &__custom-checkbox {
@@ -147,6 +151,12 @@
       .font-set(14.99px,13.49px,@medium);
       color: @filter-letter-color;
       letter-spacing: 0.1em;
+
+      transition: all 0.3s;
+
+      &:focus {
+        border-color: @profile-input-focus-color;
+      }
     }
 
     input:first-child{
@@ -228,6 +238,12 @@
 
     margin-top: 19px;
     transform: translate(-6px);
+
+    transition: all 0.1s;
+
+    &:active {
+      background-color: @travellers-filter-button-acive-color;
+    }
   }
 }
 
@@ -249,6 +265,21 @@
 
     background-color: @color-main;
     border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+
+      svg {
+        opacity: 0.3;
+      }
+    }
+
+    &:active {
+      background-color: @profile-transport-active-color;
+      svg {
+        opacity: 0.1;
+      }
+    }
 
     display: flex;
     justify-content: center;

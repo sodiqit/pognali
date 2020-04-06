@@ -157,6 +157,21 @@
   text-transform: uppercase;
 
   .tablet({
+    transition: all 0.1s;
+
+    span {
+      transition: opacity 0.1s;
+    }
+
+    &:hover {
+      background-color: @route-close-button-bg;
+    }
+
+    &:active {
+      span {
+        opacity: 0.3;
+      }
+    }
     height: 108px;
     margin-top: 31px;
 

@@ -203,8 +203,6 @@
 .travellers {
 
   &__item {
-    overflow: hidden;
-    border-radius: 10px;
     margin-bottom: 10px;
 
     &--green {
@@ -221,6 +219,10 @@
     }
   }
 
+  &__img {
+    transition: all 0.1s;
+  }
+
   &__name {
     color: @triangle-color;
     font-size: 21px;
@@ -232,6 +234,20 @@
     margin-bottom: 14px;
 
     position: relative;
+
+    transition: opacity 0.1s;
+
+    &:hover {
+      a {
+        opacity: 0.6;
+      }
+    }
+
+    &:active {
+      a {
+        opacity: 0.3;
+      }
+    }
 
     &::before {
       content: "";
@@ -262,28 +278,18 @@
       margin-right: 19px;
       position: relative;
 
+      .tooltip();
+
       &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 35px;
-        height: 24px;
-        background-size: 35px 24px;
-        background-repeat: no-repeat;
+        top: -51px;
+        bottom: unset;
       }
 
-      .flag(sri-lanka);
-      .flag(thailand);
-      .flag(seychelles);
-      .flag(belgium);
-      .flag(czech);
-      .flag(usa);
-      .flag(australia);
-      .flag(bosnia);
-      .flag(dominica);
-      .flag(france);
-      .flag(united-kingdom);
+      &::after {
+        transform: translate(-50%) rotate(180deg);
+        bottom: unset;
+        top: -7px;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -330,6 +336,7 @@
   }
 
   &__container {
+    .radius(0,0,10px,10px);
     background-color: @color-main;
     margin-top: -8px;
     padding-bottom: 17px;
@@ -354,7 +361,6 @@
     justify-content: space-between;
 
     &__item {
-      border-radius: 20px;
       margin-bottom: 0;
       margin-bottom: 20px;
 
@@ -363,10 +369,15 @@
     }
 
     &__img {
+      .radius(20px,20px);
       width: 100%;
       height: 285px;
 
       object-fit: cover;
+    }
+
+    &__container {
+      .radius(0,0,20px,20px);
     }
 
     &__name {
@@ -383,10 +394,6 @@
 
     &__level {
       transform: translate(18px, -285px);
-    }
-
-    &__container {
-      height: 100%;
     }
 
 
@@ -432,18 +439,32 @@
   &__item {
     width: 22px;
     height: 21px;
-    opacity: 0.15;
     margin-right: 15px;
+    position: relative;
+
+    .tooltip();
+
+    &::before {
+      bottom: -49px;
+    }
+
+    &::after {
+      bottom: -7px;
+    }
+
+    svg {
+      opacity: 0.15;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
     &--active {
-      opacity: 1;
 
       svg {
         fill: @triangle-color;
+        opacity: 1;
       }
     }
 
@@ -489,6 +510,20 @@
   .btn-triangle();
 
   margin: 0 auto;
+
+  transition: all 0.1s;
+
+  span {
+    transition: opacity 0.1s;
+  }
+
+  &:hover {
+    background-color: @hover-color-button;
+  }
+
+  &:active {
+    span, &::before {opacity: 0.3;}
+  }
 
   .desktop({
     width: 280px;

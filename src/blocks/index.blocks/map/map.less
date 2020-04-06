@@ -115,9 +115,34 @@
 
   &::before {
     top: 21px;
+    transition: all 0.1s;
   }
 
   .tablet({
+    transition: all 0.1s;
+    span {
+      transition: all 0.1s;
+    }
+    &:hover {
+      &::before {
+        border-color: transparent transparent transparent @color-main;
+      }
+      background-color: @background-color;
+      color: @color-main;
+    }
+
+    &:active {
+      &::before {
+        border-color: transparent transparent transparent @color-main;
+        opacity: 0.3;
+      }
+      background-color: @background-color;
+      color: @color-main;
+      span {
+        opacity: 0.3;
+      }
+    }
+
     width: 90%;
     margin-top: 61px;
 

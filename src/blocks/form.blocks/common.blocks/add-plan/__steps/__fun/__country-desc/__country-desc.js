@@ -83,7 +83,7 @@ class CountryDescription {
           </svg>
         </div>
       </div>
-      <textarea name="countryDesc${i}" class="country-desc__text" id="country-desc${i}" placeholder="План действий"></textarea>
+      <textarea name="countryDesc" class="country-desc__text" id="country-desc${i}" placeholder="План действий"></textarea>
     </div>`;
   }
 
