@@ -37,6 +37,7 @@ class CountryDescription {
     const fragment = document.createDocumentFragment();
 
     this._inputsData.forEach((item, i) => {
+      console.log(item);
       let countryName = item[0].toUpperCase() + item.slice(1);
 
       let li = document.createElement('li');
@@ -90,3 +91,4 @@ class CountryDescription {
 }
 
 const desc = new CountryDescription(document.querySelector('.fun__country-list'));
+// const submitButton = document.querySelector('');

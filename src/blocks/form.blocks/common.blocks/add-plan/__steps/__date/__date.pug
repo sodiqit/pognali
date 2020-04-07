@@ -21,7 +21,7 @@
 include ./__input/__input
 
 .date
-  h3.date__title Даты пребывания
+  h3.date__title Шаг<span class="step">&nbsp;1</span>. Даты пребывания
   p.date__desc.
     Укажите предпочтительное количество попутчиков, которых
     вы хотели бы позвать в поездку и ее предполагаемую длительность.
@@ -32,4 +32,4 @@ include ./__input/__input
     span.date__custom-checkbox
       include ./../../../../../../img/tick.svg
   include ./__calendar/__calendar
-  button.date__next-step(type="button") <span>Следующий шаг</span>
+  button.date__next-step.next-step( type="button") <span>Следующий шаг</span>

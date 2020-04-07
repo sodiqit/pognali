@@ -17,7 +17,7 @@
 include ./__country-desc/__country-desc
 
 .fun
-  h3.fun__title Развлечения
+  h3.fun__title Шаг<span class="step">&nbsp;3</span>. Развлечения
   p.fun__description.
     Наконец, расскажите о своих планах времяпровождения.
     Можно писать в свободной форме и ставить тэги.
@@ -27,4 +27,4 @@ include ./__country-desc/__country-desc
         +country-desc(option, index)
   .fun__buttons-container
     button.fun__submit(type="submit") <span>Отправить</span>
-    button.fun__prev-step(type="button") На шаг назад
+    button.fun__prev-step.prev-step(data-type="prev" type="button") На шаг назад
