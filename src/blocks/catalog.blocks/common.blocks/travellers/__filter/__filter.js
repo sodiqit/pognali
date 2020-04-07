@@ -88,8 +88,6 @@ class RangeSlider {
       return false;
     };
 
-    let activeBar = e.target.previousElementSibling;
-
     const changePos = (event) => {
 
       let newLeft;
@@ -102,15 +100,17 @@ class RangeSlider {
         newLeft = event.clientX - coordParent.left;
       }
 
-      if (newLeft <= coordDecrButton.left - coordParent.left + 10) {
-        newLeft = coordDecrButton.left - coordParent.left + 10;
+      if (newLeft <= coordDecrButton.left - coordParent.left + coordDecrButton.width) {
+        newLeft = coordDecrButton.left - coordParent.left + coordDecrButton.width;
       } else if (newLeft >= coordParent.width) {
         newLeft = coordParent.width;
+      } else if (newLeft <= 0) {
+        newLeft = 0;
       }
 
       e.target.style.left=`${this._makePercent(coordParent.width, newLeft)}%`;
-      activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - (coordDecrButton.left - coordParent.left))}%`;
-      activeBar.style.left = `${this._makePercent(coordParent.width, coordDecrButton.left - coordParent.left)}%`;
+      this._activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - (coordDecrButton.left - coordParent.left) + 5)}%`;
+      this._activeBar.style.left = `${this._makePercent(coordParent.width, coordDecrButton.left - coordParent.left)}%`;
       this._maxInput.value = Math.ceil(this._makePercent(coordParent.width, newLeft));
     }
 
@@ -130,8 +130,6 @@ class RangeSlider {
   _startDragDecr(e) {
     let coordParent = this._getCoords(this._slider);
 
-    let activeBar = e.target.nextElementSibling;
-
     e.target.ondragstart = () => {
       return false;
     };
@@ -149,15 +147,15 @@ class RangeSlider {
 
       if (newLeft < 0) {
         newLeft = 0;
-      } else if (newLeft >= coordIncrButton.left - coordParent.left - 10) {
-        newLeft = coordIncrButton.left - coordParent.left - 10;
+      } else if (newLeft >= coordIncrButton.left - coordParent.left - coordIncrButton.width) {
+        newLeft = coordIncrButton.left - coordParent.left - coordIncrButton.width;
       } else if (newLeft >= coordParent.width) {
         newLeft = coordParent.width;
       }
 
       e.target.style.left=`${this._makePercent(coordParent.width,newLeft)}%`;
-      activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - newLeft)}%`;
-      activeBar.style.left = `${this._makePercent(coordParent.width,newLeft)}%`;
+      this._activeBar.style.width = `${this._makePercent(coordParent.width, (coordIncrButton.left - coordParent.left) - newLeft)}%`;
+      this._activeBar.style.left = `${this._makePercent(coordParent.width,newLeft)}%`;
       this._minInput.value = Math.floor(this._makePercent(coordParent.width,newLeft));
     }
 
