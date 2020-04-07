@@ -1,0 +1,62 @@
+
+mixin user(option)
+  .user
+    .user__img
+      +picture({tablet: false}, option.img, "jpg", "", "70", "70", "Фотография пользователя " + option.name)
+    h3(class="user__title " + (option.online ? "user__title--online" : ""))
+      span=option.name
+    span.user__level
+      <span> #{option.level}</span><br>
+      svg(width="46" height="46" viewBox="0 0 60 60" class="level-ring")
+        use(xlink:href="#level-ring" fill="none")
+    p.user__hashtags=option.hashtags
+    p.user__wants-visit
+      span Хочет посетить:
+    ul.user__countries
+      each country in option.countries
+        li.user__country
+          svg(width="26" height="18" viewBox=" 0 0 70 47" role="img" data-hover=country.name)
+            title="Изображение флага " + country.name
+            use(xlink:href="#flag-" + country.flag)
+          span=country.name
+    p.user__wants-transport
+      span Транспорт:
+    ul.transports-list
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--plane " + (option.transport.plane ? "transports-list__label--active" : "") data-hover="Авиаперелет")
+          span.visually-hidden Самолет
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 21" width="14" height="16")
+            use(xlink:href="#plane")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--bus " + (option.transport.bus ? "transports-list__label--active" : "") data-hover="Автотранспорт")
+          span.visually-hidden Автобус
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 21" width="13" height="16")
+            use(xlink:href="#bus")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--bike " + (option.transport.bike ? "transports-list__label--active" : "") data-hover="Велосипед")
+          span.visually-hidden Велосипед
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" width="19" height="17")
+            use(xlink:href="#bike")
+      li.transports-list__item
+        div(class="transports-list__label transports-list__label--run " + (option.transport.run ? "transport-list__label--active" : "") data-hover="Пешком")
+          span.visually-hidden Пешком
+          svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 21" width="15" height="17" )
+            use(xlink:href="#run")
+    .user__button-container
+      button(type="button" class="user__like-button " + (option.liked ? "user__like-button--liked" : ""))
+        span(class="visually-hidden")=option.liked ? "Убрать лайк" : "Поставить лайк"
+        svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 17" width="13" height="11")
+          use(xlink:href="#heart" + (option.liked ? "-active" : ""))
+      span(class="user__count-likes")=option.likes
+    button(type="button" class="user__call-button")
+      span Позвать!
+
+
+
+
+
+mixin users-list(option)
+  ul(class="users-list " + option.block_name + "__users")
+    each user in option.users
+      li.users-list__item
+        +user(user)

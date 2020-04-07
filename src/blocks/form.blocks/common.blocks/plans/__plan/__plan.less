@@ -1,0 +1,68 @@
+.plan {
+  background-color: @color-main;
+
+  position: relative;
+
+  .radius(10px,10px,10px,10px);
+
+  padding-top: 24px;
+  padding-left: 23px;
+  padding-bottom: 19px;
+
+}
+
+.plan__title {
+  color: @plan-title-color;
+  .font-set(16px, 16px, @bold);
+
+  margin-top: 0;
+  margin-bottom: 21px;
+
+  &::before {
+    counter-increment: plan;
+    content: counter(plan) ". ";
+
+  }
+}
+
+.plan__companions {
+  margin-bottom: 0;
+}
+
+.plan__date {
+  margin-top: 5px;
+}
+
+.plan__companions, .plan__date {
+  color: @plan-title-color;
+  .font-set(14px, 14px, @medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.plan__button {
+  color: @total-black;
+
+  opacity: 0.3;
+
+  .font-set(14px, 18px, @medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+
+  background-color: inherit;
+  border: none;
+
+  padding: 0;
+  margin-top: 8px;
+
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}

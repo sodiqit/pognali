@@ -1,0 +1,352 @@
+.interesting {
+  background-color: @background-color;
+  margin-top: -55px;
+  padding-top: 106px;
+  padding-bottom: 31px;
+
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  position: relative;
+  z-index: 5;
+
+  .tablet({
+    padding-top: 91px;
+    padding-bottom: 55px;
+
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+  });
+
+  .desktop({
+    padding-top: 124px;
+    padding-bottom: 102px;
+  });
+}
+
+.interesting__title {
+  .title(24px);
+
+  text-align: center;
+}
+
+.interesting__desc {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+
+  .tablet({
+    width: 90%;
+
+    .font-set(28px,33px,@light);
+
+    margin-top: 57px;
+    margin-bottom: 63px;
+
+    br:first-child {
+      display: none;
+    }
+  });
+}
+
+.interesting__auth {
+  color: @default-button-color;
+  text-decoration: underline;
+
+  transition: all 0.1s;
+
+  &:hover {
+    color: @hover-email-circle;
+  }
+
+  &:active {
+    color: @hover-email-circle;
+    opacity: 0.3;
+  }
+}
+
+.interesting__form {
+  width: 100%;
+  position: relative;
+  margin-top: 29px;
+
+  input {
+    width: 100%;
+    height: 62px;
+    padding-left: 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-family: @font-main;
+
+    .font-set(18px, 18px, @regular);
+
+    transition: all 0.3s;
+
+    &:hover {
+      &::placeholder {
+        color: fade(@total-black, 50%);
+      }
+    };
+
+    &:focus {
+      background-color: @background-color;
+      border: 4px solid @color-main;
+      color: @color-main;
+    }
+
+    &::placeholder {
+      transition: color 0.1s;
+      font-family: @font-main;
+
+      .font-set(18px, 18px, @bold);
+
+      color: fade(@total-black, 30%);
+    }
+
+    &:focus {
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .tablet({
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 29px;
+
+    input {
+      width: 100%;
+      height: 81px;
+      padding-left: 34px;
+
+      border-radius: 20px;
+
+      .font-set(24px, 24px, @regular);
+
+      &::placeholder {
+        .font-set(24px, 24px, @bold);
+      }
+    }
+  });
+
+  .desktop({
+    width: 89%;
+    margin-top: -6px;
+  });
+}
+
+.interesting__button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 60px;
+  height: 62px;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 10px;
+  background-color: @default-button-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 22px;
+    top: 25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 10px;
+    border-color: transparent transparent transparent @triangle-color;
+  }
+
+  .tablet({
+    transition: all 0.1s;
+    &::after {
+      transition: opacity 0.1s;
+    }
+
+    &:hover {
+      background-color: @hover-color-button;
+    }
+
+    &:active {
+      &::after, &::before {opacity: 0.3;}
+    }
+    width: 80px;
+    height: 81px;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+
+    &::before {
+      right: 37px;
+      top: 35px;
+    }
+  });
+
+  .desktop({
+    width: 325px;
+    height: 81px;
+
+    &::before {
+      right: 37px;
+      top: 35px;
+    }
+
+    &::after {
+      content: "Регистрация";
+      position: absolute;
+      top: 30px;
+      left: 35px;
+
+      font-family: @font-main;
+      .font-set(24px,24px,@bold);
+      color: @triangle-color;
+    }
+  });
+}
+
+.interesting__make-question {
+  text-align: center;
+  margin-top: 30px;
+
+  .tablet({
+    .font-set(28px,33px,@light);
+    margin-top: 59px;
+
+    br {
+      display: none;
+    }
+  });
+
+  .desktop({
+    margin-top: 68px;
+  });
+}
+
+.interesting__about-us {
+  color: @default-button-color;
+  font-weight: @bold;
+  line-height: 22px;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    transition: opacity 0.1s;
+
+    &:hover {
+      
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__item {
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    a::before {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 45px;
+      background-color: @menu-circle-color;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      margin-right: 18px;
+    }
+
+    &--tel {
+      a::before {
+        background-image: url("./../../../img/contacts-phone.svg");
+        background-size: 18px;
+      }
+    }
+
+    &--mail {
+      a::before {
+        background-image: url("./../../../img/contacts-mail.svg");
+        background-size: 18px 13px;
+      }
+    }
+  }
+
+  .tablet({
+    font-size: 28px;
+    line-height: 28px;
+
+    padding-left: 5%;
+    margin-top: 40px;
+
+    &__item {
+
+      a::before {
+        width: 68px;
+        height: 68px;
+        margin-right: 23px;
+      }
+
+      &--tel {
+        a::before {
+          background-size: 27px;
+        }
+      }
+
+      &--mail {
+        a::before {
+          background-size: 27px 20px;
+        }
+      }
+    }
+  });
+
+  .desktop({
+
+    padding-left: 0;
+    margin: 0 auto;
+    width: 65%;
+    margin-top: 44px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+
+      a::before {
+        width: 90px;
+        height: 90px;
+      }
+
+      &--tel {
+        a::before {
+          background-size: 36px;
+        }
+      }
+
+      &--mail {
+        a::before {
+          background-size: 36px 26px;
+        }
+      }
+    }
+  });
+}

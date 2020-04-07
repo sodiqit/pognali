@@ -1,0 +1,83 @@
+@import "./__date/__date";
+@import "./__route/__route";
+@import "./__fun/__fun";
+
+.step() {
+  background-color: @color-main;
+  .radius(10px,10px,10px,10px);
+
+  padding-top: 24px;
+  padding-left: 23px;
+  padding-right: 24px;
+  padding-bottom: 21px;
+
+  margin-bottom: 10px;
+
+  .tablet({
+    .radius(30px,30px,30px,30px);
+    padding-left: 43px;
+    padding-right: 44px;
+    padding-top: 48px;
+    padding-bottom: 55px;
+
+    margin-bottom: 40px;
+  });
+
+  .desktop({
+    .radius(60px,60px,60px,60px);
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 97px;
+    padding-bottom: 104px;
+    margin-bottom: 43px;
+
+    position: relative;
+    z-index: 13;
+  });
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    color: @add-plan-title-color;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    .font-set(20px,20px,@bold);
+
+    counter-increment: step;
+
+    &::before {
+      content: "Шаг " counter(step) ". ";
+      width: 100%;
+    }
+
+    .tablet({
+      .font-set(36px,36px,@bold);
+    });
+
+    .desktop({
+      &::before {
+        content: "Шаг " counter(step) ". ";
+        width: auto;
+        margin-right: 7px;
+      }
+    });
+  }
+
+  &__desc {
+    color: @directions-text-color;
+    .font-set(16px,22px,@regular);
+    margin-top: 0;
+
+    .tablet({
+      .font-set(20px,24px,@regular);
+    });
+  }
+}
+
+.steps {
+  .reset();
+
+  counter-reset: step;
+}

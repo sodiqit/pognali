@@ -1,0 +1,36 @@
+.country-select--add {
+
+  .tablet({
+
+    &::before {
+      background-color: @route-close-button-bg;
+    }
+
+    &::after {
+      top: 34px;
+      width: 42%;
+      right: -104px;
+    }
+
+    .country-select__change-button {
+      width: 40px;
+      height: 40px;
+
+      &::before {
+        width: 18px;
+        background-color: @route-add-button;
+
+        background-color: fade(@total-black, 20%);
+        opacity: 1;
+      }
+
+      &::after {
+        width: 18px;
+        background-color: fade(@total-black, 20%);
+        opacity: 1;
+      }
+
+    }
+  });
+
+}

@@ -1,0 +1,39 @@
+.country-select--checked {
+  .desktop({
+
+    width: 100%;
+
+    &::before {
+      top: 27px;
+      right: 218px;
+      background-color: @add-plan-title-color;
+    }
+
+    &::after {
+      width: 25%;
+      top: 62px;
+      right: 101px;
+    }
+
+    .country-select__selected {
+      width: 73%;
+    }
+
+    .country-select__img {
+      margin-right: 115px;
+    }
+
+    .country-select__delete-country {
+      right: -3px;
+    }
+  });
+}
+
+.country-select--checked.country-select--opened {
+  .desktop({
+    .country-select__dropdown {
+      width: 731px;
+    }
+  });
+
+}

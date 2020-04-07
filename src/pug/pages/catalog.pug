@@ -1,0 +1,11 @@
+extends ./../layouts/minor.pug
+
+block variables
+  - var pageTitle = "Pognali - подбор попутчиков"
+  - var title = "Попутчики"
+
+block content
+  include ./../../img/icons.svg
+  main.page-main
+    include ./../../blocks/catalog.blocks/common.blocks/country-filter/country-filter
+    include ./../../blocks/catalog.blocks/common.blocks/travellers/travellers

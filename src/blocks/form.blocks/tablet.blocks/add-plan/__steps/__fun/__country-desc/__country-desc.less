@@ -1,0 +1,68 @@
+.country-desc {
+
+  .tablet({
+    &::before {
+      width: 3px;
+      height: 261px;
+
+      left: 527px;
+      top: 28px;
+    }
+
+    &__container {
+      .font-set(30px,18px,@bold);
+
+      margin-bottom: 29px;
+
+      &::before {
+
+        width: 15px;
+        height: 15px;
+
+        left: 521px;
+        top: 17px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__title {
+      width: auto;
+
+      overflow: visible;
+
+      margin-left: 0;
+    }
+
+    &__img {
+      width: 70px;
+      height: 47px;
+
+      svg {
+        width: 70px;
+        height: 47px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__text {
+      min-height: 142px;
+      .font-set(20px,24px,@regular);
+
+      padding-left: 19px;
+      padding-top: 17px;
+      padding-right: 15px;
+
+      &::placeholder {
+        .font-set(20px,24px,@regular);
+      }
+    }
+  });
+
+
+}

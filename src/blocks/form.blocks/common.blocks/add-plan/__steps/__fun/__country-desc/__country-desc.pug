@@ -1,0 +1,9 @@
+mixin country-desc(option, i)
+  div(class="country-desc " + option.class)
+    .country-desc__container
+      label.country-desc__title(for="country-desc" + i)=option.title
+      .country-desc__img
+          svg(viewBox="0 0 70 47" role="img" width="35" height="24")
+            title Изображение флага #{option.title}
+            use(xlink:href="#" + option.flag)
+    textarea.country-desc__text(id="country-desc" + i placeholder="План действий")=option.text

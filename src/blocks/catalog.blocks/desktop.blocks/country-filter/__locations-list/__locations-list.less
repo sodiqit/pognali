@@ -1,0 +1,41 @@
+.locations-list {
+  .desktop({
+    width: 100%;
+
+    &__item {
+      margin-bottom: 75px;
+
+      width: 15%;
+      .locations-list__list-countries {
+        display: block;
+      }
+      &--active {
+        .locations-list__list-countries {
+          position: static;
+        }
+      }
+    }
+
+    &__item:nth-child(5n) {
+      margin-right: 12px;
+    }
+
+    &__item:nth-child(6n) {
+      margin-right: 0;
+    }
+
+    &__button {
+      opacity: 1;
+    }
+
+    &__list-countries {
+      display: block;
+      position: static;
+
+      max-height: 1000px;
+
+      transform: translate(80px, 13px);
+    }
+  });
+
+}

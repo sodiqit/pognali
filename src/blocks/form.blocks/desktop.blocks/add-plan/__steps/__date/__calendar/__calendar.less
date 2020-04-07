@@ -1,0 +1,40 @@
+.calendar {
+
+  .desktop({
+
+    &__decrease {
+      &::before {
+        left: 4px;
+      }
+    }
+
+    &__increase {
+      &::before {
+        left: 12px;
+      }
+    }
+
+    &__table {
+      .font-set(18px,30px,@regular);
+
+      margin-top: 10px;
+
+      td {
+        text-align: left;
+        width: 143px;
+        height: 71px;
+        padding-top: 0;
+        padding-bottom: 30px;
+        padding-left: 16px;
+      }
+    }
+
+    &__day-name {
+      td {
+        height: 31px;
+        padding-bottom: 14px;
+      }
+    }
+  });
+}
+

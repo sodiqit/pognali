@@ -1,0 +1,24 @@
+-
+  var options = [
+    {
+      block: "plans-list",
+      title: "Франция, Италия",
+      companions: "3 попутчика",
+      date: "26 мар — 29 мар"
+    },
+    {
+      block: "plans-list",
+      title: "Тайланд, Индонезия",
+      companions: "1 попутчик",
+      date: "1 июл — 15 июл"
+    }
+  ]
+
+include ./__plan/__plan
+
+section.plans
+  .container
+    h2.plans__title Мои планы:
+    ul.plans__list.plans-list
+      each option in options
+        +plan(option)

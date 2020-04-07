@@ -1,0 +1,47 @@
+.hastags {
+  width: 100%;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: @profile-border-color;
+  border-radius: 10px;
+  background-color: @profile-bg-color;
+
+  color: @directions-text-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 20px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.hastags__label {
+  .font-set(16px, 18px, @bold);
+  color: @profile-label-color;
+  margin-bottom: 10px;
+  margin-top: -8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+
+  z-index: 2;
+  position: relative;
+
+  background-color: @profile-bg-color;
+}
+
+.hastags-text {
+  width: 100%;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  padding-left: 9%;
+  resize: none;
+
+  .font-set(16px, 22px, @regular);
+}

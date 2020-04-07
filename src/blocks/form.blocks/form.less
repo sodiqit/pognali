@@ -1,0 +1,22 @@
+@import "./common.blocks/profile/profile";
+@import "./tablet.blocks/profile/profile";
+@import "./desktop.blocks/profile/profile";
+@import "./desktop.blocks/header/header";
+@import "./common.blocks/plans/plans";
+@import "./tablet.blocks/plans/plans";
+@import "./desktop.blocks/plans/plans";
+@import "./common.blocks/add-plan/add-plan";
+@import "./tablet.blocks/add-plan/add-plan";
+@import "./desktop.blocks/add-plan/add-plan";
+
+.header__back {
+  display: none;
+
+  .tablet({
+    display: none;
+  });
+
+  .desktop({
+    display: none;
+  });
+}

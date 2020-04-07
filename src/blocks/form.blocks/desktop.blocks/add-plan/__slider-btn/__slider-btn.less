@@ -1,0 +1,37 @@
+.slider-btn {
+  .desktop({
+    span {
+      .reset-vh();
+      color: fade(@total-black,60%);
+      text-transform: uppercase;
+      .font-set(20px, auto, @regular);
+      letter-spacing: 0.1em;
+    }
+
+    width: auto;
+    height: 33px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 15;
+
+    margin-bottom: 11px;
+
+    &::before {
+      background-color: fade(@slider-btn-color, 30%);
+
+      position: static;
+
+      margin-right: 31px;
+    }
+
+    &--active {
+      span {
+        color: @total-black;
+      }
+      &::before {
+        background-color: @add-plan-title-color;
+      }
+    }
+  });
+}

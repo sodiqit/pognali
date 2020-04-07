@@ -1,0 +1,67 @@
+@import "./__locations-list/__locations-list";
+
+.country-filter {
+  .desktop({
+    padding-top: 101px;
+    padding-left: 103px;
+
+    margin-top: -60px;
+
+    &__form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    &--opened {
+      .country-filter__button {
+        right: 151px;
+        top: 7px;
+      }
+    }
+
+    &--closed {
+      padding-bottom: 37px;
+    }
+
+    &__name {
+      cursor: pointer;
+    }
+
+    &__title {
+      position: static;
+      width: auto;
+      height: auto;
+      opacity: 1;
+
+      .font-set(20px, 24px, @bold);
+      text-transform: uppercase;
+
+      margin-right: 32px;
+
+      &::before {
+        width: 23px;
+        height: 15px;
+        top: 19px;
+        left: -32px;
+      }
+    }
+
+    &__button {
+      right: 132px;
+      top: 7px;
+    }
+
+    &__locations-list {
+      margin-top: 39px;
+      transform: translate(-67px);
+      margin-bottom: 70px;
+    }
+
+    &__bottom-button {
+      width: 100%;
+      transform: translate(-53px);
+    }
+  });
+
+}

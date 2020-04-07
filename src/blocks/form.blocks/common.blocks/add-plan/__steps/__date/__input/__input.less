@@ -1,0 +1,136 @@
+.input-range {
+  color: @add-plan-title-color;
+  .font-set(16px,16px,@medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  position: relative;
+
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  input {
+    margin-top: 8px;
+
+    width: 100%;
+    height: 43px;
+
+    border: 1px solid @input-border-color;
+    border-radius: 4px;
+
+    text-align: center;
+    .font-set(14.3px,13px,@medium);
+
+    transition: border-color 0.3s;
+
+    outline: none;
+
+    &:hover {
+      border-color: @profile-input-hover-color;
+    }
+
+    &:focus {
+      border-color: @profile-input-focus-color;
+    }
+  }
+
+  &__measuring {
+    color: fade(@add-plan-title-color, 30%);
+  }
+
+  &__decrease, &__increase {
+
+    &::before, &::after {
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::before, &::after {
+        opacity: 0.4;
+      }
+    }
+
+    &:active {
+      &::before, &::after {
+        opacity: 0.1;
+      }
+    }
+  }
+
+  &__decrease {
+    position: absolute;
+    top: 25px;
+    left: 11px;
+
+    width: 24px;
+    height: 43px;
+
+    padding: 0;
+    background-color: @transparent;
+    border: none;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      left: 4px;
+
+      width: 14px;
+      height: 2px;
+
+      background-color: @total-black;
+      opacity: 0.2;
+    }
+  }
+
+  &__increase {
+    position: absolute;
+    top: 25px;
+    right: 8px;
+
+    width: 24px;
+    height: 43px;
+
+    padding: 0;
+    background-color: @transparent;
+    border: none;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      left: 4px;
+
+      width: 14px;
+      height: 2px;
+
+      background-color: @total-black;
+      opacity: 0.2;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      left: 4px;
+
+      z-index: 1;
+
+      transform: rotate(90deg);
+
+      width: 14px;
+      height: 2px;
+
+      background-color: @total-black;
+      opacity: 0.2;
+    }
+  }
+}
+

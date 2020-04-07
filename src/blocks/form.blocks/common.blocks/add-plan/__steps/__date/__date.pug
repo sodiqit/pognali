@@ -1,0 +1,35 @@
+-
+  var inputInfo = [
+    {
+      block_name: "date__compan",
+      name: "Ищу попутчиков:",
+      value: 2,
+      measuring: "чел.",
+      nameInput: "companions",
+      data_min: 1
+    },
+    {
+      block_name: "date__time",
+      name: "Длительность:",
+      value: 2,
+      measuring: "дн.",
+      nameInput: "duration",
+      data_min: 1
+    }
+  ]
+
+include ./__input/__input
+
+.date
+  h3.date__title Даты пребывания
+  p.date__desc.
+    Укажите предпочтительное количество попутчиков, которых
+    вы хотели бы позвать в поездку и ее предполагаемую длительность.
+  each option in inputInfo
+    +input(option)
+  label.date__checkbox <span>Можно с детьми</span>
+    input(class="visually-hidden" type="checkbox" name="children")
+    span.date__custom-checkbox
+      include ./../../../../../../img/tick.svg
+  include ./__calendar/__calendar
+  button.date__next-step(type="button") <span>Следующий шаг</span>

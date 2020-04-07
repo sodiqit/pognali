@@ -80,7 +80,8 @@ const plugins = () => {
       page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/,'.html')}`
+          filename: `./${page.replace(/\.pug/,'.html')}`,
+          chunks: [`${page.replace(/\.pug/,'')}`, `vendors`]
         })
     ),
   ]
@@ -119,7 +120,9 @@ const plugins = () => {
 
 module.exports = {
   entry: {
-    app: PATHS.src
+    index: `${PATHS.src}/index`,
+    form: `${PATHS.src}/form`,
+    catalog: `${PATHS.src}/catalog`
   },
   output: {
     filename: `js/${fileName("js")}`,
@@ -127,10 +130,10 @@ module.exports = {
   },
   devtool: isDev ? "source-map" : false, //"cheap-module-eval-source-map" - not working
   devServer: isDev ? devServer() : {},
-  optimization: optimization(),
   module: {
     rules: [
       {
+        // Pug
         test: /\.pug$/,
         loader: "pug-loader",
         query: {
@@ -205,9 +208,14 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: [`.js`, `.jsx`, `.less`],
     alias: {
-      "~": PATHS.src
+      "@j": path.resolve(__dirname, 'src/js/'),
+      img: path.resolve(__dirname, 'src/img/')
     }
   },
+
+  optimization: optimization(),
+
   plugins: plugins()
 };

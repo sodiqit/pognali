@@ -1,0 +1,65 @@
+.country-select--add {
+
+  margin-bottom: 0;
+
+  background-color: @route-close-button-bg;
+
+  &:active {
+    .country-select__value {
+      opacity: 0.3;
+    }
+  }
+
+  .country-select__value {
+    transition: opacity 0.3s;
+  }
+
+  .country-select__arrow {
+    display: none;
+  }
+
+  .country-select__change-button {
+    right: 8px;
+    top: -14px;
+
+    width: 22px;
+    height: 39px;
+
+    &::before {
+      top: 20px;
+      left: 3px;
+
+      width: 14px;
+      height: 2px;
+      background-color: @route-add-button;
+
+      transform: rotate(0);
+      border: none;
+      opacity: 0.3;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      left: 3px;
+
+      width: 14px;
+      height: 2px;
+      background-color: @route-add-button;
+
+      transform: rotate(90deg);
+      opacity: 0.3;
+    }
+
+  }
+
+  .country-select__delete-country {
+    display: none;
+  }
+
+  .country-select__dropdown {
+    display: none;
+  }
+}

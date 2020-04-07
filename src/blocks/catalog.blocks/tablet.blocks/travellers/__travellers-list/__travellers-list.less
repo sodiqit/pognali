@@ -1,0 +1,31 @@
+@import "./__users/__users";
+@import "./__pagination/__pagination";
+
+.travellers-list {
+  .tablet({
+    &__show-more {
+      margin-top: 42px;
+      margin-bottom: 47px;
+      width: 100%;
+
+      .font-set(20px, 30px, @bold);
+
+      svg {
+        width: 27px;
+        height: 27px;
+        margin-right: 12px;
+        transform: translate(-10px, -3px);
+      }
+
+      transition: opacity 0.1s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  });
+}

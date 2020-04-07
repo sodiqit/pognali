@@ -1,0 +1,26 @@
+@import "./__users/__users";
+@import "./__pagination/__pagination";
+
+.travellers-list {
+  &__show-more {
+    .reset-btn();
+    margin-top: 23px;
+    margin-bottom: 23px;
+    width: 100%;
+
+    .font-set(17px, 30px, @bold);
+    text-transform: uppercase;
+    color: @user-title-color;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 12px;
+      fill: @user-title-color;
+      transform: translateY(-2px);
+    }
+  }
+}

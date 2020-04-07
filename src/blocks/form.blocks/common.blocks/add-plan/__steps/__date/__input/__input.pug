@@ -1,0 +1,7 @@
+mixin input(options)
+  div(class=options.block_name + " input-range")
+    button(type="button" class="input-range__decrease") <span class="visually-hidden">Уменьшить #{options.name}</span>
+    label <span class="input-range__label">#{options.name}</span>
+      span.input-range__measuring=options.measuring
+      input(type="text" name=options.nameInput value=options.value data-min=options.data_min)
+    button(type="button" class="input-range__increase") <span class="visually-hidden">Увеличить #{options.name}</span>

@@ -1,0 +1,21 @@
+@import "./__filter/__filter";
+@import "./__travellers-list/__travellers-list";
+
+.travellers {
+  .desktop({
+    padding-bottom: 233px;
+    .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &__filter {
+      order: 1;
+    }
+
+    .container {
+      width: 1320px;
+    }
+  });
+}

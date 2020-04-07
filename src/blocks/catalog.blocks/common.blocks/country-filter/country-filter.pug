@@ -1,0 +1,160 @@
+-
+  var countryOptions = [
+    {
+      letter: "А",
+      active: true,
+      list_countries: ["Австралия","Австрия","Азербайджан","Албания","Алжир","Ангола","Андорра","Антигуа и Барбуда","Аргентина","Армения","Афганистан"]
+    },
+    {
+      letter: "Б",
+      list_countries: ["Багамские Острова","Бангладеш","Барбадос","Бахрейн","Белоруссия","Белиз","Бельгия","Бенин","Болгария","Боливия","Босния и Герцеговина","Ботсвана","Бразилия","Бруней","Буркина-Фасо","Бурунди","Бутан"]
+    },
+    {
+      letter: "В",
+      list_countries: ["Вануату","Великобритания","Венгрия","Венесуэла","Восточный Тимор","Вьетнам"]
+    },
+    {
+      letter: "Г",
+      list_countries: ["Габон","Гаит","Гайана","Гамбия","Гана","Гватемала","Гвинея","Гвинея-Бисау","Германия","Гондурас","Гренада","Греция","Грузия"]
+    },
+    {
+      letter: "Д",
+      list_countries: ["Дания","Джибути","Доминика","Доминикана"]
+    },
+    {
+      letter: "Е",
+      list_countries: ["Египет"]
+    },
+    {
+      letter: "Ё",
+      list_countries: []
+    },
+    {
+      letter: "Ж",
+      list_countries: []
+    },
+    {
+      letter: "З",
+      list_countries: ["Замбия","Зимбабве"]
+    },
+    {
+      letter: "И",
+      list_countries: ["Израиль","Индия","Индонезия","Иордания","Ирак","Иран","Ирландия","Исландия","Испания","Италия"]
+    },
+    {
+      letter: "Й",
+      list_countries: []
+    },
+    {
+      letter: "К",
+      list_countries: ["Кабо-Верде","Казахстан","Камбоджа","Камерун","Канада","Катар","Кения","Кипр","Киргизия","Кирибати","Китай","Колумбия","Коморы","Конго","КНДР","Республика Корея","Коста-Рика","Кот-д’Ивуар","Куба","Кувейт"]
+    },
+    {
+      letter: "Л",
+      list_countries: ["Лаос","Латвия","Лесото","Либерия","Ливан","Ливия","Литва","Лихтенштейн","Люксембург"]
+    },
+    {
+      letter: "М",
+      list_countries: ["Маврикий","Мавритания","Мадагаскар","Малави","Малайзия","Мали","Мальдивы","Мальта","Марокко","Маршалловы Острова","Мексика","Мозамбик","Молдавия","Монако","Монголия","Мьянма"]
+    },
+    {
+      letter: "Н",
+      list_countries: ["Намибия","Науру","Непал","Нигер","Нигерия","Нидерланды","Никарагуа","Новая Зеландия","Норвегия"]
+    },
+    {
+      letter: "О",
+      list_countries: ["ОАЭ","Оман"]
+    },
+    {
+      letter: "П",
+      list_countries: ["Пакистан","Палау","Панама","Папуа — Новая Гвинея","Парагвай","Перу","Польша","Португалия"]
+    },
+    {
+      letter: "Р",
+      list_countries: []
+    },
+    {
+      letter: "С",
+      list_countries: ["Сальвадор","Самоа","Сан-Марино","Сан-Томе и Принсипи","Саудовская Аравия","Северная Македония","Сейшелы","Сенегал","Сент-Люсия","Сербия","Сингапур","Сирия","Словакия","Словения","США","Сомали","Судан","Суринам","Сьерра-Леоне"]
+    },
+    {
+      letter: "Т",
+      list_countries: ["Таджикистан","Таиланд","Танзания","Того","Тонга","Тринидад и Тобаго","Тувалу","Тунис","Туркмения","Турция"]
+    },
+    {
+      letter: "У",
+      list_countries: ["Уганда","Узбекистан","Украина","Уругвай"]
+    },
+    {
+      letter: "Ф",
+      list_countries: ["Фиджи","Филиппины","Финляндия","Франция"]
+    },
+    {
+      letter: "Х",
+      list_countries: ["Хорватия"]
+    },
+    {
+      letter: "Ц",
+      list_countries: []
+    },
+    {
+      letter: "Ч",
+      list_countries: ["Чад","Черногория","Чехия","Чили"]
+    },
+    {
+      letter: "Ш",
+      list_countries: ["Швейцария","Швеция","Шри-Ланка"]
+    },
+    {
+      letter: "Щ",
+      list_countries: []
+    },
+    {
+      letter: "Э",
+      list_countries: ["Эквадор","Эритрея","Эсватини","Эстония","Эфиопия"]
+    },
+    {
+      letter: "Ю",
+      list_countries: ["ЮАР","Южный судан"]
+    },
+    {
+      letter: "Я",
+      list_countries: ["Ямайка","Япония"]
+    },
+  ]
+
+include ./__locations-list/__locations-list.pug
+
+section.country-filter.country-filter--opened
+  .container
+    form.country-filter__form(action="http://echo.htmlacademy.ru")
+      h2.country-filter__title Фильтрация по странам:
+      button.country-filter__button(type="button")
+        span.visually-hidden Показать все
+        svg(class="close" viewBox="0 0 12 12" width="12" height="12")
+          use(xlink:href="#filter-close")
+        include ./../../../../img/dots.svg
+      ul.country-filter__list
+        li
+          label
+            input(class="visually-hidden" type="radio" name="country" value="europe" checked)
+            span.country-filter__name Европа
+        li
+          label
+            input(class="visually-hidden" type="radio" name="country" value="asia")
+            span.country-filter__name Азия
+        li
+          label
+            input(class="visually-hidden" type="radio" name="country" value="america")
+            span.country-filter__name Америка
+        li
+          label
+            input(class="visually-hidden" type="radio" name="country" value="island")
+            span.country-filter__name Острова
+      ul.country-filter__locations-list.locations-list
+        each option in countryOptions
+          +location(option)
+      button(class="country-filter__bottom-button" type="button")
+        svg(viewBox="0 0 12 12" width="12" height="12")
+          use(xlink:href="#filter-close")
+        span Свернуть

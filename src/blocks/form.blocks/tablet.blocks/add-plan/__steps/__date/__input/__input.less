@@ -1,0 +1,50 @@
+.input-range {
+  .tablet({
+    .font-set(20px,18px,@medium);
+
+    label {
+      padding-top: 24px;
+      border-top: 1px solid @input-border-top-color;
+    }
+
+    input {
+      margin-top: 25px;
+
+      height: 70px;
+
+      .font-set(20px,18px,@medium);
+    }
+
+    &__decrease {
+      top: 82px;
+
+      width: 44px;
+
+      &::before {
+        left: 14px;
+
+        width: 20px;
+        height: 2px;
+      }
+    }
+
+    &__increase {
+      top: 82px;
+
+      width: 44px;
+
+      &::before {
+        left: 12px;
+
+        width: 20px;
+      }
+
+      &::after {
+        left: 12px;
+
+        width: 20px;
+      }
+    }
+  });
+}
+

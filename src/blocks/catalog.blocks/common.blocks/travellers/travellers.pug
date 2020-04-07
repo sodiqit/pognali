@@ -1,0 +1,180 @@
+-
+  var options = {
+    class: "travellers__filter",
+    fieldOptions: [
+      {
+        name: "Хобби",
+        inputOptions: [
+          {
+            name: "gym",
+            title: "Спортзал",
+          },
+          {
+            name: "hookah",
+            title: "Кальян",
+          },
+          {
+            name: "sofa",
+            title: "Диван",
+          }
+        ]
+      },
+      {
+        name: "Музыка",
+        opened: true,
+        inputOptions: [
+          {
+            name: "rock",
+            title: "Тяжелый рок",
+          },
+          {
+            name: "rap",
+            title: "Русский рэп",
+          },
+          {
+            name: "eurodance",
+            title: "Евроденс",
+          }
+        ]
+      },
+      {
+        name: "Еда",
+        inputOptions: [
+          {
+            name: "meat",
+            title: "Мясоед",
+          },
+          {
+            name: "healthy",
+            title: "Сидит на ПП",
+          },
+          {
+            name: "vegan",
+            title: "Веган-сыроед",
+          }
+        ]
+      }
+    ]
+  }
+
+-
+  var listOptions = {
+    block_name: "travellers__list",
+    users_list: {
+      block_name: "travellers-list",
+      users: [
+        {
+          name: "Таня Фирсова",
+          level: "99",
+          img: "firsova",
+          hashtags: "#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи",
+          transport: {
+            plane: true,
+            bus: false,
+            run: false,
+            bike: false
+          },
+          countries: [
+            {
+              name: "Шри ланка",
+              flag: "sri-lanka"
+            },
+            {
+              name: "Тайланд",
+              flag: "thailand"
+            },
+            {
+              name: "Сейшелы",
+              flag: "seychelles"
+            }
+          ],
+          liked: true,
+          likes: "1,5 m"
+        },
+        {
+          name: "Петя Демин",
+          level: "80",
+          img: "demin",
+          hashtags: "#бургер #бар #футбол #концерт #крафт",
+          transport: {
+            plane: true,
+            bus: true,
+            run: true,
+            bike: false
+          },
+          countries: [
+            {
+              name: "Бельгия",
+              flag: "belgium"
+            },
+            {
+              name: "Чехия",
+              flag: "czech"
+            }
+          ],
+          likes: "150"
+        },
+        {
+          name: "Марк Смолов",
+          level: "25",
+          img: "smolov",
+          hashtags: "#рэп #тату #хайпбист #кроссовки #суприм",
+          transport: {
+            plane: true,
+            bus: false,
+            run: false,
+            bike: true
+          },
+          countries: [
+            {
+              name: "Сша",
+              flag: "usa"
+            },
+            {
+              name: "Австралия",
+              flag: "australia"
+            },
+            {
+              name: "Доминикана",
+              flag: "dominica"
+            }
+          ],
+          likes: "1700"
+        },
+        {
+          name: "Лариса Роговая",
+          level: "50",
+          img: "rogovaya",
+          hashtags: "#образование #карьера #учеба #линкедин",
+          transport: {
+            plane: true,
+            bus: true,
+            run: false,
+            bike: false
+          },
+          countries: [
+            {
+              name: "Великобритания",
+              flag: "united-kingdom"
+            },
+            {
+              name: "Сша",
+              flag: "usa"
+            }
+          ],
+          online: true,
+          likes: "23"
+        }
+      ]
+    },
+    users_pagination: {
+      block_name: "travellers-list"
+    }
+  }
+
+include ./__filter/__filter
+include ./__travellers-list/__travellers-list
+section.travellers
+  .container
+    +travellers-filter(options)
+    +travellers-list(listOptions)
