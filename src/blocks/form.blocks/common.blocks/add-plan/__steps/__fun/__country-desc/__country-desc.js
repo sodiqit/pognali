@@ -91,4 +91,3 @@ class CountryDescription {
 }
 
 const desc = new CountryDescription(document.querySelector('.fun__country-list'));
-// const submitButton = document.querySelector('');

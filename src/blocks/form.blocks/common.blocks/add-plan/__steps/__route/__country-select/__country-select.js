@@ -161,7 +161,6 @@ class CountrySelect {
     e.stopPropagation();
     this._container.removeChild(this._elements[i]);
     this._elements[i] = null;
-    console.log(this._elements);
   }
 
   _bind(el, i) {
